@@ -72,7 +72,7 @@ namespace Assets.Scripts
     {
         static public bool IsSet(K blackBoardKey)
         {
-            if (blackBoardKey.Key == null)
+            if (blackBoardKey.Key.Equals(null))
                 return false; // 참조형이 null이면 값 없음
             
             if (EqualityComparer<T>.Default.Equals(blackBoardKey.Key, default(T)))
@@ -83,7 +83,7 @@ namespace Assets.Scripts
 
         static public bool IsNotSet(K blackBoardKey)
         {
-            if (Equals(blackBoardKey.Key, null))
+            if (blackBoardKey.Key.Equals(null))
                 return true; // 참조형이 null이면 값 없음
 
             if (EqualityComparer<T>.Default.Equals(blackBoardKey.Key, default(T)))

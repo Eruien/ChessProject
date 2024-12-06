@@ -1,93 +1,126 @@
 using Assets.Scripts;
 using System.Collections;
-using System.Collections.Generic;
-using TMPro;
-using UnityEditor.Timeline;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class Character : MonoBehaviour
+public class Character : BaseObject
 {
     [SerializeField]
     public GameObject target;
     [SerializeField]
-    public float viewHP = 0.0f;
+    public GameObject targetLabo;
 
-    public UnityEvent deathEvent;
-    public BlackBoard beeBlackBoard = new BlackBoard();
+    [SerializeField]
+    public float viewHP = 0.0f;
+    [SerializeField]
+    public bool IsNotDeath = false;
+
+    static public UnityEvent monsterDeathEvent = new UnityEvent();
    
     private Material material;
     private Animator beeAnimation;
-    
+    private CapsuleCollider selfCollider;
     private Selector selector;
 
-    private bool IsDeath = false;
     private bool IsHit = false;
+    private bool UseLookAt = true;
     private float beeAlpha = 1.0f;
-   
-    private IEnumerator HPReduce(b_float characterHP)
+
+    // ìœ ë‹ˆí‹° ë¼ì´í”„ ì‚¬ì´í´ í•¨ìˆ˜ 
+    private void Awake()
     {
-        while (characterHP.Key > 0)
+        MonsterManager.Instance.Register(gameObject);
+        material = FindMaterial();
+        beeAnimation = GetComponentInChildren<Animator>();
+        selfCollider = GetComponent<CapsuleCollider>();
+        targetLabo = GameObject.Find("Labo");
+        SetBlackBoardKey();
+
+        selector = new Selector();
+    }
+
+    private void OnEnable()
+    {
+        Character.monsterDeathEvent.AddListener(OnDeathEvent);
+    }
+
+    private void Start()
+    {
+        // HPê´€ë¦¬
+        Selector HPMgr = new Selector();
+        selector.AddChild(HPMgr);
+
+        Sequence<float, b_float> checkHPZero = new Sequence<float, b_float>(KeyQuery.IsLessThanOrEqualTo, 0.001f, blackBoard.m_HP);
+        HPMgr.AddChild(checkHPZero);
+
+        Action action = new Action(IsHPZero);
+        checkHPZero.AddChild(action);
+
+        // ê³µê²© ê´€ë¦¬
+        Selector attackMgr = new Selector();
+        selector.AddChild(attackMgr);
+
+        SetSequence<GameObject, b_GameObject> checkTargetLive = new SetSequence<GameObject, b_GameObject>(KeyQuery.IsSet, blackBoard.m_TargetObject);
+        attackMgr.AddChild(checkTargetLive);
+
+        Sequence<float, b_float> checkAttackRange = new Sequence<float, b_float>(KeyQuery.IsLessThanOrEqualTo, blackBoard.m_AttackRange.Key, blackBoard.m_AttackDistance);
+        checkTargetLive.AddChild(checkAttackRange);
+
+        Action attackAction = new Action(FlyAttack);
+        checkAttackRange.AddChild(attackAction);
+
+        // ì´ë™ ê´€ë¦¬
+        Selector moveMgr = new Selector();
+        selector.AddChild(moveMgr);
+
+        SetSequence<GameObject, b_GameObject> move = new SetSequence<GameObject, b_GameObject>(KeyQuery.IsSet, blackBoard.m_TargetObject);
+        moveMgr.AddChild(move);
+        Action moveAction = new Action(MoveToPosition);
+
+        move.AddChild(moveAction);
+        //StartCoroutine(HPReduce(beeBlackBoard.m_HP));
+    }
+
+    private void Update()
+    {
+        viewHP = blackBoard.m_HP.Key;
+        if (IsNotDeath)
         {
-            characterHP.Key -= 1.0f;
-            Debug.Log(characterHP.Key);
-            yield return new WaitForSeconds(1.0f);
+            blackBoard.m_HP.Key = 100;
         }
-    }
-  
-    private IEnumerator DecreaseAlpha()
-    {
-        while (beeAlpha >= 0)
+
+
+        if (!IsDeath)
         {
-            beeAlpha -= 0.1f;
-            material.SetFloat("_Alpha", beeAlpha);  // ¼ÎÀÌ´õ¿¡ ¾ËÆÄ °ªÀ» Àü´Ş
-            yield return new WaitForSeconds(0.1f);
-        }
-    }
-
-    private IEnumerator DeathAndDestroy(float deathTime)
-    {
-        yield return new WaitForSeconds(deathTime);
-        MonsterManager.Instance.UnRegister(gameObject);
-    }
-
-    private ReturnCode FlyAttack()
-    {
-        beeAnimation.SetTrigger("IsAttack");
-        return ReturnCode.SUCCESS;
-    }
-
-    private ReturnCode MoveToPosition()
-    {
-        transform.LookAt(target.transform);
-        transform.position = Vector3.MoveTowards(gameObject.transform.position, target.transform.position, 0.01f);
-        
-        return ReturnCode.SUCCESS;
-    }
-
-    private ReturnCode IsHPZero()
-    {
-        if (beeBlackBoard.m_HP.Key <= 0)
-        {
-            Debug.Log("HP Zero EXECUTE");
-            beeAnimation.SetBool("IsDeath", true);
-            StartCoroutine(DecreaseAlpha());
-            IsDeath = true;
-            return ReturnCode.SUCCESS;
+            if (target == null)
+            {
+                if (targetLabo is not null)
+                {
+                    target = targetLabo;
+                    blackBoard.m_TargetObject.Key = target;
+                }
+            }
+            blackBoard.m_AttackDistance.Key = ComputeAttackDistance();
+            selector.Tick();
         }
         else
         {
-            return ReturnCode.FAIL;
+            StartCoroutine(DeathAndDestroy(1.0f));
         }
     }
 
-    private void SetBlackBoardKey()
+    private void OnDisable()
     {
-        beeBlackBoard.m_HP.Key = 100.0f;
-        beeBlackBoard.m_SearchRange.Key = 20.0f;
-        beeBlackBoard.m_AttackDistance.Key = ComputeAttackDistance();
-        beeBlackBoard.m_AttackRange.Key = 1.5f;
-        beeBlackBoard.m_TargetObject.Key = target;
+        Character.monsterDeathEvent.RemoveListener(OnDeathEvent);
+    }
+
+    protected override void SetBlackBoardKey()
+    {
+        blackBoard.m_HP.Key = 100.0f;
+        blackBoard.m_SearchRange.Key = 20.0f;
+        blackBoard.m_AttackDistance.Key = ComputeAttackDistance();
+        blackBoard.m_AttackRange.Key = 1.5f;
+        blackBoard.m_TargetObject.Key = target;
     }
 
     private Material FindMaterial()
@@ -115,106 +148,114 @@ public class Character : MonoBehaviour
         return dis;
     }
 
-    private void OnEnable()
+    // Coroutine
+    private IEnumerator HPReduce(b_float characterHP)
     {
-        deathEvent.AddListener(OnDeathEvent);
-    }
-
-    private void Awake()
-    {
-        MonsterManager.Instance.Register(gameObject);
-        material = FindMaterial();
-        beeAnimation = GetComponentInChildren<Animator>();
-        SetBlackBoardKey();
-        
-        selector = new Selector();
-    }
-
-    private void Start()
-    {
-        // HP°ü¸®
-        Selector HPMgr = new Selector();
-        selector.AddChild(HPMgr);
-
-        Sequence<float, b_float> checkHPZero = new Sequence<float, b_float>(KeyQuery.IsLessThanOrEqualTo, 0.001f, beeBlackBoard.m_HP);
-        HPMgr.AddChild(checkHPZero);
-
-        Action action = new Action(IsHPZero);
-        checkHPZero.AddChild(action);
-
-        // °ø°İ °ü¸®
-        Selector attackMgr = new Selector();
-        selector.AddChild(attackMgr);
-
-        Sequence<float, b_float> checkAttackRange = new Sequence<float, b_float>(KeyQuery.IsLessThanOrEqualTo, beeBlackBoard.m_AttackRange.Key, beeBlackBoard.m_AttackDistance);
-        attackMgr.AddChild(checkAttackRange);
-
-        Action attackAction = new Action(FlyAttack);
-        checkAttackRange.AddChild(attackAction);
-
-        // ÀÌµ¿ °ü¸®
-        Selector moveMgr = new Selector();
-        selector.AddChild(moveMgr);
-
-        SetSequence<GameObject, b_GameObject> move = new SetSequence<GameObject, b_GameObject>(KeyQuery.IsSet, beeBlackBoard.m_TargetObject);
-        moveMgr.AddChild(move);
-        Action moveAction = new Action(MoveToPosition);
-
-        move.AddChild(moveAction);
-        //StartCoroutine(HPReduce(beeBlackBoard.m_HP));
-    }
-
-    private void Update()
-    {
-        viewHP = beeBlackBoard.m_HP.Key;
-        
-        if (!IsDeath)
+        while (characterHP.Key > 0)
         {
-            beeBlackBoard.m_AttackDistance.Key = ComputeAttackDistance();
-            selector.Tick();
+            characterHP.Key -= 1.0f;
+            Debug.Log(characterHP.Key);
+            yield return new WaitForSeconds(1.0f);
+        }
+    }
+  
+    private IEnumerator DecreaseAlpha()
+    {
+        while (beeAlpha >= 0)
+        {
+            beeAlpha -= 0.1f;
+            material.SetFloat("_Alpha", beeAlpha);  // ì…°ì´ë”ì— ì•ŒíŒŒ ê°’ì„ ì „ë‹¬
+            yield return new WaitForSeconds(0.1f);
+        }
+    }
+
+    private IEnumerator DeathAndDestroy(float deathTime)
+    {
+        yield return new WaitForSeconds(deathTime);
+        MonsterManager.Instance.UnRegister(gameObject);
+    }
+
+    // TaskNode ëª¨ìŒ
+    private ReturnCode FlyAttack()
+    {
+        if (UseLookAt)
+        {
+            transform.LookAt(target.transform);
+            UseLookAt = false;
+            beeAnimation.SetTrigger("IsAttack");
+        }
+  
+        return ReturnCode.SUCCESS;
+    }
+
+    private ReturnCode MoveToPosition()
+    {
+        transform.LookAt(target.transform);
+        transform.position = Vector3.MoveTowards(gameObject.transform.position, target.transform.position, 0.01f);
+        
+        return ReturnCode.SUCCESS;
+    }
+
+    private ReturnCode IsHPZero()
+    {
+        if (blackBoard.m_HP.Key <= 0)
+        {
+            Debug.Log("HP Zero EXECUTE");
+            beeAnimation.SetBool("IsDeath", true);
+            StartCoroutine(DecreaseAlpha());
+            IsDeath = true;
+            Character.monsterDeathEvent.Invoke();
+            return ReturnCode.SUCCESS;
         }
         else
         {
-            StartCoroutine(DeathAndDestroy(1.0f));
+            return ReturnCode.FAIL;
         }
     }
 
-    private void OnDisable()
-    {
-        MonsterManager.UnityDeathEvent.RemoveListener(OnDeathEvent);
-    }
-
-    // CollisionCheckÀÇ ÀÌº¥Æ® ¿ë
+    // ìœ ë‹ˆí‹° ì´ë²¤íŠ¸ ëª¨ìŒ
+    // CollisionCheckì˜ ì´ë²¤íŠ¸ ìš©
     public void OnHitEvent(Collider other)
     {
         if (!IsHit)
         {
-            Character otherCharacter = other.gameObject.GetComponent<Character>();
-            otherCharacter.beeBlackBoard.m_HP.Key -= 5;
+            BaseObject otherObject = other.gameObject.GetComponent<BaseObject>();
+            otherObject.blackBoard.m_HP.Key -= 50;
             IsHit = true;
         }
     }
 
-    // SearchCollisionÀÇ ÀÌº¥Æ® ¿ë
+    // SearchCollisionì˜ ì´ë²¤íŠ¸ ìš©
     public void OnSearchCollisionEvent(Collider other)
     {
         target = other.gameObject;
-        beeBlackBoard.m_TargetObject.Key = target;
+        blackBoard.m_TargetObject.Key = target;
     }
 
-    // Å¸°İÀ» ÇÑ ¹ø¸¸ ÀÔÈ÷°Ô ÇÏ±â À§ÇØ
-    // AttackAnimationCheckÀÇ ÀÌº¥Æ® ¿ë
+    // íƒ€ê²©ì„ í•œ ë²ˆë§Œ ì…íˆê²Œ í•˜ê¸° ìœ„í•´
+    // AttackAnimationCheckì˜ ì´ë²¤íŠ¸ ìš©
     public void OnAttackAnimationStart()
     {
         IsHit = false;
     }
 
-    // MonsterManagerÀÇ DeathEvent ¿ë
+    // ì• ë‹ˆë©”ì´ì…˜ ëë‚˜ëŠ” íƒ€ì´ë° ì²´í¬
+    public void OnAttackAnimationEnd()
+    {
+        UseLookAt = true;
+    }
+
+    // MonsterManagerì˜ DeathEvent ìš©
     public void OnDeathEvent()
     {
-        if (target == null)
+        Debug.Log("ì´ë²¤íŠ¸ í…ŒìŠ¤íŠ¸");
+
+        BaseObject obj = target.GetComponent<BaseObject>();
+
+        if (!IsDeath)
         {
-            Debug.Log("Å¸°ÙÀÌ nullÀÌ¾ß");
+            selfCollider.enabled = false;
+            selfCollider.enabled = true;
         }
     }
 }

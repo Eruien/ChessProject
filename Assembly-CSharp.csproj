@@ -60,6 +60,7 @@
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\2022.3.33f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\Labo.cs" />
     <Compile Include="Assets\Scripts\DecorateFunc.cs" />
     <Compile Include="Assets\Scripts\CollisionCheck.cs" />
     <Compile Include="Assets\Scripts\BlackBoard.cs" />
@@ -69,11 +70,14 @@
     <Compile Include="Assets\Scripts\Composite.cs" />
     <Compile Include="Assets\Scripts\SearchCollision.cs" />
     <Compile Include="Assets\Scripts\SphereColliderExclude.cs" />
+    <Compile Include="Assets\Scripts\BaseObject.cs" />
     <Compile Include="Assets\Scripts\BoxColliderExclude.cs" />
     <Compile Include="Assets\Scripts\TestScripts.cs" />
     <Compile Include="Assets\Scripts\AttackAnimationCheck.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\RPGMonsterBundlePBR\HowToTestHDRP_URP.txt" />
+    <None Include="Assets\RPGMonsterBundlePBR\CommonStuffs\Shader\PBRMaskTint.shader" />
     <None Include="Assets\Shader\MonsterDeathShader.shader" />
   </ItemGroup>
   <ItemGroup>

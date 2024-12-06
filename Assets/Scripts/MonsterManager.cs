@@ -5,8 +5,6 @@ using UnityEngine.EventSystems;
 
 public class MonsterManager : MonoBehaviour
 {
-    static public UnityEvent UnityDeathEvent = new UnityEvent();
-
     private static MonsterManager _instance;
     
     public static MonsterManager Instance
@@ -24,18 +22,17 @@ public class MonsterManager : MonoBehaviour
         }
     }
 
-    private List<Object> MonsterList = new List<Object>(); 
+    private List<GameObject> MonsterList = new List<GameObject>(); 
 
-    public void Register(Object obj)
+    public void Register(GameObject obj)
     {
         MonsterList.Add(obj);
     }
 
-    public void UnRegister(Object obj)
+    public void UnRegister(GameObject obj)
     {
         MonsterList.Remove(obj);
         Destroy(obj);
         obj = null;
-        UnityDeathEvent.Invoke();
     }
 }
