@@ -1,5 +1,6 @@
 using Assets.Scripts;
 using System.Collections;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -27,9 +28,9 @@ public class Character : BaseObject
     private float beeAlpha = 1.0f;
 
     // 유니티 라이프 사이클 함수 
-    private void Awake()
+    protected void Awake()
     {
-        MonsterManager.Instance.Register(gameObject);
+        Managers.Monster.Register(gameObject);
         material = FindMaterial();
         beeAnimation = GetComponentInChildren<Animator>();
         selfCollider = GetComponent<CapsuleCollider>();
@@ -39,12 +40,12 @@ public class Character : BaseObject
         selector = new Selector();
     }
 
-    private void OnEnable()
+    protected void OnEnable()
     {
         Character.monsterDeathEvent.AddListener(OnDeathEvent);
     }
 
-    private void Start()
+    protected void Start()
     {
         // HP관리
         Selector HPMgr = new Selector();
@@ -81,7 +82,7 @@ public class Character : BaseObject
         //StartCoroutine(HPReduce(beeBlackBoard.m_HP));
     }
 
-    private void Update()
+    protected void Update()
     {
         viewHP = blackBoard.m_HP.Key;
         if (IsNotDeath)
@@ -109,18 +110,44 @@ public class Character : BaseObject
         }
     }
 
-    private void OnDisable()
+    protected void OnDisable()
     {
         Character.monsterDeathEvent.RemoveListener(OnDeathEvent);
     }
 
     protected override void SetBlackBoardKey()
     {
+        DataManager.Instance.FetchData();
         blackBoard.m_HP.Key = 100.0f;
         blackBoard.m_SearchRange.Key = 20.0f;
         blackBoard.m_AttackDistance.Key = ComputeAttackDistance();
         blackBoard.m_AttackRange.Key = 1.5f;
+        target = targetLabo;
         blackBoard.m_TargetObject.Key = target;
+    }
+
+    protected float ComputeAttackDistance()
+    {
+        if (target == null) return 100.0f;
+        Vector3 vec = target.transform.position - transform.position;
+        float dis = Mathf.Pow(vec.x * vec.x + vec.z * vec.z, 0.5f);
+
+        return dis;
+    }
+
+    protected GameObject FindChildObject(string childName)
+    {
+        Transform[] allObjects = transform.GetComponentsInChildren<Transform>();
+
+        foreach (Transform obj in allObjects)
+        {
+            if (obj.name == childName)
+            {
+                return obj.gameObject;
+            }
+        }
+
+        return null;
     }
 
     private Material FindMaterial()
@@ -137,15 +164,6 @@ public class Character : BaseObject
         }
 
         return null;
-    }
-
-    private float ComputeAttackDistance()
-    {
-        if (target == null) return 100.0f;
-        Vector3 vec = target.transform.position - transform.position;
-        float dis = Mathf.Pow(vec.x * vec.x + vec.z * vec.z, 0.5f);
-
-        return dis;
     }
 
     // Coroutine
@@ -172,10 +190,11 @@ public class Character : BaseObject
     private IEnumerator DeathAndDestroy(float deathTime)
     {
         yield return new WaitForSeconds(deathTime);
-        MonsterManager.Instance.UnRegister(gameObject);
+        Managers.Monster.UnRegister(gameObject);
     }
 
     // TaskNode 모음
+    
     private ReturnCode FlyAttack()
     {
         if (UseLookAt)
@@ -183,10 +202,13 @@ public class Character : BaseObject
             transform.LookAt(target.transform);
             UseLookAt = false;
             beeAnimation.SetTrigger("IsAttack");
+            ChildAttack();
         }
   
         return ReturnCode.SUCCESS;
     }
+
+    protected virtual void ChildAttack() { }
 
     private ReturnCode MoveToPosition()
     {
@@ -248,9 +270,7 @@ public class Character : BaseObject
     // MonsterManager의 DeathEvent 용
     public void OnDeathEvent()
     {
-        Debug.Log("이벤트 테스트");
-
-        BaseObject obj = target.GetComponent<BaseObject>();
+        Debug.Log("죽는 이벤트가 모두에게 전달되는지 테스트");
 
         if (!IsDeath)
         {
