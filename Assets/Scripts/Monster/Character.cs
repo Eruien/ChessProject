@@ -3,6 +3,7 @@ using System.Collections;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.UIElements;
 
 public class Character : BaseObject
 {
@@ -19,25 +20,27 @@ public class Character : BaseObject
     static public UnityEvent monsterDeathEvent = new UnityEvent();
    
     private Material material;
-    private Animator beeAnimation;
+    private Animator monsterAnimation;
     private CapsuleCollider selfCollider;
     private Selector selector;
 
-    private bool IsHit = false;
     private bool UseLookAt = true;
-    private float beeAlpha = 1.0f;
+    private bool IsHit = false;
+    private float monsterAlpha = 1.0f;
+    private float initialY = 0.0f;
 
     // 유니티 라이프 사이클 함수 
     protected void Awake()
     {
         Managers.Monster.Register(gameObject);
         material = FindMaterial();
-        beeAnimation = GetComponentInChildren<Animator>();
+        monsterAnimation = GetComponentInChildren<Animator>();
         selfCollider = GetComponent<CapsuleCollider>();
+        initialY = transform.position.y;
         targetLabo = GameObject.Find("Labo");
-        SetBlackBoardKey();
-
         selector = new Selector();
+
+        SetBlackBoardKey();
     }
 
     protected void OnEnable()
@@ -67,7 +70,7 @@ public class Character : BaseObject
         Sequence<float, b_float> checkAttackRange = new Sequence<float, b_float>(KeyQuery.IsLessThanOrEqualTo, blackBoard.m_AttackRange.Key, blackBoard.m_AttackDistance);
         checkTargetLive.AddChild(checkAttackRange);
 
-        Action attackAction = new Action(FlyAttack);
+        Action attackAction = new Action(Attack);
         checkAttackRange.AddChild(attackAction);
 
         // 이동 관리
@@ -79,17 +82,16 @@ public class Character : BaseObject
         Action moveAction = new Action(MoveToPosition);
 
         move.AddChild(moveAction);
-        //StartCoroutine(HPReduce(beeBlackBoard.m_HP));
     }
 
     protected void Update()
     {
         viewHP = blackBoard.m_HP.Key;
+
         if (IsNotDeath)
         {
             blackBoard.m_HP.Key = 100;
         }
-
 
         if (!IsDeath)
         {
@@ -119,9 +121,8 @@ public class Character : BaseObject
     {
         DataManager.Instance.FetchData();
         blackBoard.m_HP.Key = 100.0f;
-        blackBoard.m_SearchRange.Key = 20.0f;
-        blackBoard.m_AttackDistance.Key = ComputeAttackDistance();
         blackBoard.m_AttackRange.Key = 1.5f;
+        blackBoard.m_AttackDistance.Key = blackBoard.m_AttackRange.Key * 2;
         target = targetLabo;
         blackBoard.m_TargetObject.Key = target;
     }
@@ -179,10 +180,10 @@ public class Character : BaseObject
   
     private IEnumerator DecreaseAlpha()
     {
-        while (beeAlpha >= 0)
+        while (monsterAlpha >= 0)
         {
-            beeAlpha -= 0.1f;
-            material.SetFloat("_Alpha", beeAlpha);  // 셰이더에 알파 값을 전달
+            monsterAlpha -= 0.1f;
+            material.SetFloat("_Alpha", monsterAlpha);  // 셰이더에 알파 값을 전달
             yield return new WaitForSeconds(0.1f);
         }
     }
@@ -195,13 +196,13 @@ public class Character : BaseObject
 
     // TaskNode 모음
     
-    private ReturnCode FlyAttack()
+    private ReturnCode Attack()
     {
         if (UseLookAt)
         {
             transform.LookAt(target.transform);
             UseLookAt = false;
-            beeAnimation.SetTrigger("IsAttack");
+            monsterAnimation.SetTrigger("IsAttack");
             ChildAttack();
         }
   
@@ -214,7 +215,9 @@ public class Character : BaseObject
     {
         transform.LookAt(target.transform);
         transform.position = Vector3.MoveTowards(gameObject.transform.position, target.transform.position, 0.01f);
-        
+        Vector3 fixYPos = new Vector3(transform.position.x, initialY, transform.position.z);
+        transform.position = fixYPos;
+
         return ReturnCode.SUCCESS;
     }
 
@@ -222,8 +225,7 @@ public class Character : BaseObject
     {
         if (blackBoard.m_HP.Key <= 0)
         {
-            Debug.Log("HP Zero EXECUTE");
-            beeAnimation.SetBool("IsDeath", true);
+            monsterAnimation.SetBool("IsDeath", true);
             StartCoroutine(DecreaseAlpha());
             IsDeath = true;
             Character.monsterDeathEvent.Invoke();
@@ -237,15 +239,20 @@ public class Character : BaseObject
 
     // 유니티 이벤트 모음
     // CollisionCheck의 이벤트 용
-    public void OnHitEvent(Collider other)
+    public virtual void OnHitEvent(Collider other)
     {
+        if (other.gameObject == null) return;
+
         if (!IsHit)
         {
             BaseObject otherObject = other.gameObject.GetComponent<BaseObject>();
             otherObject.blackBoard.m_HP.Key -= 50;
             IsHit = true;
+            OnChildHitEvent();
         }
     }
+
+    public virtual void OnChildHitEvent() {}
 
     // SearchCollision의 이벤트 용
     public void OnSearchCollisionEvent(Collider other)
@@ -270,8 +277,6 @@ public class Character : BaseObject
     // MonsterManager의 DeathEvent 용
     public void OnDeathEvent()
     {
-        Debug.Log("죽는 이벤트가 모두에게 전달되는지 테스트");
-
         if (!IsDeath)
         {
             selfCollider.enabled = false;

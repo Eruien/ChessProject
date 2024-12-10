@@ -11,6 +11,9 @@ public class AttackAnimationCheck : MonoBehaviour
     [SerializeField]
     public UnityEvent attackAnimationEndEvent;
 
+    [SerializeField]
+    public UnityEvent attackProjectTileEvent;
+
     private void OnAttackStart()
     {
         attackAnimationStartEvent.Invoke();
@@ -20,5 +23,11 @@ public class AttackAnimationCheck : MonoBehaviour
     {
         attackAnimationEndEvent.Invoke();
     }
+
+    private void OnAttackProjectTile()
+    {
+        attackProjectTileEvent.Invoke();
+    }
+    
 
 }
