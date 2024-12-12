@@ -1,0 +1,20 @@
+{
+  "monsterStat": [
+    {
+      "name": "Bee",
+      "hp": "100.0f",
+      "attackRange": "1.5f",
+      "attackRangeCorrectionValue": "2.0f",
+      "attackDistance": "3.0f",
+      "speed": "5.0f"
+    },
+    {
+      "name": "Mage",
+      "hp": "100.0f",
+      "attackRange": "10.0f",
+      "attackRangeCorrectionValue": "2.0f",
+      "attackDistance": "20.0f",
+      "speed": "3.0f"
+    }
+  ]
+}

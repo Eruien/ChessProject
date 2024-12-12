@@ -119,7 +119,7 @@ public class Character : BaseObject
 
     protected override void SetBlackBoardKey()
     {
-        DataManager.Instance.FetchData();
+        Debug.Log(this.name);
         blackBoard.m_HP.Key = 100.0f;
         blackBoard.m_AttackRange.Key = 1.5f;
         blackBoard.m_AttackDistance.Key = blackBoard.m_AttackRange.Key * 2;

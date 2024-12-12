@@ -12,7 +12,7 @@ public class Mage : Character
     protected new void Awake()
     {
         base.Awake();
-        fireBallPrefab = Managers.Resource.Load<GameObject>("Prefab/FireBall");
+        fireBallPrefab = Managers.Resource.Load<GameObject>("Prefabs/FireBall");
         weaponSocket = FindChildObject("Socket");
     }
 
@@ -38,11 +38,11 @@ public class Mage : Character
 
     protected override void SetBlackBoardKey()
     {
-        DataManager.Instance.FetchData();
-        blackBoard.m_HP.Key = 100.0f;
-        blackBoard.m_AttackRange.Key = 10.0f;
-        blackBoard.m_AttackRangeCorrectionValue.Key = 2.0f;
-        blackBoard.m_AttackDistance.Key = blackBoard.m_AttackRange.Key * 2;
+        Debug.Log(this.name);
+        blackBoard.m_HP.Key = Managers.Data.monsterDict[this.GetType().Name].hp;
+        blackBoard.m_AttackRange.Key = Managers.Data.monsterDict[this.GetType().Name].attackRange;
+        blackBoard.m_AttackRangeCorrectionValue.Key = Managers.Data.monsterDict[this.GetType().Name].attackRangeCorrectionValue;
+        blackBoard.m_AttackDistance.Key = Managers.Data.monsterDict[this.GetType().Name].attackDistance;
         target = targetLabo;
         blackBoard.m_TargetObject.Key = target;
     }

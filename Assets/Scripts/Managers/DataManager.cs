@@ -1,26 +1,54 @@
+using Palmmedia.ReportGenerator.Core.Plugin;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
 
-[Serializable]
-public class Stats
+public interface IDict<Key, Value>
 {
-    public float hp;
-    public float attackRange;
+    Dictionary<Key, Value> MakeDict();
 }
 
+[Serializable]
+public class MonsterStat
+{
+    public string name;
+    public float hp;
+    public float attackRange;
+    public float attackRangeCorrectionValue;
+    public float attackDistance;
+    public float speed;
+}
+
+[Serializable]
+public class MonsterData : IDict<string, MonsterStat>
+{
+    public List<MonsterStat> monsterStat = new List<MonsterStat>();
+
+    public Dictionary<string, MonsterStat> MakeDict()
+    {
+        Dictionary<string, MonsterStat> dict = new Dictionary<string, MonsterStat>();
+        foreach (MonsterStat stat in monsterStat)
+        {
+            dict.Add(stat.name, stat);
+        }
+        return dict;
+    }
+}
 
 public class DataManager
 {
-    private static DataManager _instance = new DataManager();
-
-    public static DataManager Instance { get { return _instance; } }
-
-    public void FetchData()
+    public Dictionary<string, MonsterStat> monsterDict { get; private set; } = new Dictionary<string, MonsterStat>();
+    
+    public void Init()
     {
-        TextAsset asset = Resources.Load<TextAsset>($"GameData/BattleBee");
-        Stats data = JsonUtility.FromJson<Stats>(asset.text);
-        Debug.Log(asset.text);
+        monsterDict = LoadJson<MonsterData, string, MonsterStat>("MonsterData").MakeDict();
+    }
+
+    Loader LoadJson<Loader, Key, Value>(string path) where Loader : IDict<Key, Value>
+    {
+        TextAsset textAsset = Managers.Resource.Load<TextAsset>($"GameData/{path}");
+        return JsonUtility.FromJson<Loader>(textAsset.text);
     }
 }

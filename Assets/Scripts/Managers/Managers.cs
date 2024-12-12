@@ -9,9 +9,11 @@ public class Managers : MonoBehaviour
 
     private ResourceManager _resource = new ResourceManager();
     private MonsterManager _monster = new MonsterManager();
+    private DataManager _data = new DataManager();
 
     public static ResourceManager Resource { get { return Instance._resource; } }
     public static MonsterManager Monster { get { return Instance._monster; } }
+    public static DataManager Data { get { return Instance._data; } }
 
     private void Start()
     {
@@ -32,8 +34,9 @@ public class Managers : MonoBehaviour
 
             DontDestroyOnLoad(go);
             _instance = go.GetComponent<Managers>();
-            
+
             // 매니저들 초기화 작업
+            _instance._data.Init();
         }
     }
 
