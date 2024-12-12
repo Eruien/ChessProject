@@ -374,6 +374,7 @@
 "Assets/Scripts/BehaviorTree/Composite.cs"
 "Assets/Scripts/BehaviorTree/DecorateFunc.cs"
 "Assets/Scripts/ColliderExclude/ColliderExclude.cs"
+"Assets/Scripts/ColliderExclude/SelectColliderExclude.cs"
 "Assets/Scripts/Managers/DataManager.cs"
 "Assets/Scripts/Managers/Managers.cs"
 "Assets/Scripts/Managers/MonsterManager.cs"

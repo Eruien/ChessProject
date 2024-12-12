@@ -1,4 +1,5 @@
 using Assets.Scripts;
+using JetBrains.Annotations;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
@@ -88,17 +89,19 @@ public class Character : BaseObject
     protected void Update()
     {
         viewHP = blackBoard.m_HP.Key;
-
+     
         if (IsNotDeath)
         {
             blackBoard.m_HP.Key = 100;
         }
 
+        monsterAnimation.SetBool("IsMove", false);
+
         if (!IsDeath)
         {
             if (target == null)
             {
-                if (targetLabo is not null)
+                if (targetLabo != null)
                 {
                     target = targetLabo;
                     blackBoard.m_TargetObject.Key = target;
@@ -147,7 +150,7 @@ public class Character : BaseObject
     protected override void SetBlackBoardKey()
     {
         blackBoard.m_HP.Key = 100.0f;
-        blackBoard.m_AttackRange.Key = 1.5f;
+        blackBoard.m_AttackRange.Key = 3.0f;
         blackBoard.m_AttackDistance.Key = blackBoard.m_AttackRange.Key * 2;
         target = targetLabo;
         blackBoard.m_TargetObject.Key = target;
@@ -214,6 +217,7 @@ public class Character : BaseObject
 
     private ReturnCode MoveToPosition()
     {
+        monsterAnimation.SetBool("IsMove", true);
         transform.LookAt(target.transform);
         transform.position = Vector3.MoveTowards(gameObject.transform.position, target.transform.position, 0.01f);
         Vector3 fixYPos = new Vector3(transform.position.x, initialY, transform.position.z);
@@ -259,8 +263,12 @@ public class Character : BaseObject
     // SearchCollision의 이벤트 용
     public void OnSearchCollisionEvent(Collider other)
     {
-        BaseObject obj = target.gameObject.GetComponent<BaseObject>();
-        if (obj.SelfType == ObjectType.Monster) return;  
+        if (target != null)
+        {
+            BaseObject obj = target.gameObject.GetComponent<BaseObject>();
+            if (!obj.IsDeath && obj.SelfType == ObjectType.Monster) return;
+        }
+       
         target = other.gameObject;
         blackBoard.m_TargetObject.Key = target;
     }

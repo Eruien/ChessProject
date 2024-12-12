@@ -47,18 +47,19 @@ public class Mage : Character
 
     protected override void OnChildHitEvent()
     {
-        fireBall.GetComponent<CollisionCheck>().UnityHitEvent.RemoveListener(OnHitEvent);
-        Destroy(fireBall.gameObject);
+        if (fireBall == null) return;
+        fireBall.GetComponent<FireBall>().IsUse = false;
     }
 
     // AttackAnimationCheck에서 OnAttackProjectTile 이벤트 용
     public void OnAttackFireBall()
     {
         fireBall = Instantiate(fireBallPrefab, weaponSocket.transform.position, Quaternion.identity);
-        fireBall.GetComponent<FireBall>().TargetObject = blackBoard.m_TargetObject;
-        fireBall.GetComponent<FireBall>().AttackRange = blackBoard.m_AttackRange.Key;
-        fireBall.GetComponent<FireBall>().AttackRangeCorrectionValue = blackBoard.m_AttackRangeCorrectionValue.Key;
-        fireBall.GetComponent<CollisionCheck>().UnityHitEvent.AddListener(OnHitEvent);
-        fireBall.GetComponent<SphereCollider>().excludeLayers = (1 << gameObject.layer) | fireBall.GetComponent<SphereCollider>().excludeLayers;
+        FireBall fireBallScript = fireBall.GetComponent<FireBall>();
+        fireBallScript.TargetObject = blackBoard.m_TargetObject;
+        fireBallScript.AttackRange = blackBoard.m_AttackRange.Key;
+        fireBallScript.AttackRangeCorrectionValue = blackBoard.m_AttackRangeCorrectionValue.Key;
+        fireBall.GetComponent<CollisionCheck>().CollisionAddListener(OnHitEvent);
+        fireBall.GetComponent<SelectColliderExclude>().SelectExcludeLayer(gameObject.layer);
     }
 }

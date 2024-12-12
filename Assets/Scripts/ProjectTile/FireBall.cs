@@ -1,13 +1,15 @@
 using Assets.Scripts;
 using UnityEngine;
+using System;
 
 public class FireBall : MonoBehaviour
 {
     public b_GameObject TargetObject { get; set; }
     public float AttackRange { get; set; }
     public float AttackRangeCorrectionValue { get; set; }
+    public bool IsUse { get; set; } = true;
     private Vector3 initialPos = Vector3.zero;
-   
+    
     private void Awake()
     {
         initialPos = transform.position;
@@ -17,7 +19,7 @@ public class FireBall : MonoBehaviour
     {
         if (TargetObject.Key == null)
         {
-            Destroy(gameObject);
+            IsUse = false;
         }
         else
         {
@@ -26,6 +28,11 @@ public class FireBall : MonoBehaviour
         }
       
         if (ComputeDistance() >= AttackRange + AttackRangeCorrectionValue)
+        {
+            IsUse = false;
+        }
+
+        if (!IsUse)
         {
             Destroy(gameObject);
         }

@@ -95,6 +95,7 @@
     <Compile Include="Assets\AssetStore\SpecialSkillsEffectsPack\Scripts\ForEffects\LookAtTarget.cs" />
     <Compile Include="Assets\Scripts\Util\BehaviorTreeLog.cs" />
     <Compile Include="Assets\AssetStore\SpecialSkillsEffectsPack\Scripts\ForEffects\_ObjectsMakeBase.cs" />
+    <Compile Include="Assets\Scripts\ColliderExclude\SelectColliderExclude.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\AssetStore\SpecialSkillsEffectsPack\Shader_ForEffects\Shader_Decal.shader" />
