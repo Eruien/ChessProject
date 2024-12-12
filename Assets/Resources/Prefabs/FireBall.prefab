@@ -114,7 +114,7 @@ GameObject:
   - component: {fileID: 767879728113014496}
   - component: {fileID: 3691452040198280161}
   - component: {fileID: 4863403886159185864}
-  - component: {fileID: 5762818473747120411}
+  - component: {fileID: 6268811386569670720}
   m_Layer: 7
   m_Name: FireBall
   m_TagString: Untagged
@@ -213,7 +213,7 @@ MonoBehaviour:
   UnityHitEvent:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &5762818473747120411
+--- !u!114 &6268811386569670720
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -222,7 +222,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 906136650066898603}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6c48e75b7cb469a47b1f71ab5e42c8e1, type: 3}
+  m_Script: {fileID: 11500000, guid: db3abd476714c644b9a8f677ffbfc22d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1880851601287630720

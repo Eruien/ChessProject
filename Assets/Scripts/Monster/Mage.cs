@@ -1,13 +1,10 @@
-using Assets.Scripts;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Mage : Character
 {
-    GameObject fireBallPrefab;
-    GameObject fireBall;
-    GameObject weaponSocket;
+    private GameObject fireBallPrefab;
+    private GameObject fireBall;
+    private GameObject weaponSocket;
    
     protected new void Awake()
     {
@@ -38,7 +35,6 @@ public class Mage : Character
 
     protected override void SetBlackBoardKey()
     {
-        Debug.Log(this.name);
         blackBoard.m_HP.Key = Managers.Data.monsterDict[this.GetType().Name].hp;
         blackBoard.m_AttackRange.Key = Managers.Data.monsterDict[this.GetType().Name].attackRange;
         blackBoard.m_AttackRangeCorrectionValue.Key = Managers.Data.monsterDict[this.GetType().Name].attackRangeCorrectionValue;
@@ -49,6 +45,12 @@ public class Mage : Character
 
     protected override void ChildAttack() {}
 
+    protected override void OnChildHitEvent()
+    {
+        fireBall.GetComponent<CollisionCheck>().UnityHitEvent.RemoveListener(OnHitEvent);
+        Destroy(fireBall.gameObject);
+    }
+
     // AttackAnimationCheck에서 OnAttackProjectTile 이벤트 용
     public void OnAttackFireBall()
     {
@@ -58,11 +60,5 @@ public class Mage : Character
         fireBall.GetComponent<FireBall>().AttackRangeCorrectionValue = blackBoard.m_AttackRangeCorrectionValue.Key;
         fireBall.GetComponent<CollisionCheck>().UnityHitEvent.AddListener(OnHitEvent);
         fireBall.GetComponent<SphereCollider>().excludeLayers = (1 << gameObject.layer) | fireBall.GetComponent<SphereCollider>().excludeLayers;
-    }
-
-    public override void OnChildHitEvent()
-    {
-        fireBall.GetComponent<CollisionCheck>().UnityHitEvent.RemoveListener(OnHitEvent);
-        Destroy(fireBall.gameObject);
     }
 }

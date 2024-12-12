@@ -1,9 +1,7 @@
 using Assets.Scripts;
 using System.Collections;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.Events;
-using UnityEngine.UIElements;
 
 public class Character : BaseObject
 {
@@ -26,12 +24,15 @@ public class Character : BaseObject
 
     private bool UseLookAt = true;
     private bool IsHit = false;
+    private bool attackAnimationSpan = false;
     private float monsterAlpha = 1.0f;
     private float initialY = 0.0f;
+    private float deathAndDestroyTime = 1.0f;
 
     // 유니티 라이프 사이클 함수 
     protected void Awake()
     {
+        SelfType = ObjectType.Monster;
         Managers.Monster.Register(gameObject);
         material = FindMaterial();
         monsterAnimation = GetComponentInChildren<Animator>();
@@ -108,7 +109,7 @@ public class Character : BaseObject
         }
         else
         {
-            StartCoroutine(DeathAndDestroy(1.0f));
+            StartCoroutine(DeathAndDestroy(deathAndDestroyTime));
         }
     }
 
@@ -117,38 +118,14 @@ public class Character : BaseObject
         Character.monsterDeathEvent.RemoveListener(OnDeathEvent);
     }
 
-    protected override void SetBlackBoardKey()
+    // 일반 함수
+    private float ComputeAttackDistance()
     {
-        Debug.Log(this.name);
-        blackBoard.m_HP.Key = 100.0f;
-        blackBoard.m_AttackRange.Key = 1.5f;
-        blackBoard.m_AttackDistance.Key = blackBoard.m_AttackRange.Key * 2;
-        target = targetLabo;
-        blackBoard.m_TargetObject.Key = target;
-    }
-
-    protected float ComputeAttackDistance()
-    {
-        if (target == null) return 100.0f;
+        if (target == null) return blackBoard.m_AttackDistance.Key;
         Vector3 vec = target.transform.position - transform.position;
         float dis = Mathf.Pow(vec.x * vec.x + vec.z * vec.z, 0.5f);
 
         return dis;
-    }
-
-    protected GameObject FindChildObject(string childName)
-    {
-        Transform[] allObjects = transform.GetComponentsInChildren<Transform>();
-
-        foreach (Transform obj in allObjects)
-        {
-            if (obj.name == childName)
-            {
-                return obj.gameObject;
-            }
-        }
-
-        return null;
     }
 
     private Material FindMaterial()
@@ -161,6 +138,30 @@ public class Character : BaseObject
             {
                 Material mat = obj.gameObject.GetComponent<SkinnedMeshRenderer>().material;
                 return mat;
+            }
+        }
+
+        return null;
+    }
+
+    protected override void SetBlackBoardKey()
+    {
+        blackBoard.m_HP.Key = 100.0f;
+        blackBoard.m_AttackRange.Key = 1.5f;
+        blackBoard.m_AttackDistance.Key = blackBoard.m_AttackRange.Key * 2;
+        target = targetLabo;
+        blackBoard.m_TargetObject.Key = target;
+    }
+
+    protected GameObject FindChildObject(string childName)
+    {
+        Transform[] allObjects = transform.GetComponentsInChildren<Transform>();
+
+        foreach (Transform obj in allObjects)
+        {
+            if (obj.name == childName)
+            {
+                return obj.gameObject;
             }
         }
 
@@ -195,7 +196,6 @@ public class Character : BaseObject
     }
 
     // TaskNode 모음
-    
     private ReturnCode Attack()
     {
         if (UseLookAt)
@@ -209,7 +209,8 @@ public class Character : BaseObject
         return ReturnCode.SUCCESS;
     }
 
-    protected virtual void ChildAttack() { }
+    // 자식에게서 추가 행동이 있을 경우
+    protected virtual void ChildAttack() {}
 
     private ReturnCode MoveToPosition()
     {
@@ -243,7 +244,7 @@ public class Character : BaseObject
     {
         if (other.gameObject == null) return;
 
-        if (!IsHit)
+        if (!IsHit && attackAnimationSpan)
         {
             BaseObject otherObject = other.gameObject.GetComponent<BaseObject>();
             otherObject.blackBoard.m_HP.Key -= 50;
@@ -252,11 +253,14 @@ public class Character : BaseObject
         }
     }
 
-    public virtual void OnChildHitEvent() {}
+    // 자식에게서 추가 행동이 있을 경우
+    protected virtual void OnChildHitEvent() {}
 
     // SearchCollision의 이벤트 용
     public void OnSearchCollisionEvent(Collider other)
     {
+        BaseObject obj = target.gameObject.GetComponent<BaseObject>();
+        if (obj.SelfType == ObjectType.Monster) return;  
         target = other.gameObject;
         blackBoard.m_TargetObject.Key = target;
     }
@@ -266,15 +270,18 @@ public class Character : BaseObject
     public void OnAttackAnimationStart()
     {
         IsHit = false;
+        attackAnimationSpan = true;
     }
 
     // 애니메이션 끝나는 타이밍 체크
+    // AttackAnimationCheck의 이벤트 용
     public void OnAttackAnimationEnd()
     {
         UseLookAt = true;
+        attackAnimationSpan = false;
     }
 
-    // MonsterManager의 DeathEvent 용
+    // Character의 monsterDeathEvent 용
     public void OnDeathEvent()
     {
         if (!IsDeath)

@@ -1,6 +1,5 @@
 using Assets.Scripts;
 using UnityEngine;
-using static UnityEngine.GraphicsBuffer;
 
 public class FireBall : MonoBehaviour
 {
@@ -20,10 +19,12 @@ public class FireBall : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        else
+        {
+            Vector3 direction = (TargetObject.Key.transform.position - transform.position).normalized;
+            GetComponent<Rigidbody>().AddForce(direction * 10.0f);
+        }
       
-        Vector3 direction = (TargetObject.Key.transform.position - transform.position).normalized;
-        GetComponent<Rigidbody>().AddForce(direction * 10.0f);
-
         if (ComputeDistance() >= AttackRange + AttackRangeCorrectionValue)
         {
             Destroy(gameObject);

@@ -1,6 +1,3 @@
-using Assets.Scripts;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Bee : Character
@@ -29,9 +26,9 @@ public class Bee : Character
     {
         base.OnDisable();
     }
+
     protected override void SetBlackBoardKey()
     {
-        Debug.Log(this.name);
         blackBoard.m_HP.Key = Managers.Data.monsterDict[this.GetType().Name].hp;
         blackBoard.m_AttackRange.Key = Managers.Data.monsterDict[this.GetType().Name].attackRange;
         blackBoard.m_AttackRangeCorrectionValue.Key = Managers.Data.monsterDict[this.GetType().Name].attackRangeCorrectionValue;
@@ -40,7 +37,7 @@ public class Bee : Character
         blackBoard.m_TargetObject.Key = target;
     }
 
-    protected override void ChildAttack() { }
+    protected override void ChildAttack() {}
 
-    public override void OnChildHitEvent() { }
+    protected override void OnChildHitEvent() {}
 }
