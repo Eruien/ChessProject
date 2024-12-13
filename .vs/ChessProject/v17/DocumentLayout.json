@@ -3,44 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\ogkim\\Desktop\\UnityClient\\ChessProject\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{44D6AA39-E445-1F57-1F48-299BDDE4D9D2}|Assembly-CSharp.csproj|C:\\Users\\ogkim\\Desktop\\UnityClient\\ChessProject\\assets\\scripts\\projecttile\\fireball.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{44D6AA39-E445-1F57-1F48-299BDDE4D9D2}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\projecttile\\fireball.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{44D6AA39-E445-1F57-1F48-299BDDE4D9D2}|Assembly-CSharp.csproj|C:\\Users\\ogkim\\Desktop\\UnityClient\\ChessProject\\assets\\scripts\\monster\\mage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{44D6AA39-E445-1F57-1F48-299BDDE4D9D2}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\monster\\mage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{44D6AA39-E445-1F57-1F48-299BDDE4D9D2}|Assembly-CSharp.csproj|c:\\users\\ogkim\\desktop\\unityclient\\chessproject\\assets\\scripts\\monster\\basemonster.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{44D6AA39-E445-1F57-1F48-299BDDE4D9D2}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\monster\\basemonster.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{44D6AA39-E445-1F57-1F48-299BDDE4D9D2}|Assembly-CSharp.csproj|C:\\Users\\ogkim\\Desktop\\UnityClient\\ChessProject\\assets\\scripts\\monster\\bee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{44D6AA39-E445-1F57-1F48-299BDDE4D9D2}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\monster\\bee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{44D6AA39-E445-1F57-1F48-299BDDE4D9D2}|Assembly-CSharp.csproj|C:\\Users\\ogkim\\Desktop\\UnityClient\\ChessProject\\assets\\scripts\\monster\\baseobject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{44D6AA39-E445-1F57-1F48-299BDDE4D9D2}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\monster\\baseobject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{44D6AA39-E445-1F57-1F48-299BDDE4D9D2}|Assembly-CSharp.csproj|c:\\users\\ogkim\\desktop\\unityclient\\chessproject\\assets\\scripts\\monster\\skeleton.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{44D6AA39-E445-1F57-1F48-299BDDE4D9D2}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\monster\\skeleton.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\ogkim\\Desktop\\UnityClient\\ChessProject\\Assets\\Resources\\GameData\\MonsterData.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Resources\\GameData\\MonsterData.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{44D6AA39-E445-1F57-1F48-299BDDE4D9D2}|Assembly-CSharp.csproj|c:\\users\\ogkim\\desktop\\unityclient\\chessproject\\assets\\scripts\\util\\behaviortreelog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{44D6AA39-E445-1F57-1F48-299BDDE4D9D2}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\util\\behaviortreelog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{44D6AA39-E445-1F57-1F48-299BDDE4D9D2}|Assembly-CSharp.csproj|C:\\Users\\ogkim\\Desktop\\UnityClient\\ChessProject\\assets\\scripts\\managers\\datamanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{44D6AA39-E445-1F57-1F48-299BDDE4D9D2}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\managers\\datamanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{44D6AA39-E445-1F57-1F48-299BDDE4D9D2}|Assembly-CSharp.csproj|C:\\Users\\ogkim\\Desktop\\UnityClient\\ChessProject\\assets\\scripts\\behaviortree\\blackboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{44D6AA39-E445-1F57-1F48-299BDDE4D9D2}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\behaviortree\\blackboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{44D6AA39-E445-1F57-1F48-299BDDE4D9D2}|Assembly-CSharp.csproj|C:\\Users\\ogkim\\Desktop\\UnityClient\\ChessProject\\assets\\scripts\\monster\\labo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{44D6AA39-E445-1F57-1F48-299BDDE4D9D2}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\monster\\labo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -50,136 +22,45 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "BehaviorTreeLog.cs",
-              "DocumentMoniker": "C:\\Users\\ogkim\\Desktop\\UnityClient\\ChessProject\\Assets\\Scripts\\Util\\BehaviorTreeLog.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Util\\BehaviorTreeLog.cs",
-              "ToolTip": "C:\\Users\\ogkim\\Desktop\\UnityClient\\ChessProject\\Assets\\Scripts\\Util\\BehaviorTreeLog.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Util\\BehaviorTreeLog.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAADwvwAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-13T09:28:33.228Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "BaseMonster.cs",
               "DocumentMoniker": "C:\\Users\\ogkim\\Desktop\\UnityClient\\ChessProject\\Assets\\Scripts\\Monster\\BaseMonster.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Monster\\BaseMonster.cs",
               "ToolTip": "C:\\Users\\ogkim\\Desktop\\UnityClient\\ChessProject\\Assets\\Scripts\\Monster\\BaseMonster.cs",
               "RelativeToolTip": "Assets\\Scripts\\Monster\\BaseMonster.cs",
-              "ViewState": "AQIAAB4BAAAAAAAAAAAUwPwAAAALAAAA",
+              "ViewState": "AQIAAMcAAAAAAAAAAAAlwN4AAAAFAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-13T09:17:49.139Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "MonsterData.json",
-              "DocumentMoniker": "C:\\Users\\ogkim\\Desktop\\UnityClient\\ChessProject\\Assets\\Resources\\GameData\\MonsterData.json",
-              "RelativeDocumentMoniker": "Assets\\Resources\\GameData\\MonsterData.json",
-              "ToolTip": "C:\\Users\\ogkim\\Desktop\\UnityClient\\ChessProject\\Assets\\Resources\\GameData\\MonsterData.json",
-              "RelativeToolTip": "Assets\\Resources\\GameData\\MonsterData.json",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAXAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-12-13T09:08:51.396Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "BaseObject.cs",
-              "DocumentMoniker": "C:\\Users\\ogkim\\Desktop\\UnityClient\\ChessProject\\Assets\\Scripts\\Monster\\BaseObject.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Monster\\BaseObject.cs",
-              "ToolTip": "C:\\Users\\ogkim\\Desktop\\UnityClient\\ChessProject\\Assets\\Scripts\\Monster\\BaseObject.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Monster\\BaseObject.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAADwvwkAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-13T09:18:36.942Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "FireBall.cs",
-              "DocumentMoniker": "C:\\Users\\ogkim\\Desktop\\UnityClient\\ChessProject\\Assets\\Scripts\\ProjectTile\\FireBall.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\ProjectTile\\FireBall.cs",
-              "ToolTip": "C:\\Users\\ogkim\\Desktop\\UnityClient\\ChessProject\\Assets\\Scripts\\ProjectTile\\FireBall.cs",
-              "RelativeToolTip": "Assets\\Scripts\\ProjectTile\\FireBall.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABwAAAAJAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-13T09:18:30.859Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "Labo.cs",
-              "DocumentMoniker": "C:\\Users\\ogkim\\Desktop\\UnityClient\\ChessProject\\Assets\\Scripts\\Monster\\Labo.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Monster\\Labo.cs",
-              "ToolTip": "C:\\Users\\ogkim\\Desktop\\UnityClient\\ChessProject\\Assets\\Scripts\\Monster\\Labo.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Monster\\Labo.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAADwvwAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-13T09:18:28.731Z",
+              "WhenOpened": "2024-12-13T12:53:53.383Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Mage.cs",
-              "DocumentMoniker": "C:\\Users\\ogkim\\Desktop\\UnityClient\\ChessProject\\Assets\\Scripts\\Monster\\Mage.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Monster\\Mage.cs",
-              "ToolTip": "C:\\Users\\ogkim\\Desktop\\UnityClient\\ChessProject\\Assets\\Scripts\\Monster\\Mage.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Monster\\Mage.cs",
-              "ViewState": "AQIAACYAAAAAAAAAAAAgwEAAAABMAAAA",
+              "Title": "Skeleton.cs",
+              "DocumentMoniker": "C:\\Users\\ogkim\\Desktop\\UnityClient\\ChessProject\\Assets\\Scripts\\Monster\\Skeleton.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Monster\\Skeleton.cs",
+              "ToolTip": "C:\\Users\\ogkim\\Desktop\\UnityClient\\ChessProject\\Assets\\Scripts\\Monster\\Skeleton.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Monster\\Skeleton.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAADwvwAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-13T09:17:16.45Z",
+              "WhenOpened": "2024-12-13T12:53:50.118Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Bee.cs",
-              "DocumentMoniker": "C:\\Users\\ogkim\\Desktop\\UnityClient\\ChessProject\\Assets\\Scripts\\Monster\\Bee.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Monster\\Bee.cs",
-              "ToolTip": "C:\\Users\\ogkim\\Desktop\\UnityClient\\ChessProject\\Assets\\Scripts\\Monster\\Bee.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Monster\\Bee.cs",
-              "ViewState": "AQIAAA8AAAAAAAAAAAAIwCgAAABsAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-13T09:10:21.124Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "BlackBoard.cs",
-              "DocumentMoniker": "C:\\Users\\ogkim\\Desktop\\UnityClient\\ChessProject\\Assets\\Scripts\\BehaviorTree\\BlackBoard.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\BehaviorTree\\BlackBoard.cs",
-              "ToolTip": "C:\\Users\\ogkim\\Desktop\\UnityClient\\ChessProject\\Assets\\Scripts\\BehaviorTree\\BlackBoard.cs",
-              "RelativeToolTip": "Assets\\Scripts\\BehaviorTree\\BlackBoard.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-13T09:10:17.879Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "DataManager.cs",
-              "DocumentMoniker": "C:\\Users\\ogkim\\Desktop\\UnityClient\\ChessProject\\Assets\\Scripts\\Managers\\DataManager.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Managers\\DataManager.cs",
-              "ToolTip": "C:\\Users\\ogkim\\Desktop\\UnityClient\\ChessProject\\Assets\\Scripts\\Managers\\DataManager.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Managers\\DataManager.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAswBIAAAAaAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-13T09:09:09.918Z",
+              "DocumentIndex": 2,
+              "Title": "MonsterData.json",
+              "DocumentMoniker": "C:\\Users\\ogkim\\Desktop\\UnityClient\\ChessProject\\Assets\\Resources\\GameData\\MonsterData.json",
+              "RelativeDocumentMoniker": "Assets\\Resources\\GameData\\MonsterData.json",
+              "ToolTip": "C:\\Users\\ogkim\\Desktop\\UnityClient\\ChessProject\\Assets\\Resources\\GameData\\MonsterData.json",
+              "RelativeToolTip": "Assets\\Resources\\GameData\\MonsterData.json",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAACkAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-12-13T12:22:32.578Z",
               "EditorCaption": ""
             }
           ]

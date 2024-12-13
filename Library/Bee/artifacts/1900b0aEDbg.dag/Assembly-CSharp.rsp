@@ -384,6 +384,7 @@
 "Assets/Scripts/Monster/Bee.cs"
 "Assets/Scripts/Monster/Labo.cs"
 "Assets/Scripts/Monster/Mage.cs"
+"Assets/Scripts/Monster/Skeleton.cs"
 "Assets/Scripts/ProjectTile/FireBall.cs"
 "Assets/Scripts/TestScripts.cs"
 "Assets/Scripts/Util/AttackAnimationCheck.cs"
