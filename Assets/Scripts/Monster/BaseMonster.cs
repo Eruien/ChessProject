@@ -4,7 +4,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class Character : BaseObject
+public class BaseMonster : BaseObject
 {
     [SerializeField]
     public GameObject target;
@@ -47,7 +47,7 @@ public class Character : BaseObject
 
     protected void OnEnable()
     {
-        Character.monsterDeathEvent.AddListener(OnDeathEvent);
+        BaseMonster.monsterDeathEvent.AddListener(OnDeathEvent);
     }
 
     protected void Start()
@@ -118,7 +118,7 @@ public class Character : BaseObject
 
     protected void OnDisable()
     {
-        Character.monsterDeathEvent.RemoveListener(OnDeathEvent);
+        BaseMonster.monsterDeathEvent.RemoveListener(OnDeathEvent);
     }
 
     // 일반 함수
@@ -149,11 +149,15 @@ public class Character : BaseObject
 
     protected override void SetBlackBoardKey()
     {
-        blackBoard.m_HP.Key = 100.0f;
-        blackBoard.m_AttackRange.Key = 3.0f;
-        blackBoard.m_AttackDistance.Key = blackBoard.m_AttackRange.Key * 2;
         target = targetLabo;
         blackBoard.m_TargetObject.Key = target;
+        blackBoard.m_HP.Key = Managers.Data.monsterDict[this.GetType().Name].hp;
+        blackBoard.m_AttackDistance.Key = Managers.Data.monsterDict[this.GetType().Name].attackDistance;
+        blackBoard.m_AttackRange.Key = Managers.Data.monsterDict[this.GetType().Name].attackRange;
+        blackBoard.m_AttackRangeCorrectionValue.Key = Managers.Data.monsterDict[this.GetType().Name].attackRangeCorrectionValue;
+        blackBoard.m_DefaultAttackDamage.Key = Managers.Data.monsterDict[this.GetType().Name].defaultAttackDamage;
+        blackBoard.m_MoveSpeed.Key = Managers.Data.monsterDict[this.GetType().Name].moveSpeed;
+        blackBoard.m_ProjectTileSpeed.Key = Managers.Data.monsterDict[this.GetType().Name].projectTileSpeed;
     }
 
     protected GameObject FindChildObject(string childName)
@@ -219,7 +223,9 @@ public class Character : BaseObject
     {
         monsterAnimation.SetBool("IsMove", true);
         transform.LookAt(target.transform);
-        transform.position = Vector3.MoveTowards(gameObject.transform.position, target.transform.position, 0.01f);
+        float LerpT = blackBoard.m_MoveSpeed.Key * Time.deltaTime / Vector3.Distance(gameObject.transform.position, target.transform.position);
+        //transform.position = Vector3.Lerp(gameObject.transform.position, target.transform.position, LerpT);
+        transform.position = Vector3.MoveTowards(gameObject.transform.position, target.transform.position, blackBoard.m_MoveSpeed.Key * Time.deltaTime);
         Vector3 fixYPos = new Vector3(transform.position.x, initialY, transform.position.z);
         transform.position = fixYPos;
 
@@ -233,7 +239,7 @@ public class Character : BaseObject
             monsterAnimation.SetBool("IsDeath", true);
             StartCoroutine(DecreaseAlpha());
             IsDeath = true;
-            Character.monsterDeathEvent.Invoke();
+            BaseMonster.monsterDeathEvent.Invoke();
             return ReturnCode.SUCCESS;
         }
         else
@@ -244,14 +250,14 @@ public class Character : BaseObject
 
     // 유니티 이벤트 모음
     // CollisionCheck의 이벤트 용
-    public virtual void OnHitEvent(Collider other)
+    public void OnHitEvent(Collider other)
     {
         if (other.gameObject == null) return;
 
         if (!IsHit && attackAnimationSpan)
         {
             BaseObject otherObject = other.gameObject.GetComponent<BaseObject>();
-            otherObject.blackBoard.m_HP.Key -= 50;
+            otherObject.blackBoard.m_HP.Key -= blackBoard.m_DefaultAttackDamage.Key;
             IsHit = true;
             OnChildHitEvent();
         }

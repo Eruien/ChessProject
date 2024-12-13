@@ -70,11 +70,11 @@
     <Compile Include="Assets\Scripts\Managers\ResourceManager.cs" />
     <Compile Include="Assets\AssetStore\SpecialSkillsEffectsPack\Scripts\VariousEffectsScene.cs" />
     <Compile Include="Assets\Scripts\Managers\MonsterManager.cs" />
+    <Compile Include="Assets\Scripts\Monster\BaseMonster.cs" />
     <Compile Include="Assets\Scripts\BehaviorTree\Composite.cs" />
     <Compile Include="Assets\Scripts\BehaviorTree\DecorateFunc.cs" />
     <Compile Include="Assets\AssetStore\SpecialSkillsEffectsPack\Scripts\ForEffects\ObjectMove.cs" />
     <Compile Include="Assets\Scripts\ProjectTile\FireBall.cs" />
-    <Compile Include="Assets\Scripts\Monster\Character.cs" />
     <Compile Include="Assets\Scripts\Util\UtilityLog.cs" />
     <Compile Include="Assets\Scripts\BehaviorTree\BlackBoard.cs" />
     <Compile Include="Assets\AssetStore\SpecialSkillsEffectsPack\Scripts\VariousMouseOrbit.cs" />

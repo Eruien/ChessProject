@@ -47,8 +47,8 @@ namespace Assets.Scripts
         public GameObject Key { get; set; }
     }
 
-    public class b_Character : IBlackBoardKey<Character>
+    public class b_Character : IBlackBoardKey<BaseMonster>
     {
-        public Character Key { get; set; }
+        public BaseMonster Key { get; set; }
     }
 }

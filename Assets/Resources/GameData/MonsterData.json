@@ -1,12 +1,24 @@
 {
   "monsterStat": [
     {
-      "name": "Bee",
+      "name": "BaseMonster",
       "hp": "100.0f",
-      "attackRange": "1.5f",
+      "attackRange": "2.5f",
       "attackRangeCorrectionValue": "2.0f",
       "attackDistance": "3.0f",
-      "speed": "5.0f"
+      "defaultAttackDamage": "50.0f",
+      "moveSpeed": "5.0f",
+      "projectTileSpeed": "0.0f"
+    },
+    {
+      "name": "Bee",
+      "hp": "100.0f",
+      "attackRange": "2.5f",
+      "attackRangeCorrectionValue": "2.0f",
+      "attackDistance": "3.0f",
+      "defaultAttackDamage": "50.0f",
+      "moveSpeed": "5.0f",
+      "projectTileSpeed": "0.0f"
     },
     {
       "name": "Mage",
@@ -14,7 +26,9 @@
       "attackRange": "10.0f",
       "attackRangeCorrectionValue": "2.0f",
       "attackDistance": "20.0f",
-      "speed": "3.0f"
+      "defaultAttackDamage": "50.0f",
+      "moveSpeed": "3.0f",
+      "projectTileSpeed": "10.0f"
     }
   ]
 }

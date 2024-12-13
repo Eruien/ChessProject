@@ -15,7 +15,9 @@ public class MonsterStat
     public float attackRange;
     public float attackRangeCorrectionValue;
     public float attackDistance;
-    public float speed;
+    public float defaultAttackDamage;
+    public float moveSpeed;
+    public float projectTileSpeed;
 }
 
 [Serializable]

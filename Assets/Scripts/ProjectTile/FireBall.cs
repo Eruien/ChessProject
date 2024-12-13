@@ -7,6 +7,7 @@ public class FireBall : MonoBehaviour
     public b_GameObject TargetObject { get; set; }
     public float AttackRange { get; set; }
     public float AttackRangeCorrectionValue { get; set; }
+    public float ProjectTileSpeed { get; set; }
     public bool IsUse { get; set; } = true;
     private Vector3 initialPos = Vector3.zero;
     
@@ -24,7 +25,7 @@ public class FireBall : MonoBehaviour
         else
         {
             Vector3 direction = (TargetObject.Key.transform.position - transform.position).normalized;
-            GetComponent<Rigidbody>().AddForce(direction * 10.0f);
+            GetComponent<Rigidbody>().AddForce(direction * ProjectTileSpeed);
         }
       
         if (ComputeDistance() >= AttackRange + AttackRangeCorrectionValue)

@@ -1,6 +1,7 @@
+using System.Collections.Concurrent;
 using UnityEngine;
 
-public class Bee : Character
+public class Bee : BaseMonster
 {
     protected new void Awake()
     {
@@ -29,12 +30,15 @@ public class Bee : Character
 
     protected override void SetBlackBoardKey()
     {
-        blackBoard.m_HP.Key = Managers.Data.monsterDict[this.GetType().Name].hp;
-        blackBoard.m_AttackRange.Key = Managers.Data.monsterDict[this.GetType().Name].attackRange;
-        blackBoard.m_AttackRangeCorrectionValue.Key = Managers.Data.monsterDict[this.GetType().Name].attackRangeCorrectionValue;
-        blackBoard.m_AttackDistance.Key = Managers.Data.monsterDict[this.GetType().Name].attackDistance;
         target = targetLabo;
         blackBoard.m_TargetObject.Key = target;
+        blackBoard.m_HP.Key = Managers.Data.monsterDict[this.GetType().Name].hp;
+        blackBoard.m_AttackDistance.Key = Managers.Data.monsterDict[this.GetType().Name].attackDistance;
+        blackBoard.m_AttackRange.Key = Managers.Data.monsterDict[this.GetType().Name].attackRange;
+        blackBoard.m_AttackRangeCorrectionValue.Key = Managers.Data.monsterDict[this.GetType().Name].attackRangeCorrectionValue;
+        blackBoard.m_DefaultAttackDamage.Key = Managers.Data.monsterDict[this.GetType().Name].defaultAttackDamage;
+        blackBoard.m_MoveSpeed.Key = Managers.Data.monsterDict[this.GetType().Name].moveSpeed;
+        blackBoard.m_ProjectTileSpeed.Key = Managers.Data.monsterDict[this.GetType().Name].projectTileSpeed;
     }
 
     protected override void ChildAttack() {}
