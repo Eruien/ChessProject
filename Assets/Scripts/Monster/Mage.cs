@@ -51,14 +51,14 @@ public class Mage : BaseMonster
     protected override void OnChildHitEvent()
     {
         if (projectTile == null) return;
-        projectTile.GetComponent<FireBall>().IsUse = false;
+        projectTile.GetComponent<ProjectTile>().IsUse = false;
     }
 
     // AttackAnimationCheck에서 OnAttackProjectTile 이벤트 용
     public void OnAttackMonsterProjectTile()
     {
         projectTile = Instantiate(projectTilePrefab, weaponSocket.transform.position, Quaternion.identity);
-        FireBall projectTileScript = projectTile.GetComponent<FireBall>();
+        ProjectTile projectTileScript = projectTile.GetComponent<ProjectTile>();
         projectTileScript.TargetObject = blackBoard.m_TargetObject;
         projectTileScript.AttackRange = blackBoard.m_AttackRange.Key;
         projectTileScript.AttackRangeCorrectionValue = blackBoard.m_AttackRangeCorrectionValue.Key;

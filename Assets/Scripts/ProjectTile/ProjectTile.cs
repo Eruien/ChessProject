@@ -2,7 +2,7 @@ using Assets.Scripts;
 using UnityEngine;
 using System;
 
-public class FireBall : MonoBehaviour
+public class ProjectTile : MonoBehaviour
 {
     public b_GameObject TargetObject { get; set; }
     public float AttackRange { get; set; }

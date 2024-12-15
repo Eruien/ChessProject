@@ -74,7 +74,6 @@
     <Compile Include="Assets\Scripts\BehaviorTree\Composite.cs" />
     <Compile Include="Assets\Scripts\BehaviorTree\DecorateFunc.cs" />
     <Compile Include="Assets\AssetStore\SpecialSkillsEffectsPack\Scripts\ForEffects\ObjectMove.cs" />
-    <Compile Include="Assets\Scripts\ProjectTile\FireBall.cs" />
     <Compile Include="Assets\Scripts\Util\UtilityLog.cs" />
     <Compile Include="Assets\Scripts\BehaviorTree\BlackBoard.cs" />
     <Compile Include="Assets\Scripts\Monster\Skeleton.cs" />
@@ -97,6 +96,7 @@
     <Compile Include="Assets\AssetStore\SpecialSkillsEffectsPack\Scripts\ForEffects\LookAtTarget.cs" />
     <Compile Include="Assets\Scripts\Util\BehaviorTreeLog.cs" />
     <Compile Include="Assets\AssetStore\SpecialSkillsEffectsPack\Scripts\ForEffects\_ObjectsMakeBase.cs" />
+    <Compile Include="Assets\Scripts\ProjectTile\ProjectTile.cs" />
     <Compile Include="Assets\Scripts\ColliderExclude\SelectColliderExclude.cs" />
   </ItemGroup>
   <ItemGroup>

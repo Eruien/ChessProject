@@ -376,11 +376,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1023811913986187414, guid: e3d3679caf55422409ed893779f174b9, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.69
+      value: -7.38
       objectReference: {fileID: 0}
     - target: {fileID: 1023811913986187414, guid: e3d3679caf55422409ed893779f174b9, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.829
+      value: 2.283
       objectReference: {fileID: 0}
     - target: {fileID: 1023811913986187414, guid: e3d3679caf55422409ed893779f174b9, type: 3}
       propertyPath: m_LocalPosition.z
@@ -414,21 +414,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3843340269384078770, guid: e3d3679caf55422409ed893779f174b9, type: 3}
-      propertyPath: UnityHitEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1212876329}
     - target: {fileID: 5773839724702035970, guid: e3d3679caf55422409ed893779f174b9, type: 3}
       propertyPath: m_Name
       value: Bee
-      objectReference: {fileID: 0}
-    - target: {fileID: 5773839724702035970, guid: e3d3679caf55422409ed893779f174b9, type: 3}
-      propertyPath: m_Layer
-      value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 5773839724702035970, guid: e3d3679caf55422409ed893779f174b9, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1747,17 +1735,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5ebe239a78ec49d286e84888b28d432b, type: 3}
---- !u!114 &1212876329 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8499214138211535357, guid: 28a377788fab4614f87f41ee8c3d4fa5, type: 3}
-  m_PrefabInstance: {fileID: 7665824141116788851}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 31c9a0828fda26847968e84b1de1fe2c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1232819736
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1909,6 +1886,10 @@ PrefabInstance:
     - target: {fileID: 5747975393424631263, guid: f939b220febe70649ad9b04a8a7efdcf, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6553477710408183908, guid: f939b220febe70649ad9b04a8a7efdcf, type: 3}
+      propertyPath: IsNotDeath
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2845,6 +2826,10 @@ PrefabInstance:
     - target: {fileID: 6296401143350276848, guid: 28a377788fab4614f87f41ee8c3d4fa5, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8499214138211535357, guid: 28a377788fab4614f87f41ee8c3d4fa5, type: 3}
+      propertyPath: IsNotDeath
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
