@@ -381,6 +381,7 @@
 "Assets/Scripts/Managers/ResourceManager.cs"
 "Assets/Scripts/Monster/BaseMonster.cs"
 "Assets/Scripts/Monster/BaseObject.cs"
+"Assets/Scripts/Monster/BattleBee.cs"
 "Assets/Scripts/Monster/Bee.cs"
 "Assets/Scripts/Monster/Labo.cs"
 "Assets/Scripts/Monster/Mage.cs"

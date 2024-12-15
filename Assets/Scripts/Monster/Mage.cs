@@ -2,14 +2,14 @@ using UnityEngine;
 
 public class Mage : BaseMonster
 {
-    private GameObject fireBallPrefab;
-    private GameObject fireBall;
+    private GameObject projectTilePrefab;
+    private GameObject projectTile;
     private GameObject weaponSocket;
    
     protected new void Awake()
     {
         base.Awake();
-        fireBallPrefab = Managers.Resource.Load<GameObject>("Prefabs/FireBall");
+        projectTilePrefab = Managers.Resource.Load<GameObject>("Prefabs/FireBall");
         weaponSocket = FindChildObject("Socket");
     }
 
@@ -50,20 +50,20 @@ public class Mage : BaseMonster
 
     protected override void OnChildHitEvent()
     {
-        if (fireBall == null) return;
-        fireBall.GetComponent<FireBall>().IsUse = false;
+        if (projectTile == null) return;
+        projectTile.GetComponent<FireBall>().IsUse = false;
     }
 
     // AttackAnimationCheck에서 OnAttackProjectTile 이벤트 용
-    public void OnAttackFireBall()
+    public void OnAttackMonsterProjectTile()
     {
-        fireBall = Instantiate(fireBallPrefab, weaponSocket.transform.position, Quaternion.identity);
-        FireBall fireBallScript = fireBall.GetComponent<FireBall>();
-        fireBallScript.TargetObject = blackBoard.m_TargetObject;
-        fireBallScript.AttackRange = blackBoard.m_AttackRange.Key;
-        fireBallScript.AttackRangeCorrectionValue = blackBoard.m_AttackRangeCorrectionValue.Key;
-        fireBallScript.ProjectTileSpeed = blackBoard.m_ProjectTileSpeed.Key;
-        fireBall.GetComponent<CollisionCheck>().CollisionAddListener(OnHitEvent);
-        fireBall.GetComponent<SelectColliderExclude>().SelectExcludeLayer(gameObject.layer);
+        projectTile = Instantiate(projectTilePrefab, weaponSocket.transform.position, Quaternion.identity);
+        FireBall projectTileScript = projectTile.GetComponent<FireBall>();
+        projectTileScript.TargetObject = blackBoard.m_TargetObject;
+        projectTileScript.AttackRange = blackBoard.m_AttackRange.Key;
+        projectTileScript.AttackRangeCorrectionValue = blackBoard.m_AttackRangeCorrectionValue.Key;
+        projectTileScript.ProjectTileSpeed = blackBoard.m_ProjectTileSpeed.Key;
+        projectTile.GetComponent<CollisionCheck>().CollisionAddListener(OnHitEvent);
+        projectTile.GetComponent<SelectColliderExclude>().SelectExcludeLayer(gameObject.layer);
     }
 }

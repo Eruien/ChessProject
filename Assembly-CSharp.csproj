@@ -92,6 +92,7 @@
     <Compile Include="Assets\AssetStore\SpecialSkillsEffectsPack\Scripts\DestroyObject.cs" />
     <Compile Include="Assets\Scripts\TestScripts.cs" />
     <Compile Include="Assets\Scripts\Util\CollisionCheck.cs" />
+    <Compile Include="Assets\Scripts\Monster\BattleBee.cs" />
     <Compile Include="Assets\AssetStore\SpecialSkillsEffectsPack\Scripts\ForEffects\ObjectMoveDestroy.cs" />
     <Compile Include="Assets\AssetStore\SpecialSkillsEffectsPack\Scripts\ForEffects\LookAtTarget.cs" />
     <Compile Include="Assets\Scripts\Util\BehaviorTreeLog.cs" />

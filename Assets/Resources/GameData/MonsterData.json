@@ -39,6 +39,16 @@
       "defaultAttackDamage": "50.0f",
       "moveSpeed": "5.0f",
       "projectTileSpeed": "0.0f"
+    },
+    {
+      "name": "BattleBee",
+      "hp": "100.0f",
+      "attackRange": "7.0f",
+      "attackRangeCorrectionValue": "2.0f",
+      "attackDistance": "14.0f",
+      "defaultAttackDamage": "50.0f",
+      "moveSpeed": "10.0f",
+      "projectTileSpeed": "10.0f"
     }
   ]
 }

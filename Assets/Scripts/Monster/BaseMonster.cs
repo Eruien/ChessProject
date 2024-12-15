@@ -22,6 +22,7 @@ public class BaseMonster : BaseObject
     private Animator monsterAnimation;
     private CapsuleCollider selfCollider;
     private Selector selector;
+    private Vector3 fixRotation = Vector3.zero;
 
     private bool UseLookAt = true;
     private bool IsHit = false;
@@ -29,7 +30,7 @@ public class BaseMonster : BaseObject
     private float monsterAlpha = 1.0f;
     private float initialY = 0.0f;
     private float deathAndDestroyTime = 1.0f;
-
+   
     // 유니티 라이프 사이클 함수 
     protected void Awake()
     {
@@ -109,6 +110,10 @@ public class BaseMonster : BaseObject
             }
             blackBoard.m_AttackDistance.Key = ComputeAttackDistance();
             selector.Tick();
+            fixRotation = transform.eulerAngles;
+            fixRotation.x = 0;
+            fixRotation.z = 0;
+            transform.eulerAngles = fixRotation;
         }
         else
         {
@@ -254,7 +259,7 @@ public class BaseMonster : BaseObject
     {
         if (other.gameObject == null) return;
 
-        if (!IsHit && attackAnimationSpan)
+        if (!IsHit && attackAnimationSpan && !IsDeath)
         {
             BaseObject otherObject = other.gameObject.GetComponent<BaseObject>();
             otherObject.blackBoard.m_HP.Key -= blackBoard.m_DefaultAttackDamage.Key;
