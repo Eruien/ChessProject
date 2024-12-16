@@ -69,6 +69,16 @@
       "defaultAttackDamage": "50.0f",
       "moveSpeed": "10.0f",
       "projectTileSpeed": "0.0f"
+    },
+    {
+      "name": "Golem",
+      "hp": "100.0f",
+      "attackRange": "3.0f",
+      "attackRangeCorrectionValue": "2.0f",
+      "attackDistance": "6.0f",
+      "defaultAttackDamage": "50.0f",
+      "moveSpeed": "3.0f",
+      "projectTileSpeed": "0.0f"
     }
   ]
 }

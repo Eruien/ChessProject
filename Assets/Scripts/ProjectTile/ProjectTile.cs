@@ -9,11 +9,18 @@ public class ProjectTile : MonoBehaviour
     public float AttackRangeCorrectionValue { get; set; }
     public float ProjectTileSpeed { get; set; }
     public bool IsUse { get; set; } = true;
+
+    private CapsuleCollider targetCollider;
     private Vector3 initialPos = Vector3.zero;
     
     private void Awake()
     {
         initialPos = transform.position;
+    }
+
+    private void Start()
+    {
+        targetCollider = TargetObject.Key.GetComponent<CapsuleCollider>();
     }
 
     private void Update()
@@ -24,7 +31,7 @@ public class ProjectTile : MonoBehaviour
         }
         else
         {
-            Vector3 direction = (TargetObject.Key.transform.position - transform.position).normalized;
+            Vector3 direction = (targetCollider.bounds.center - transform.position).normalized;
             GetComponent<Rigidbody>().AddForce(direction * ProjectTileSpeed);
         }
       

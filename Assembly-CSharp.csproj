@@ -77,6 +77,7 @@
     <Compile Include="Assets\AssetStore\SpecialSkillsEffectsPack\Scripts\ForEffects\ObjectMove.cs" />
     <Compile Include="Assets\Scripts\Util\UtilityLog.cs" />
     <Compile Include="Assets\Scripts\BehaviorTree\BlackBoard.cs" />
+    <Compile Include="Assets\Scripts\Monster\Golem.cs" />
     <Compile Include="Assets\Scripts\Monster\Skeleton.cs" />
     <Compile Include="Assets\AssetStore\SpecialSkillsEffectsPack\Scripts\VariousMouseOrbit.cs" />
     <Compile Include="Assets\AssetStore\SpecialSkillsEffectsPack\Scripts\VariousTranslateMove.cs" />

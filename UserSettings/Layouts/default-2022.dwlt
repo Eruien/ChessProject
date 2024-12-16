@@ -192,8 +192,8 @@ MonoBehaviour:
     y: 0
     width: 521
     height: 938
-  m_MinSize: {x: 101, y: 121}
-  m_MaxSize: {x: 4001, y: 4021}
+  m_MinSize: {x: 100, y: 100}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 16}
   m_Panes:
   - {fileID: 16}
@@ -297,8 +297,8 @@ MonoBehaviour:
     y: 0
     width: 755
     height: 938
-  m_MinSize: {x: 276, y: 121}
-  m_MaxSize: {x: 4001, y: 4021}
+  m_MinSize: {x: 275, y: 100}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 19}
   m_Panes:
   - {fileID: 19}
@@ -374,6 +374,9 @@ MonoBehaviour:
     - {fileID: 1305060972111991814, guid: 50233e3d861924144a1baa5e8ea518e3, type: 2}
     - {fileID: 1107804632305174528, guid: af45970b649544b181f548cd991b934c, type: 2}
     - {fileID: 4736476133904912365, guid: a5d9154b2cd03d94ab26f8f08bbffa3e, type: 2}
+    - {fileID: 8450505483118293505, guid: 74e023036ecdf8645a2e2811920b82a1, type: 2}
+    - {fileID: 1107580804784747560, guid: 0a3afcdd4f9b4942a4ccfc17513432c8, type: 2}
+    - {fileID: -3280700229602045567, guid: fdcd7a880e8241e2bb8934c55d27912a, type: 2}
     m_ValueSerializationHelper:
     - e00: 0.91299224
       e01: 0
@@ -487,10 +490,58 @@ MonoBehaviour:
       e31: 0
       e32: 0
       e33: 1
+    - e00: 0.53157896
+      e01: 0
+      e02: 0
+      e03: -11.578949
+      e10: 0
+      e11: 0.53157896
+      e12: 0
+      e13: 367.23685
+      e20: 0
+      e21: 0
+      e22: 1
+      e23: 0
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    - e00: 0.5090726
+      e01: 0
+      e02: 0
+      e03: -9.435486
+      e10: 0
+      e11: 0.5090726
+      e12: 0
+      e13: 288.82358
+      e20: 0
+      e21: 0
+      e22: 1
+      e23: 0
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    - e00: 0.38549617
+      e01: 0
+      e02: 0
+      e03: -4.274811
+      e10: 0
+      e11: 0.38549617
+      e12: 0
+      e13: 332.98856
+      e20: 0
+      e21: 0
+      e22: 1
+      e23: 0
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
   m_PreviewAnimator: {fileID: 0}
-  m_AnimatorController: {fileID: 9100000, guid: a5d9154b2cd03d94ab26f8f08bbffa3e, type: 2}
+  m_AnimatorController: {fileID: 9100000, guid: 74e023036ecdf8645a2e2811920b82a1, type: 2}
   m_BreadCrumbs:
-  - m_Target: {fileID: 4736476133904912365, guid: a5d9154b2cd03d94ab26f8f08bbffa3e, type: 2}
+  - m_Target: {fileID: 8450505483118293505, guid: 74e023036ecdf8645a2e2811920b82a1, type: 2}
     m_ScrollPosition: {x: 0, y: 0}
   stateMachineGraph: {fileID: 0}
   stateMachineGraphGUI: {fileID: 0}
@@ -965,9 +1016,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -9.727306, y: -14.392513, z: -13.528459}
+    m_Target: {x: -9.489777, y: 0.2305166, z: 4.199186}
     speed: 2
-    m_Value: {x: -9.727306, y: -14.392513, z: -13.528459}
+    m_Value: {x: -9.489777, y: 0.2305166, z: 4.199186}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -1013,13 +1064,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: -0.013447779, y: 0.9589414, z: -0.27655837, w: -0.044331223}
+    m_Target: {x: -0.008822482, y: 0.965254, z: -0.2549864, w: -0.027377162}
     speed: 2
-    m_Value: {x: -0.013393091, y: 0.9602201, z: -0.2753677, w: -0.0443914}
+    m_Value: {x: -0.008791934, y: 0.9668153, z: -0.25384805, w: -0.027423896}
   m_Size:
-    m_Target: 17.320509
+    m_Target: 10
     speed: 2
-    m_Value: 17.320509
+    m_Value: 10
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -1083,21 +1134,21 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: fce6ffff2cfbffff
+      m_ExpandedIDs: 2af1ffff2ef1ffff3ef1ffff42f1ffff4af1ffff4ef1ffff96f1ffff9af1ffffaef1ffffb4f1ffff20fbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
-        m_Name: GolemPBRMaskTint
-        m_OriginalName: GolemPBRMaskTint
+        m_Name: 
+        m_OriginalName: 
         m_EditFieldRect:
           serializedVersion: 2
           x: 0
           y: 0
           width: 0
           height: 0
-        m_UserData: -1238
+        m_UserData: 0
         m_IsWaitingForDelay: 0
         m_IsRenaming: 0
-        m_OriginalEventType: 0
+        m_OriginalEventType: 11
         m_IsRenamingFilename: 0
         m_ClientGUIView: {fileID: 11}
       m_SearchString: 
@@ -1199,7 +1250,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/AssetStore/RPGMonsterBundlePBR/CommonStuffs/Prefab/Wave03/CharacterMaskTint
+    - Assets/Resources/Animation/Golem
     m_Globs: []
     m_OriginalText: 
     m_ImportLogFlags: 0
@@ -1207,16 +1258,16 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/AssetStore/RPGMonsterBundlePBR/CommonStuffs/Prefab/Wave03/CharacterMaskTint
+  - Assets/Resources/Animation/Golem
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\ogkim\Desktop\UnityClient\ChessProject
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 127}
-    m_SelectedIDs: be7c0000
-    m_LastClickedID: 31934
-    m_ExpandedIDs: 000000003c7c0000987c0000c07c0000c27c0000c47c0000c67c000000ca9a3bffffff7f
+    scrollPos: {x: 0, y: 488}
+    m_SelectedIDs: 04680100
+    m_LastClickedID: 92164
+    m_ExpandedIDs: 000000003c7c0000987c00009a7c00009e7c0000c07c0000c27c0000c47c0000c67c0000dc7c0000de7c0000e07c00001a8a00003a68010000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1272,7 +1323,7 @@ MonoBehaviour:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
     m_HadKeyboardFocusLastEvent: 1
-    m_ExpandedInstanceIDs: c62300000676000084780000b6780000b0780000e06f0000627100007ca9000080740000626c0000b0700000b67000007c6c00008a7500007a700000f0780000767000009a6c0000027a0000fe790000ce7000002e9d0000f69f00002e090100d0950000d6950000da950000ca950000147700009e260100968c000032840000f05a00005cac000018cd0100768e0000be8200008c050100
+    m_ExpandedInstanceIDs: c62300000676000084780000b6780000b0780000e06f0000627100007ca9000080740000626c0000b0700000b67000007c6c00008a7500007a700000f0780000767000009a6c0000027a0000fe790000ce7000002e9d0000f69f00002e090100d0950000d6950000da950000ca950000147700009e260100968c000032840000f05a00005cac000018cd0100768e0000be8200008c05010058680100
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
