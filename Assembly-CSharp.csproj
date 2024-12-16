@@ -64,6 +64,7 @@
     <Compile Include="Assets\AssetStore\SpecialSkillsEffectsPack\Scripts\NewMaterialChange.cs" />
     <Compile Include="Assets\Scripts\Util\AttackAnimationCheck.cs" />
     <Compile Include="Assets\Scripts\ColliderExclude\ColliderExclude.cs" />
+    <Compile Include="Assets\Scripts\Monster\Specter.cs" />
     <Compile Include="Assets\AssetStore\SpecialSkillsEffectsPack\Scripts\VariousRotateObject.cs" />
     <Compile Include="Assets\AssetStore\SpecialSkillsEffectsPack\Scripts\ChangeSizeColor.cs" />
     <Compile Include="Assets\Scripts\Monster\Bee.cs" />
@@ -81,6 +82,7 @@
     <Compile Include="Assets\AssetStore\SpecialSkillsEffectsPack\Scripts\VariousTranslateMove.cs" />
     <Compile Include="Assets\Scripts\Util\SearchCollision.cs" />
     <Compile Include="Assets\AssetStore\SpecialSkillsEffectsPack\Scripts\DelayActive.cs" />
+    <Compile Include="Assets\Scripts\Monster\Beholder.cs" />
     <Compile Include="Assets\Scripts\Managers\Managers.cs" />
     <Compile Include="Assets\Scripts\Monster\Labo.cs" />
     <Compile Include="Assets\AssetStore\SpecialSkillsEffectsPack\Scripts\ScaleFactorApplyToMaterial.cs" />

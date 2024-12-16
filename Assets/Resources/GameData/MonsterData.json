@@ -49,6 +49,26 @@
       "defaultAttackDamage": "50.0f",
       "moveSpeed": "10.0f",
       "projectTileSpeed": "10.0f"
+    },
+    {
+      "name": "Beholder",
+      "hp": "100.0f",
+      "attackRange": "15.0f",
+      "attackRangeCorrectionValue": "2.0f",
+      "attackDistance": "30.0f",
+      "defaultAttackDamage": "50.0f",
+      "moveSpeed": "10.0f",
+      "projectTileSpeed": "10.0f"
+    },
+    {
+      "name": "Specter",
+      "hp": "100.0f",
+      "attackRange": "2.5f",
+      "attackRangeCorrectionValue": "2.0f",
+      "attackDistance": "5.0f",
+      "defaultAttackDamage": "50.0f",
+      "moveSpeed": "10.0f",
+      "projectTileSpeed": "0.0f"
     }
   ]
 }
