@@ -12,6 +12,9 @@ public class ProjectTile : MonoBehaviour
 
     private CapsuleCollider targetCollider;
     private Vector3 initialPos = Vector3.zero;
+
+    private float startTime = 0.0f;
+    private float endTime = 5.0f;
     
     private void Awake()
     {
@@ -20,18 +23,25 @@ public class ProjectTile : MonoBehaviour
 
     private void Start()
     {
-        targetCollider = TargetObject.Key.GetComponent<CapsuleCollider>();
+      
     }
 
     private void Update()
     {
+        startTime += Time.deltaTime;
+
+        if (startTime >= endTime)
+        {
+            IsUse = false;
+        }
+        
         if (TargetObject.Key == null)
         {
             IsUse = false;
         }
         else
         {
-            Vector3 direction = (targetCollider.bounds.center - transform.position).normalized;
+            Vector3 direction = (TargetObject.Key.GetComponent<CapsuleCollider>().bounds.center - transform.position).normalized;
             GetComponent<Rigidbody>().AddForce(direction * ProjectTileSpeed);
         }
       

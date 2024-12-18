@@ -311,7 +311,7 @@ GameObject:
   - component: {fileID: 4225822814242289764}
   - component: {fileID: 8056396792920414514}
   - component: {fileID: 4662130236297593557}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SkeletonPBRMaskTint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -631,7 +631,7 @@ GameObject:
   - component: {fileID: 137983608846323349}
   - component: {fileID: 1418483628477388318}
   - component: {fileID: 7717646898951148838}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Socket
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1808,7 +1808,7 @@ GameObject:
   - component: {fileID: 3445208964776375927}
   - component: {fileID: 1479557470347559003}
   - component: {fileID: 8499214138211535357}
-  m_Layer: 9
+  m_Layer: 8
   m_Name: Skeleton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1857,7 +1857,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 116
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!136 &1479557470347559003
 CapsuleCollider:
   m_ObjectHideFlags: 0

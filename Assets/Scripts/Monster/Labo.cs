@@ -9,6 +9,20 @@ public class Labo : BaseObject
 
     private void Awake()
     {
+        SetBlackBoardKey();
         SelfType = ObjectType.Machine;
+    }
+
+    private void Update()
+    {
+        IsHPZero();
+    }
+
+    private void IsHPZero()
+    {
+        if (blackBoard.m_HP.Key <= 0)
+        {
+            Destroy(gameObject);
+        }
     }
 }

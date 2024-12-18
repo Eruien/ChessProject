@@ -1,5 +1,4 @@
 using Assets.Scripts;
-using JetBrains.Annotations;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
@@ -30,7 +29,9 @@ public class BaseMonster : BaseObject
     private float monsterAlpha = 1.0f;
     private float initialY = 0.0f;
     private float deathAndDestroyTime = 1.0f;
-   
+
+    protected MonsterType monsterType = MonsterType.None;
+
     // 유니티 라이프 사이클 함수 
     protected void Awake()
     {
@@ -40,7 +41,7 @@ public class BaseMonster : BaseObject
         monsterAnimation = GetComponentInChildren<Animator>();
         selfCollider = GetComponent<CapsuleCollider>();
         initialY = transform.position.y;
-        targetLabo = GameObject.Find("Labo");
+        targetLabo = FindTeamObjectWithTag("Labo");
         selector = new Selector();
 
         SetBlackBoardKey();
@@ -180,6 +181,21 @@ public class BaseMonster : BaseObject
         return null;
     }
 
+    protected GameObject FindTeamObjectWithTag(string tagName)
+    {
+        GameObject[] allObjects = GameObject.FindGameObjectsWithTag(tagName);
+
+        foreach (GameObject obj in allObjects)
+        {
+            if (obj.layer != gameObject.layer)
+            {
+                return obj.gameObject;
+            }
+        }
+
+        return null;
+    }
+
     // Coroutine
     private IEnumerator HPReduce(b_float characterHP)
     {
@@ -259,13 +275,23 @@ public class BaseMonster : BaseObject
     {
         if (other.gameObject == null) return;
 
-        if (!IsHit && attackAnimationSpan && !IsDeath)
+        if (!IsHit && AttackType() && !IsDeath)
         {
             BaseObject otherObject = other.gameObject.GetComponent<BaseObject>();
             otherObject.blackBoard.m_HP.Key -= blackBoard.m_DefaultAttackDamage.Key;
             IsHit = true;
             OnChildHitEvent();
         }
+    }
+
+    private bool AttackType()
+    {
+        if (monsterType == MonsterType.Range)
+        {
+            return true;
+        }
+
+        return attackAnimationSpan;
     }
 
     // 자식에게서 추가 행동이 있을 경우

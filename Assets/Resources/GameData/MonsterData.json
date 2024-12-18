@@ -2,6 +2,7 @@
   "monsterStat": [
     {
       "name": "BaseMonster",
+      "monsterType": "1",
       "hp": "100.0f",
       "attackRange": "2.5f",
       "attackRangeCorrectionValue": "2.0f",
@@ -12,6 +13,7 @@
     },
     {
       "name": "Skeleton",
+      "monsterType": "1",
       "hp": "100.0f",
       "attackRange": "2.5f",
       "attackRangeCorrectionValue": "2.0f",
@@ -22,6 +24,7 @@
     },
     {
       "name": "Mage",
+      "monsterType": "2",
       "hp": "100.0f",
       "attackRange": "10.0f",
       "attackRangeCorrectionValue": "2.0f",
@@ -32,6 +35,7 @@
     },
     {
       "name": "Bee",
+      "monsterType": "1",
       "hp": "100.0f",
       "attackRange": "2.5f",
       "attackRangeCorrectionValue": "2.0f",
@@ -42,6 +46,7 @@
     },
     {
       "name": "BattleBee",
+      "monsterType": "2",
       "hp": "100.0f",
       "attackRange": "7.0f",
       "attackRangeCorrectionValue": "2.0f",
@@ -52,6 +57,7 @@
     },
     {
       "name": "Beholder",
+      "monsterType": "2",
       "hp": "100.0f",
       "attackRange": "15.0f",
       "attackRangeCorrectionValue": "2.0f",
@@ -62,6 +68,7 @@
     },
     {
       "name": "Specter",
+      "monsterType": "2",
       "hp": "100.0f",
       "attackRange": "2.5f",
       "attackRangeCorrectionValue": "2.0f",
@@ -72,6 +79,7 @@
     },
     {
       "name": "Golem",
+      "monsterType": "1",
       "hp": "100.0f",
       "attackRange": "3.0f",
       "attackRangeCorrectionValue": "2.0f",

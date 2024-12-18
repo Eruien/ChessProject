@@ -29,6 +29,7 @@ public class Skeleton : BaseMonster
     protected override void SetBlackBoardKey()
     {
         target = targetLabo;
+        monsterType = Managers.Data.monsterDict[this.GetType().Name].monsterType;
         blackBoard.m_TargetObject.Key = target;
         blackBoard.m_HP.Key = Managers.Data.monsterDict[this.GetType().Name].hp;
         blackBoard.m_AttackDistance.Key = Managers.Data.monsterDict[this.GetType().Name].attackDistance;

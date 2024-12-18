@@ -593,7 +593,7 @@ GameObject:
   - component: {fileID: 4604417009362287681}
   - component: {fileID: 6062747269484437383}
   - component: {fileID: 2204663329819296312}
-  m_Layer: 9
+  m_Layer: 8
   m_Name: Bee
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -609,7 +609,7 @@ Transform:
   m_GameObject: {fileID: 5773839724702035970}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.38, y: 2.283, z: 9.38}
+  m_LocalPosition: {x: -7.075, y: 2.283, z: 7.907}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -642,7 +642,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 116
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!136 &6062747269484437383
 CapsuleCollider:
   m_ObjectHideFlags: 0

@@ -1,3 +1,4 @@
+using Assets.Scripts;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
@@ -18,6 +19,7 @@ public class MonsterStat
     public float defaultAttackDamage;
     public float moveSpeed;
     public float projectTileSpeed;
+    public MonsterType monsterType;
 }
 
 [Serializable]
