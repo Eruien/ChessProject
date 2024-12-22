@@ -14,6 +14,10 @@ public class BaseMonster : BaseObject
     public float viewHP = 0.0f;
     [SerializeField]
     public bool IsNotDeath = false;
+    [SerializeField]
+    public bool fixPos = false;
+
+    public Vector3 initalPos = Vector3.zero;
 
     static public UnityEvent monsterDeathEvent = new UnityEvent();
    
@@ -43,7 +47,7 @@ public class BaseMonster : BaseObject
         initialY = transform.position.y;
         targetLabo = FindTeamObjectWithTag("Labo");
         selector = new Selector();
-
+        initalPos = transform.position;
         SetBlackBoardKey();
     }
 
@@ -91,6 +95,11 @@ public class BaseMonster : BaseObject
     protected void Update()
     {
         viewHP = blackBoard.m_HP.Key;
+
+        if (fixPos)
+        {
+            transform.position = initalPos;
+        }
      
         if (IsNotDeath)
         {
