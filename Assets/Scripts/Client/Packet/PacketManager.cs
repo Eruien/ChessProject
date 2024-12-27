@@ -32,6 +32,9 @@ namespace Assets.Scripts
 
             m_MakePacketDict.Add((ushort)PacketType.S_BroadcastEnterGame, MakePacket<S_BroadcastEnterGame>);
             m_RunFunctionDict.Add((ushort)PacketType.S_BroadcastEnterGame, PacketHandler.Instance.S_BroadcastEnterGameHandler);
+
+            m_MakePacketDict.Add((ushort)PacketType.S_BroadcastMonsterCreate, MakePacket<S_BroadcastMonsterCreatePacket>);
+            m_RunFunctionDict.Add((ushort)PacketType.S_BroadcastMonsterCreate, PacketHandler.Instance.S_BroadcastMonsterCreatePacketHandler);
         }
 
         public int OnRecvPacket(Session session, ArraySegment<byte> buffer, Action<Session, IPacket> onRecvCallback = null)

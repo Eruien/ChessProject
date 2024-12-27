@@ -19,9 +19,9 @@ public class BaseMonster : BaseObject
 
     public Vector3 initalPos = Vector3.zero;
     public Vector3 MovePos { get; set; } = Vector3.zero;
-   
+
     static public UnityEvent monsterDeathEvent = new UnityEvent();
-   
+
     private Material material;
     private Animator monsterAnimation;
     private CapsuleCollider selfCollider;
@@ -41,7 +41,6 @@ public class BaseMonster : BaseObject
     protected void Awake()
     {
         SelfType = ObjectType.Monster;
-        Managers.Monster.Register(gameObject);
         material = FindMaterial();
         monsterAnimation = GetComponentInChildren<Animator>();
         selfCollider = GetComponent<CapsuleCollider>();
@@ -101,7 +100,7 @@ public class BaseMonster : BaseObject
         {
             transform.position = initalPos;
         }
-     
+
         if (IsNotDeath)
         {
             blackBoard.m_HP.Key = 100;
@@ -138,6 +137,11 @@ public class BaseMonster : BaseObject
     }
 
     // 일반 함수
+    public override void SetPosition(float x, float y, float z)
+    {
+        transform.position = new Vector3(x, y, z);
+    }
+
     private float ComputeAttackDistance()
     {
         if (target == null) return blackBoard.m_AttackDistance.Key;

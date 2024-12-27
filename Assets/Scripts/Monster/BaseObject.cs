@@ -8,7 +8,10 @@ namespace Assets.Scripts
 
         public BlackBoard blackBoard = new BlackBoard();
         public bool IsDeath { get; set; } = false;
+
+        public abstract void SetPosition(float x, float y, float z);
         protected abstract void SetBlackBoardKey();
+       
     }
 }
 

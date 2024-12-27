@@ -1,5 +1,6 @@
 ﻿using System;
 using ServerCore;
+using Unity.VisualScripting;
 using UnityEngine;
 
 namespace Assets.Scripts
@@ -9,22 +10,20 @@ namespace Assets.Scripts
         static PacketHandler m_PacketHandler = new PacketHandler();
         public static PacketHandler Instance { get { return m_PacketHandler; } }
 
-        private GameObject skeletonPrefab;
-
         public void PurchaseAllowedPacket(Session session, IPacket packet)
         {
             PurchaseAllowedPacket purchaseAllowed = packet as PurchaseAllowedPacket;
+
             if (purchaseAllowed.IsPurchase)
             {
                 Debug.Log("샀어요");
-                GameObject obj = Managers.Resource.Instantiate("Skeleton", new Vector3(0.0f, 1.0f, 0.0f));
-                int id = Managers.Monster.Register(obj);
+          
                 C_MonsterCreatePacket monsterCreatePacket = new C_MonsterCreatePacket();
-                monsterCreatePacket.monsterId = (ushort)id;
+              
                 monsterCreatePacket.monsterTeam = 1;
-                monsterCreatePacket.PosX = obj.transform.position.x;
-                monsterCreatePacket.PosY = obj.transform.position.y;
-                monsterCreatePacket.PosZ = obj.transform.position.z;
+                monsterCreatePacket.PosX = purchaseAllowed.PosX;
+                monsterCreatePacket.PosY = purchaseAllowed.PosY;
+                monsterCreatePacket.PosZ = purchaseAllowed.PosZ;
                 SessionManager.Instance.GetServerSession().Send(monsterCreatePacket.Write());
             }
             else
@@ -60,6 +59,14 @@ namespace Assets.Scripts
                 PosY = enterPlayer.posY,
                 PosZ = enterPlayer.posZ,
             });*/
+        }
+
+        public void S_BroadcastMonsterCreatePacketHandler(Session session, IPacket packet)
+        {
+            S_BroadcastMonsterCreatePacket monsterPacket = packet as S_BroadcastMonsterCreatePacket;
+            GameObject obj = Managers.Resource.Instantiate("Skeleton", new Vector3(0.0f, 1.0f, 0.0f));
+            Managers.Monster.Register(monsterPacket.monsterId, obj);
+            obj.GetComponent<BaseMonster>().SetPosition(monsterPacket.PosX, monsterPacket.PosY, monsterPacket.PosZ);
         }
     }
 }

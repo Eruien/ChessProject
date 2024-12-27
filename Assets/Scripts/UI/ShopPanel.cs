@@ -12,6 +12,9 @@ public class ShopPanel : MonoBehaviour
         MonsterPurchasePacket purchasePacket = new MonsterPurchasePacket();
         purchasePacket.userGameMoney = gameMoney;
         purchasePacket.monsterPrice = 500;
+        purchasePacket.PosX = 0.0f;
+        purchasePacket.PosY = 1.0f;
+        purchasePacket.PosZ = 0.0f;
 
         SessionManager.Instance.GetServerSession().Send(purchasePacket.Write());
     }
