@@ -15,4 +15,12 @@ public class ShopPanel : MonoBehaviour
 
         SessionManager.Instance.GetServerSession().Send(purchasePacket.Write());
     }
+
+    public void OnGameStart()
+    {
+        GameStartPacket gameStartPacket = new GameStartPacket();
+        gameStartPacket.IsGameStart = true;
+        
+        SessionManager.Instance.GetServerSession().Send(gameStartPacket.Write());
+    }
 }

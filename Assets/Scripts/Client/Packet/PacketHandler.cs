@@ -17,7 +17,15 @@ namespace Assets.Scripts
             if (purchaseAllowed.IsPurchase)
             {
                 Debug.Log("샀어요");
-                Managers.Resource.Instantiate("Skeleton", new Vector3(0.0f, 1.0f, 0.0f));
+                GameObject obj = Managers.Resource.Instantiate("Skeleton", new Vector3(0.0f, 1.0f, 0.0f));
+                int id = Managers.Monster.Register(obj);
+                C_MonsterCreatePacket monsterCreatePacket = new C_MonsterCreatePacket();
+                monsterCreatePacket.monsterId = (ushort)id;
+                monsterCreatePacket.monsterTeam = 1;
+                monsterCreatePacket.PosX = obj.transform.position.x;
+                monsterCreatePacket.PosY = obj.transform.position.y;
+                monsterCreatePacket.PosZ = obj.transform.position.z;
+                SessionManager.Instance.GetServerSession().Send(monsterCreatePacket.Write());
             }
             else
             {
@@ -27,7 +35,13 @@ namespace Assets.Scripts
 
         public void MovePacketHandler(Session session, IPacket packet)
         {
-            Console.WriteLine("Move Pacekt Handler 작동");
+            MovePacket movePacket = packet as MovePacket;
+            GameObject obj = Managers.Monster.GetMonster(movePacket.monsterId);
+
+            if (obj != null)
+            {
+                obj.GetComponent<BaseMonster>().MovePos = new Vector3(movePacket.PosX, movePacket.PosY, movePacket.PosZ);
+            }
         }
 
         public void PlayerListHandler(Session session, IPacket packet)

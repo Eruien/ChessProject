@@ -10,7 +10,8 @@ namespace ServerCore
     {
         public override int OnRecv(ArraySegment<byte> buffer)
         {
-            int count = 0;
+            int processLen = 0;
+            int packetCount = 0;
             // 큰 덩어리로 들어왔을 경우 쪼개서 읽기
             // 데이터가 작을 경우 그냥 패스
            
@@ -19,17 +20,19 @@ namespace ServerCore
                 // 헤더 사이즈 보다 작다면 패스
                 if (buffer.Count < Global.g_HeaderSize) break;
 
-                int dataSize = BitConverter.ToUInt16(buffer.Array, buffer.Offset + count);
+                int dataSize = BitConverter.ToUInt16(buffer.Array, buffer.Offset);
 
-                if (buffer.Count > dataSize) break;
+                if (buffer.Count < dataSize) break;
 
                 // 이제 데이터 읽기 가능
-                count += OnRecvPacket(buffer);
+                OnRecvPacket(new ArraySegment<byte>(buffer.Array, buffer.Offset, dataSize));
+                packetCount++;
 
-                buffer = new ArraySegment<byte>(buffer.Array, buffer.Offset + count, buffer.Count - count);
+                processLen += dataSize;
+                buffer = new ArraySegment<byte>(buffer.Array, buffer.Offset + dataSize, buffer.Count - dataSize);
             }
 
-            return count;
+            return processLen;
         }
 
         public abstract int OnRecvPacket(ArraySegment<byte> buffer);
@@ -159,7 +162,6 @@ namespace ServerCore
 
         void OnRecvCompleted(object sender, SocketAsyncEventArgs args)
         {
-            UnityEngine.Debug.Log("메시지에 문제가 있어요");
             if (args.SocketError == SocketError.Success && args.BytesTransferred > 0)
             {
                 UnityEngine.Debug.Log("서버로 부터 메시지를 받았어요");

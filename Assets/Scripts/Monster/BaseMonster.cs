@@ -18,7 +18,8 @@ public class BaseMonster : BaseObject
     public bool fixPos = false;
 
     public Vector3 initalPos = Vector3.zero;
-
+    public Vector3 MovePos { get; set; } = Vector3.zero;
+   
     static public UnityEvent monsterDeathEvent = new UnityEvent();
    
     private Material material;
@@ -255,7 +256,7 @@ public class BaseMonster : BaseObject
         transform.LookAt(target.transform);
         float LerpT = blackBoard.m_MoveSpeed.Key * Time.deltaTime / Vector3.Distance(gameObject.transform.position, target.transform.position);
         //transform.position = Vector3.Lerp(gameObject.transform.position, target.transform.position, LerpT);
-        transform.position = Vector3.MoveTowards(gameObject.transform.position, target.transform.position, blackBoard.m_MoveSpeed.Key * Time.deltaTime);
+        transform.position = Vector3.MoveTowards(gameObject.transform.position, MovePos, blackBoard.m_MoveSpeed.Key * Time.deltaTime);
         Vector3 fixYPos = new Vector3(transform.position.x, initialY, transform.position.z);
         transform.position = fixYPos;
 
