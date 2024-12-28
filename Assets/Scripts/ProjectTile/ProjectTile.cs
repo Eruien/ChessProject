@@ -1,6 +1,5 @@
 using Assets.Scripts;
 using UnityEngine;
-using System;
 
 public class ProjectTile : MonoBehaviour
 {

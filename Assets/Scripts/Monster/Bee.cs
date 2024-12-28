@@ -1,6 +1,3 @@
-using Assets.Scripts;
-using System.Collections.Concurrent;
-using UnityEngine;
 
 public class Bee : BaseMonster
 {
@@ -31,9 +28,8 @@ public class Bee : BaseMonster
 
     protected override void SetBlackBoardKey()
     {
-        target = targetLabo;
-        monsterType = Managers.Data.monsterDict[this.GetType().Name].monsterType;
-        blackBoard.m_TargetObject.Key = target;
+        MonsterType = Managers.Data.monsterDict[this.GetType().Name].monsterType;
+        blackBoard.m_TargetObject.Key = Target;
         blackBoard.m_HP.Key = Managers.Data.monsterDict[this.GetType().Name].hp;
         blackBoard.m_AttackDistance.Key = Managers.Data.monsterDict[this.GetType().Name].attackDistance;
         blackBoard.m_AttackRange.Key = Managers.Data.monsterDict[this.GetType().Name].attackRange;

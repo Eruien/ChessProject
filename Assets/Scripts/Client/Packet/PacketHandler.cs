@@ -43,6 +43,17 @@ namespace Assets.Scripts
             }
         }
 
+        public void S_MonsterStatePacketHandler(Session session, IPacket packet)
+        {
+            S_MonsterStatePacket monsterStatePacket = packet as S_MonsterStatePacket;
+            GameObject obj = Managers.Monster.GetMonster(monsterStatePacket.monsterId);
+
+            if (obj != null)
+            {
+                obj.GetComponent<BaseMonster>().MonsterState = (MonsterState)monsterStatePacket.currentState;
+            }
+        }
+
         public void PlayerListHandler(Session session, IPacket packet)
         {
             Console.WriteLine("클라이언트에 플레이어 목록 등록");

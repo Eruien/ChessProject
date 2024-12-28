@@ -21,4 +21,12 @@ namespace Assets.Scripts
         Melee = 1,
         Range = 2,
     }
+
+    public enum MonsterState
+    {
+        None,
+        Move,
+        Attack,
+        Death,
+    }
 }

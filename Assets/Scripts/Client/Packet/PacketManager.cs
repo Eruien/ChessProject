@@ -27,6 +27,9 @@ namespace Assets.Scripts
             m_MakePacketDict.Add((ushort)PacketType.MovePacket, MakePacket<MovePacket>);
             m_RunFunctionDict.Add((ushort)PacketType.MovePacket, PacketHandler.Instance.MovePacketHandler);
 
+            m_MakePacketDict.Add((ushort)PacketType.S_MonsterState, MakePacket<S_MonsterStatePacket>);
+            m_RunFunctionDict.Add((ushort)PacketType.S_MonsterState, PacketHandler.Instance.S_MonsterStatePacketHandler);
+
             m_MakePacketDict.Add((ushort)PacketType.PlayerList, MakePacket<PlayerList>);
             m_RunFunctionDict.Add((ushort)PacketType.PlayerList, PacketHandler.Instance.PlayerListHandler);
 

@@ -6,26 +6,25 @@ using UnityEngine.Events;
 public class BaseMonster : BaseObject
 {
     [SerializeField]
-    public GameObject target;
-    [SerializeField]
-    public GameObject targetLabo;
-
-    [SerializeField]
     public float viewHP = 0.0f;
     [SerializeField]
     public bool IsNotDeath = false;
     [SerializeField]
     public bool fixPos = false;
 
-    public Vector3 initalPos = Vector3.zero;
-    public Vector3 MovePos { get; set; } = Vector3.zero;
-
     static public UnityEvent monsterDeathEvent = new UnityEvent();
 
+    public GameObject Target { get; set; }
+    public GameObject TargetLabo { get; set; }
+
+    public Vector3 InitialPos { get; set; } = Vector3.zero;
+    public Vector3 MovePos { get; set; } = Vector3.zero;
+    public MonsterType MonsterType { get; set; } = MonsterType.None;
+    public MonsterState MonsterState { get; set; } = MonsterState.None;
+  
     private Material material;
     private Animator monsterAnimation;
     private CapsuleCollider selfCollider;
-    private Selector selector;
     private Vector3 fixRotation = Vector3.zero;
 
     private bool UseLookAt = true;
@@ -35,19 +34,18 @@ public class BaseMonster : BaseObject
     private float initialY = 0.0f;
     private float deathAndDestroyTime = 1.0f;
 
-    protected MonsterType monsterType = MonsterType.None;
-
     // 유니티 라이프 사이클 함수 
     protected void Awake()
     {
+        MonsterState = MonsterState.Move;
         SelfType = ObjectType.Monster;
         material = FindMaterial();
         monsterAnimation = GetComponentInChildren<Animator>();
         selfCollider = GetComponent<CapsuleCollider>();
+        TargetLabo = FindTeamObjectWithTag("Labo");
+        Target = TargetLabo;
         initialY = transform.position.y;
-        targetLabo = FindTeamObjectWithTag("Labo");
-        selector = new Selector();
-        initalPos = transform.position;
+        InitialPos = transform.position;
         SetBlackBoardKey();
     }
 
@@ -58,38 +56,7 @@ public class BaseMonster : BaseObject
 
     protected void Start()
     {
-        // HP관리
-        Selector HPMgr = new Selector();
-        selector.AddChild(HPMgr);
-
-        Sequence<float, b_float> checkHPZero = new Sequence<float, b_float>(KeyQuery.IsLessThanOrEqualTo, 0.001f, blackBoard.m_HP);
-        HPMgr.AddChild(checkHPZero);
-
-        Action action = new Action(IsHPZero);
-        checkHPZero.AddChild(action);
-
-        // 공격 관리
-        Selector attackMgr = new Selector();
-        selector.AddChild(attackMgr);
-
-        SetSequence<GameObject, b_GameObject> checkTargetLive = new SetSequence<GameObject, b_GameObject>(KeyQuery.IsSet, blackBoard.m_TargetObject);
-        attackMgr.AddChild(checkTargetLive);
-
-        Sequence<float, b_float> checkAttackRange = new Sequence<float, b_float>(KeyQuery.IsLessThanOrEqualTo, blackBoard.m_AttackRange.Key, blackBoard.m_AttackDistance);
-        checkTargetLive.AddChild(checkAttackRange);
-
-        Action attackAction = new Action(Attack);
-        checkAttackRange.AddChild(attackAction);
-
-        // 이동 관리
-        Selector moveMgr = new Selector();
-        selector.AddChild(moveMgr);
-
-        SetSequence<GameObject, b_GameObject> move = new SetSequence<GameObject, b_GameObject>(KeyQuery.IsSet, blackBoard.m_TargetObject);
-        moveMgr.AddChild(move);
-        Action moveAction = new Action(MoveToPosition);
-
-        move.AddChild(moveAction);
+       
     }
 
     protected void Update()
@@ -98,7 +65,7 @@ public class BaseMonster : BaseObject
 
         if (fixPos)
         {
-            transform.position = initalPos;
+            transform.position = InitialPos;
         }
 
         if (IsNotDeath)
@@ -110,20 +77,11 @@ public class BaseMonster : BaseObject
 
         if (!IsDeath)
         {
-            if (target == null)
-            {
-                if (targetLabo != null)
-                {
-                    target = targetLabo;
-                    blackBoard.m_TargetObject.Key = target;
-                }
-            }
-            blackBoard.m_AttackDistance.Key = ComputeAttackDistance();
-            selector.Tick();
             fixRotation = transform.eulerAngles;
             fixRotation.x = 0;
             fixRotation.z = 0;
             transform.eulerAngles = fixRotation;
+            StateUpdate();
         }
         else
         {
@@ -140,15 +98,6 @@ public class BaseMonster : BaseObject
     public override void SetPosition(float x, float y, float z)
     {
         transform.position = new Vector3(x, y, z);
-    }
-
-    private float ComputeAttackDistance()
-    {
-        if (target == null) return blackBoard.m_AttackDistance.Key;
-        Vector3 vec = target.transform.position - transform.position;
-        float dis = Mathf.Pow(vec.x * vec.x + vec.z * vec.z, 0.5f);
-
-        return dis;
     }
 
     private Material FindMaterial()
@@ -169,8 +118,7 @@ public class BaseMonster : BaseObject
 
     protected override void SetBlackBoardKey()
     {
-        target = targetLabo;
-        blackBoard.m_TargetObject.Key = target;
+        blackBoard.m_TargetObject.Key = Target;
         blackBoard.m_HP.Key = Managers.Data.monsterDict[this.GetType().Name].hp;
         blackBoard.m_AttackDistance.Key = Managers.Data.monsterDict[this.GetType().Name].attackDistance;
         blackBoard.m_AttackRange.Key = Managers.Data.monsterDict[this.GetType().Name].attackRange;
@@ -237,37 +185,53 @@ public class BaseMonster : BaseObject
         Managers.Monster.UnRegister(gameObject);
     }
 
-    // TaskNode 모음
-    private ReturnCode Attack()
+    // StatePattern 모음
+    private void StateUpdate()
+    {
+        switch (MonsterState)
+        {
+            case MonsterState.Move:
+                Move();
+                break;
+            case MonsterState.Attack:
+                Attack();
+                break;
+            case MonsterState.Death:
+                Death();
+                break;
+            case MonsterState.None:
+                Debug.Log("아무 상태도 없습니다.");
+                break;
+            default:
+                Debug.Log("아무 상태도 없습니다.");
+                break;
+        }
+    }
+
+    private void Attack()
     {
         if (UseLookAt)
         {
-            transform.LookAt(target.transform);
+            transform.LookAt(Target.transform);
             UseLookAt = false;
             monsterAnimation.SetTrigger("IsAttack");
             ChildAttack();
         }
-  
-        return ReturnCode.SUCCESS;
     }
 
     // 자식에게서 추가 행동이 있을 경우
     protected virtual void ChildAttack() {}
 
-    private ReturnCode MoveToPosition()
+    private void Move()
     {
         monsterAnimation.SetBool("IsMove", true);
-        transform.LookAt(target.transform);
-        float LerpT = blackBoard.m_MoveSpeed.Key * Time.deltaTime / Vector3.Distance(gameObject.transform.position, target.transform.position);
-        //transform.position = Vector3.Lerp(gameObject.transform.position, target.transform.position, LerpT);
+        transform.LookAt(Target.transform);
         transform.position = Vector3.MoveTowards(gameObject.transform.position, MovePos, blackBoard.m_MoveSpeed.Key * Time.deltaTime);
         Vector3 fixYPos = new Vector3(transform.position.x, initialY, transform.position.z);
         transform.position = fixYPos;
-
-        return ReturnCode.SUCCESS;
     }
 
-    private ReturnCode IsHPZero()
+    private void Death()
     {
         if (blackBoard.m_HP.Key <= 0)
         {
@@ -275,11 +239,6 @@ public class BaseMonster : BaseObject
             StartCoroutine(DecreaseAlpha());
             IsDeath = true;
             BaseMonster.monsterDeathEvent.Invoke();
-            return ReturnCode.SUCCESS;
-        }
-        else
-        {
-            return ReturnCode.FAIL;
         }
     }
 
@@ -292,7 +251,7 @@ public class BaseMonster : BaseObject
         if (!IsHit && AttackType() && !IsDeath)
         {
             BaseObject otherObject = other.gameObject.GetComponent<BaseObject>();
-            otherObject.blackBoard.m_HP.Key -= blackBoard.m_DefaultAttackDamage.Key;
+            // HP 패킷 왔다갔다 
             IsHit = true;
             OnChildHitEvent();
         }
@@ -300,7 +259,7 @@ public class BaseMonster : BaseObject
 
     private bool AttackType()
     {
-        if (monsterType == MonsterType.Range)
+        if (MonsterType == MonsterType.Range)
         {
             return true;
         }
@@ -314,14 +273,13 @@ public class BaseMonster : BaseObject
     // SearchCollision의 이벤트 용
     public void OnSearchCollisionEvent(Collider other)
     {
-        if (target != null)
+        if (Target != null)
         {
-            BaseObject obj = target.gameObject.GetComponent<BaseObject>();
+            BaseObject obj = Target.gameObject.GetComponent<BaseObject>();
             if (!obj.IsDeath && obj.SelfType == ObjectType.Monster) return;
         }
-       
-        target = other.gameObject;
-        blackBoard.m_TargetObject.Key = target;
+
+        Target = other.gameObject;
     }
 
     // 타격을 한 번만 입히게 하기 위해
