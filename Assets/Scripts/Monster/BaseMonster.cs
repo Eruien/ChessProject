@@ -1,7 +1,9 @@
 using Assets.Scripts;
+using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.UIElements;
 
 public class BaseMonster : BaseObject
 {
@@ -21,6 +23,7 @@ public class BaseMonster : BaseObject
     public Vector3 MovePos { get; set; } = Vector3.zero;
     public MonsterType MonsterType { get; set; } = MonsterType.None;
     public MonsterState MonsterState { get; set; } = MonsterState.None;
+    public int MonsterId { get; set; } = 0;
   
     private Material material;
     private Animator monsterAnimation;
@@ -33,6 +36,8 @@ public class BaseMonster : BaseObject
     private float monsterAlpha = 1.0f;
     private float initialY = 0.0f;
     private float deathAndDestroyTime = 1.0f;
+    private float transportPacketTime = 0.1f;
+    private float currentTime = 0.0f;
 
     // 유니티 라이프 사이클 함수 
     protected void Awake()
@@ -77,11 +82,20 @@ public class BaseMonster : BaseObject
 
         if (!IsDeath)
         {
+            currentTime += Time.deltaTime;
+
+            ComputeAttackDistance();
+            StateUpdate();
+
+            if (currentTime >= transportPacketTime)
+            {
+                currentTime = 0.0f;
+            }
+
             fixRotation = transform.eulerAngles;
             fixRotation.x = 0;
             fixRotation.z = 0;
             transform.eulerAngles = fixRotation;
-            StateUpdate();
         }
         else
         {
@@ -95,6 +109,30 @@ public class BaseMonster : BaseObject
     }
 
     // 일반 함수
+
+    private void TransportPacket(System.Action action)
+    {
+        if (currentTime >= transportPacketTime)
+        {
+            action.Invoke();
+        }
+    }
+
+    private void ComputeAttackDistance()
+    {
+        if (Target == null) return;
+        Vector3 vec = Target.transform.position - transform.position;
+        float dis = Mathf.Pow(vec.x * vec.x + vec.z * vec.z, 0.5f);
+
+        if (dis <= blackBoard.m_AttackDistance.Key)
+        {
+            C_AttackDistancePacket attackDistancePacket = new C_AttackDistancePacket();
+            attackDistancePacket.monsterId = (ushort)MonsterId;
+            attackDistancePacket.attackDistance = dis;
+            TransportPacket(() => SessionManager.Instance.GetServerSession().Send(attackDistancePacket.Write()));
+        }
+    }
+
     public override void SetPosition(float x, float y, float z)
     {
         transform.position = new Vector3(x, y, z);

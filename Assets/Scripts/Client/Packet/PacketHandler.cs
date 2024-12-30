@@ -78,6 +78,7 @@ namespace Assets.Scripts
             GameObject obj = Managers.Resource.Instantiate("Skeleton", new Vector3(0.0f, 1.0f, 0.0f));
             Managers.Monster.Register(monsterPacket.monsterId, obj);
             obj.GetComponent<BaseMonster>().SetPosition(monsterPacket.PosX, monsterPacket.PosY, monsterPacket.PosZ);
+            obj.GetComponent<BaseMonster>().MonsterId = monsterPacket.monsterId;
         }
     }
 }
