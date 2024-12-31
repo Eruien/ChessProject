@@ -17,10 +17,10 @@ public class MonsterManager
         obj = null;
     }
 
-    public GameObject GetMonster(int monsterId)
+    public GameObject GetMonster(int objectId)
     {
         GameObject obj = null;
-        if (MonsterList.TryGetValue(monsterId, out obj))
+        if (MonsterList.TryGetValue(objectId, out obj))
         {
             return obj;
         }

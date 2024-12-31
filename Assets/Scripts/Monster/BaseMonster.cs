@@ -13,6 +13,8 @@ public class BaseMonster : BaseObject
     public bool IsNotDeath = false;
     [SerializeField]
     public bool fixPos = false;
+    [SerializeField]
+    public bool stopMoving = false;
 
     static public UnityEvent monsterDeathEvent = new UnityEvent();
 
@@ -23,8 +25,7 @@ public class BaseMonster : BaseObject
     public Vector3 MovePos { get; set; } = Vector3.zero;
     public MonsterType MonsterType { get; set; } = MonsterType.None;
     public MonsterState MonsterState { get; set; } = MonsterState.None;
-    public int MonsterId { get; set; } = 0;
-  
+   
     private Material material;
     private Animator monsterAnimation;
     private CapsuleCollider selfCollider;
@@ -78,20 +79,22 @@ public class BaseMonster : BaseObject
             blackBoard.m_HP.Key = 100;
         }
 
+        if (stopMoving == true) return;
+
+        
+
         monsterAnimation.SetBool("IsMove", false);
 
         if (!IsDeath)
         {
             currentTime += Time.deltaTime;
 
-            ComputeAttackDistance();
-            StateUpdate();
-
-            if (currentTime >= transportPacketTime)
+            if (Target != null)
             {
-                currentTime = 0.0f;
+                ComputeAttackDistance();
+                StateUpdate();
             }
-
+         
             fixRotation = transform.eulerAngles;
             fixRotation.x = 0;
             fixRotation.z = 0;
@@ -101,6 +104,11 @@ public class BaseMonster : BaseObject
         {
             StartCoroutine(DeathAndDestroy(deathAndDestroyTime));
         }
+
+        if (currentTime >= transportPacketTime)
+        {
+            currentTime = 0.0f;
+        }
     }
 
     protected void OnDisable()
@@ -109,6 +117,12 @@ public class BaseMonster : BaseObject
     }
 
     // 일반 함수
+
+    private void TransportOnePacket(System.Action action)
+    {
+        if (gameObject.layer != (int)Global.g_MyTeam) return;
+        action.Invoke();
+    }
 
     private void TransportPacket(System.Action action)
     {
@@ -122,14 +136,13 @@ public class BaseMonster : BaseObject
 
     private void ComputeAttackDistance()
     {
-        if (Target == null) return;
         Vector3 vec = Target.transform.position - transform.position;
         float dis = Mathf.Pow(vec.x * vec.x + vec.z * vec.z, 0.5f);
 
         if (dis <= blackBoard.m_AttackDistance.Key)
         {
             C_AttackDistancePacket attackDistancePacket = new C_AttackDistancePacket();
-            attackDistancePacket.monsterId = (ushort)MonsterId;
+            attackDistancePacket.objectId = (ushort)ObjectId;
             attackDistancePacket.attackDistance = dis;
             TransportPacket(() => SessionManager.Instance.GetServerSession().Send(attackDistancePacket.Write()));
         }
@@ -290,8 +303,13 @@ public class BaseMonster : BaseObject
 
         if (!IsHit && AttackType() && !IsDeath)
         {
+            C_HitPacket hitPacket = new C_HitPacket();
+            hitPacket.objectId = (ushort)ObjectId;
             BaseObject otherObject = other.gameObject.GetComponent<BaseObject>();
-            // HP 패킷 왔다갔다 
+            hitPacket.targetMonsterId = (ushort)otherObject.ObjectId;
+            hitPacket.attackType = 0;
+
+            TransportOnePacket(() => SessionManager.Instance.GetServerSession().Send(hitPacket.Write()));
             IsHit = true;
             OnChildHitEvent();
         }

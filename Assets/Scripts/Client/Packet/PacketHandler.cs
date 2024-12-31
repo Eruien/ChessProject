@@ -42,7 +42,7 @@ namespace Assets.Scripts
         public void MovePacketHandler(Session session, IPacket packet)
         {
             MovePacket movePacket = packet as MovePacket;
-            GameObject obj = Managers.Monster.GetMonster(movePacket.monsterId);
+            GameObject obj = Managers.Monster.GetMonster(movePacket.objectId);
 
             if (obj != null)
             {
@@ -53,7 +53,7 @@ namespace Assets.Scripts
         public void S_MonsterStatePacketHandler(Session session, IPacket packet)
         {
             S_MonsterStatePacket monsterStatePacket = packet as S_MonsterStatePacket;
-            GameObject obj = Managers.Monster.GetMonster(monsterStatePacket.monsterId);
+            GameObject obj = Managers.Monster.GetMonster(monsterStatePacket.objectId);
 
             if (obj != null)
             {
@@ -84,9 +84,21 @@ namespace Assets.Scripts
             S_BroadcastMonsterCreatePacket monsterPacket = packet as S_BroadcastMonsterCreatePacket;
             GameObject obj = Managers.Resource.Instantiate("Skeleton", new Vector3(0.0f, 1.0f, 0.0f));
             obj.layer = monsterPacket.monsterTeam;
-            Managers.Monster.Register(monsterPacket.monsterId, obj);
+            Managers.Monster.Register(monsterPacket.objectId, obj);
             obj.GetComponent<BaseMonster>().SetPosition(monsterPacket.PosX, monsterPacket.PosY, monsterPacket.PosZ);
-            obj.GetComponent<BaseMonster>().MonsterId = monsterPacket.monsterId;
+            obj.GetComponent<BaseMonster>().ObjectId = monsterPacket.objectId;
+        }
+
+        public void S_HitPacketHandler(Session session, IPacket packet)
+        {
+            S_HitPacket hitPacket = packet as S_HitPacket;
+            
+            GameObject obj = Managers.Monster.GetMonster(hitPacket.objectId);
+
+            if (obj != null)
+            {
+                obj.GetComponent<BaseObject>().blackBoard.m_HP.Key = hitPacket.objectHP;
+            }
         }
     }
 }
