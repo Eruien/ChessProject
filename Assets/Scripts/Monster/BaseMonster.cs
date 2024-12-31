@@ -112,6 +112,8 @@ public class BaseMonster : BaseObject
 
     private void TransportPacket(System.Action action)
     {
+        if (gameObject.layer != (int)Global.g_MyTeam) return;
+
         if (currentTime >= transportPacketTime)
         {
             action.Invoke();

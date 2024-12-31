@@ -21,6 +21,9 @@ namespace Assets.Scripts
 
         void Init()
         {
+            m_MakePacketDict.Add((ushort)PacketType.S_SetInitialData, MakePacket<S_SetInitialDataPacket>);
+            m_RunFunctionDict.Add((ushort)PacketType.S_SetInitialData, PacketHandler.Instance.S_SetInitialDataPacketHandler);
+
             m_MakePacketDict.Add((ushort)PacketType.PurchaseAllowedPacket, MakePacket<PurchaseAllowedPacket>);
             m_RunFunctionDict.Add((ushort)PacketType.PurchaseAllowedPacket, PacketHandler.Instance.PurchaseAllowedPacket);
 

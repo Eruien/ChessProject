@@ -10,6 +10,13 @@ namespace Assets.Scripts
         static PacketHandler m_PacketHandler = new PacketHandler();
         public static PacketHandler Instance { get { return m_PacketHandler; } }
 
+        public void S_SetInitialDataPacketHandler(Session session, IPacket packet)
+        {
+            S_SetInitialDataPacket setDataPacket = packet as S_SetInitialDataPacket;
+            Global.g_MyTeam = (Team)setDataPacket.myTeam;
+            Debug.Log($"지금 팀은 {Global.g_MyTeam}");
+        }
+
         public void PurchaseAllowedPacket(Session session, IPacket packet)
         {
             PurchaseAllowedPacket purchaseAllowed = packet as PurchaseAllowedPacket;
@@ -76,6 +83,7 @@ namespace Assets.Scripts
         {
             S_BroadcastMonsterCreatePacket monsterPacket = packet as S_BroadcastMonsterCreatePacket;
             GameObject obj = Managers.Resource.Instantiate("Skeleton", new Vector3(0.0f, 1.0f, 0.0f));
+            obj.layer = monsterPacket.monsterTeam;
             Managers.Monster.Register(monsterPacket.monsterId, obj);
             obj.GetComponent<BaseMonster>().SetPosition(monsterPacket.PosX, monsterPacket.PosY, monsterPacket.PosZ);
             obj.GetComponent<BaseMonster>().MonsterId = monsterPacket.monsterId;
