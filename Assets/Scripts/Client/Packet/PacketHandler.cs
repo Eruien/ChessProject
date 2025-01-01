@@ -17,6 +17,26 @@ namespace Assets.Scripts
             Debug.Log($"지금 팀은 {Global.g_MyTeam}");
         }
 
+        public void S_SetInitialLaboPacketHandler(Session session, IPacket packet)
+        {
+            S_SetInitialLaboPacket setDataPacket = packet as S_SetInitialLaboPacket;
+            
+            // 연구소 생성
+            GameObject obj = null;
+            if (Global.g_MyTeam == Team.RedTeam)
+            {
+                obj = Managers.Resource.Instantiate("RedTeamLabo", new Vector3(setDataPacket.laboPosX, setDataPacket.laboPosY, setDataPacket.laboPosZ));
+            }
+            else if (Global.g_MyTeam == Team.BlueTeam)
+            {
+                obj = Managers.Resource.Instantiate("BlueTeamLabo", new Vector3(setDataPacket.laboPosX, setDataPacket.laboPosY, setDataPacket.laboPosZ));
+            }
+
+            obj.layer = (int)Global.g_MyTeam;
+            Managers.Monster.Register(setDataPacket.laboId, obj);
+            obj.GetComponent<BaseObject>().ObjectId = setDataPacket.laboId;
+        }
+
         public void PurchaseAllowedPacket(Session session, IPacket packet)
         {
             PurchaseAllowedPacket purchaseAllowed = packet as PurchaseAllowedPacket;
@@ -98,6 +118,18 @@ namespace Assets.Scripts
             if (obj != null)
             {
                 obj.GetComponent<BaseObject>().blackBoard.m_HP.Key = hitPacket.objectHP;
+            }
+        }
+
+        public void S_ChangeTargetPacketHandler(Session session, IPacket packet)
+        {
+            S_ChangeTargetPacket changeTargetPacket = packet as S_ChangeTargetPacket;
+
+            GameObject obj = Managers.Monster.GetMonster(changeTargetPacket.objectId);
+
+            if (obj != null)
+            {
+                obj.GetComponent<BaseMonster>().Target = Managers.Monster.GetMonster(changeTargetPacket.targetObjectId);
             }
         }
     }

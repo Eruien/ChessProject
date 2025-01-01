@@ -24,6 +24,9 @@ namespace Assets.Scripts
             m_MakePacketDict.Add((ushort)PacketType.S_SetInitialData, MakePacket<S_SetInitialDataPacket>);
             m_RunFunctionDict.Add((ushort)PacketType.S_SetInitialData, PacketHandler.Instance.S_SetInitialDataPacketHandler);
 
+            m_MakePacketDict.Add((ushort)PacketType.S_SetInitialLabo, MakePacket<S_SetInitialLaboPacket>);
+            m_RunFunctionDict.Add((ushort)PacketType.S_SetInitialLabo, PacketHandler.Instance.S_SetInitialLaboPacketHandler);
+
             m_MakePacketDict.Add((ushort)PacketType.PurchaseAllowedPacket, MakePacket<PurchaseAllowedPacket>);
             m_RunFunctionDict.Add((ushort)PacketType.PurchaseAllowedPacket, PacketHandler.Instance.PurchaseAllowedPacket);
 
@@ -44,6 +47,9 @@ namespace Assets.Scripts
 
             m_MakePacketDict.Add((ushort)PacketType.S_Hit, MakePacket<S_HitPacket>);
             m_RunFunctionDict.Add((ushort)PacketType.S_Hit, PacketHandler.Instance.S_HitPacketHandler);
+
+            m_MakePacketDict.Add((ushort)PacketType.S_ChangeTarget, MakePacket<S_ChangeTargetPacket>);
+            m_RunFunctionDict.Add((ushort)PacketType.S_ChangeTarget, PacketHandler.Instance.S_ChangeTargetPacketHandler);
         }
 
         public int OnRecvPacket(Session session, ArraySegment<byte> buffer, Action<Session, IPacket> onRecvCallback = null)

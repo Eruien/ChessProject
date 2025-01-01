@@ -19,8 +19,7 @@ public class BaseMonster : BaseObject
     static public UnityEvent monsterDeathEvent = new UnityEvent();
 
     public GameObject Target { get; set; }
-    public GameObject TargetLabo { get; set; }
-
+   
     public Vector3 InitialPos { get; set; } = Vector3.zero;
     public Vector3 MovePos { get; set; } = Vector3.zero;
     public MonsterType MonsterType { get; set; } = MonsterType.None;
@@ -48,8 +47,6 @@ public class BaseMonster : BaseObject
         material = FindMaterial();
         monsterAnimation = GetComponentInChildren<Animator>();
         selfCollider = GetComponent<CapsuleCollider>();
-        TargetLabo = FindTeamObjectWithTag("Labo");
-        Target = TargetLabo;
         initialY = transform.position.y;
         InitialPos = transform.position;
         SetBlackBoardKey();
@@ -80,8 +77,6 @@ public class BaseMonster : BaseObject
         }
 
         if (stopMoving == true) return;
-
-        
 
         monsterAnimation.SetBool("IsMove", false);
 
@@ -331,13 +326,21 @@ public class BaseMonster : BaseObject
     // SearchCollision의 이벤트 용
     public void OnSearchCollisionEvent(Collider other)
     {
+        int targetObjectId = 0;
+
         if (Target != null)
         {
             BaseObject obj = Target.gameObject.GetComponent<BaseObject>();
             if (!obj.IsDeath && obj.SelfType == ObjectType.Monster) return;
+            targetObjectId = other.gameObject.GetComponent<BaseObject>().ObjectId;
         }
 
-        Target = other.gameObject;
+        if (targetObjectId == 0) return;
+        C_ChangeTargetPacket changeTargetPacket = new C_ChangeTargetPacket();
+        changeTargetPacket.objectId = (ushort)ObjectId;
+        changeTargetPacket.targetObjectId = (ushort)targetObjectId;
+
+        TransportOnePacket(() => SessionManager.Instance.GetServerSession().Send(changeTargetPacket.Write()));
     }
 
     // 타격을 한 번만 입히게 하기 위해
