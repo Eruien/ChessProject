@@ -15,26 +15,37 @@ namespace Assets.Scripts
             S_SetInitialDataPacket setDataPacket = packet as S_SetInitialDataPacket;
             Global.g_MyTeam = (Team)setDataPacket.myTeam;
             Debug.Log($"지금 팀은 {Global.g_MyTeam}");
+
+            GameObject[] allObjects = GameObject.FindGameObjectsWithTag("Labo");
+
+            foreach (GameObject obj in allObjects)
+            {
+                if (obj.layer == (int)Global.g_MyTeam)
+                {
+                    obj.GetComponent<Labo>().TransportLaboData();
+                }
+            }
         }
 
         public void S_SetInitialLaboPacketHandler(Session session, IPacket packet)
         {
-            S_SetInitialLaboPacket setDataPacket = packet as S_SetInitialLaboPacket;
-            
-            // 연구소 생성
-            GameObject obj = null;
-            if (Global.g_MyTeam == Team.RedTeam)
-            {
-                obj = Managers.Resource.Instantiate("RedTeamLabo", new Vector3(setDataPacket.laboPosX, setDataPacket.laboPosY, setDataPacket.laboPosZ));
-            }
-            else if (Global.g_MyTeam == Team.BlueTeam)
-            {
-                obj = Managers.Resource.Instantiate("BlueTeamLabo", new Vector3(setDataPacket.laboPosX, setDataPacket.laboPosY, setDataPacket.laboPosZ));
-            }
+            S_SetInitialLaboPacket laboPacket = packet as S_SetInitialLaboPacket;
 
-            obj.layer = (int)Global.g_MyTeam;
-            Managers.Monster.Register(setDataPacket.laboId, obj);
-            obj.GetComponent<BaseObject>().ObjectId = setDataPacket.laboId;
+            GameObject[] allObjects = GameObject.FindGameObjectsWithTag("Labo");
+
+            foreach (GameObject obj in allObjects)
+            {
+                if (laboPacket.laboOneTeam == obj.layer)
+                {
+                    Managers.Monster.Register(laboPacket.laboOneId, obj);
+                    obj.GetComponent<BaseObject>().ObjectId = laboPacket.laboOneId;
+                }
+                else if (laboPacket.laboTwoTeam == obj.layer)
+                {
+                    Managers.Monster.Register(laboPacket.laboTwoId, obj);
+                    obj.GetComponent<BaseObject>().ObjectId = laboPacket.laboTwoId;
+                }
+            }
         }
 
         public void PurchaseAllowedPacket(Session session, IPacket packet)

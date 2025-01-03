@@ -1,4 +1,6 @@
 using Assets.Scripts;
+using Unity.VisualScripting;
+using UnityEngine.UIElements;
 
 public class Labo : BaseObject
 {
@@ -21,6 +23,16 @@ public class Labo : BaseObject
     private void Update()
     {
         IsHPZero();
+    }
+
+    public void TransportLaboData()
+    {
+        C_SetInitialLaboPacket laboPacket = new C_SetInitialLaboPacket();
+        laboPacket.laboTeam = (ushort)gameObject.layer;
+        laboPacket.laboPosX = gameObject.transform.position.x;
+        laboPacket.laboPosY = gameObject.transform.position.y;
+        laboPacket.laboPosZ = gameObject.transform.position.z;
+        SessionManager.Instance.GetServerSession().Send(laboPacket.Write());
     }
 
     private void IsHPZero()

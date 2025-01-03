@@ -4,6 +4,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UIElements;
+using static UnityEngine.GraphicsBuffer;
 
 public class BaseMonster : BaseObject
 {
@@ -19,7 +20,8 @@ public class BaseMonster : BaseObject
     static public UnityEvent monsterDeathEvent = new UnityEvent();
 
     public GameObject Target { get; set; }
-   
+    public GameObject TargetLabo { get; set; }
+
     public Vector3 InitialPos { get; set; } = Vector3.zero;
     public Vector3 MovePos { get; set; } = Vector3.zero;
     public MonsterType MonsterType { get; set; } = MonsterType.None;
@@ -45,6 +47,8 @@ public class BaseMonster : BaseObject
         MonsterState = MonsterState.Move;
         SelfType = ObjectType.Monster;
         material = FindMaterial();
+        TargetLabo = FindTeamObjectWithTag("Labo");
+        Target = TargetLabo;
         monsterAnimation = GetComponentInChildren<Animator>();
         selfCollider = GetComponent<CapsuleCollider>();
         initialY = transform.position.y;
@@ -84,12 +88,24 @@ public class BaseMonster : BaseObject
         {
             currentTime += Time.deltaTime;
 
+            if (Target == null)
+            {
+                if (TargetLabo != null)
+                {
+                    C_ChangeTargetPacket changeTargetPacket = new C_ChangeTargetPacket();
+                    changeTargetPacket.objectId = (ushort)ObjectId;
+                    changeTargetPacket.targetObjectId = (ushort)TargetLabo.GetComponent<BaseObject>().ObjectId;
+
+                    TransportOnePacket(() => SessionManager.Instance.GetServerSession().Send(changeTargetPacket.Write()));
+                }
+            }
+
             if (Target != null)
             {
                 ComputeAttackDistance();
                 StateUpdate();
             }
-         
+           
             fixRotation = transform.eulerAngles;
             fixRotation.x = 0;
             fixRotation.z = 0;
@@ -134,13 +150,10 @@ public class BaseMonster : BaseObject
         Vector3 vec = Target.transform.position - transform.position;
         float dis = Mathf.Pow(vec.x * vec.x + vec.z * vec.z, 0.5f);
 
-        if (dis <= blackBoard.m_AttackDistance.Key)
-        {
-            C_AttackDistancePacket attackDistancePacket = new C_AttackDistancePacket();
-            attackDistancePacket.objectId = (ushort)ObjectId;
-            attackDistancePacket.attackDistance = dis;
-            TransportPacket(() => SessionManager.Instance.GetServerSession().Send(attackDistancePacket.Write()));
-        }
+        C_AttackDistancePacket attackDistancePacket = new C_AttackDistancePacket();
+        attackDistancePacket.objectId = (ushort)ObjectId;
+        attackDistancePacket.attackDistance = dis;
+        TransportPacket(() => SessionManager.Instance.GetServerSession().Send(attackDistancePacket.Write()));
     }
 
     public override void SetPosition(float x, float y, float z)
