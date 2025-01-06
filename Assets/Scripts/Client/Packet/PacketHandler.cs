@@ -15,36 +15,26 @@ namespace Assets.Scripts
             S_SetInitialDataPacket setDataPacket = packet as S_SetInitialDataPacket;
             Global.g_MyTeam = (Team)setDataPacket.myTeam;
             Debug.Log($"지금 팀은 {Global.g_MyTeam}");
-
-            GameObject[] allObjects = GameObject.FindGameObjectsWithTag("Labo");
-
-            foreach (GameObject obj in allObjects)
-            {
-                if (obj.layer == (int)Global.g_MyTeam)
-                {
-                    obj.GetComponent<Labo>().TransportLaboData();
-                }
-            }
         }
 
-        public void S_SetInitialLaboPacketHandler(Session session, IPacket packet)
+        public void S_LabListPacketHandler(Session session, IPacket packet)
         {
-            S_SetInitialLaboPacket laboPacket = packet as S_SetInitialLaboPacket;
+            S_LabListPacket labPacket = packet as S_LabListPacket;
 
-            GameObject[] allObjects = GameObject.FindGameObjectsWithTag("Labo");
-
-            foreach (GameObject obj in allObjects)
+            for (int i = 0; i < labPacket.LabList.Count; i++)
             {
-                if (laboPacket.laboOneTeam == obj.layer)
+                GameObject obj = null;
+
+                if (labPacket.LabList[i].Team == (ushort)Team.RedTeam)
                 {
-                    Managers.Monster.Register(laboPacket.laboOneId, obj);
-                    obj.GetComponent<BaseObject>().ObjectId = laboPacket.laboOneId;
+                    obj = Managers.Resource.Instantiate("RedTeamLabo", new Vector3(labPacket.LabList[i].PosX, labPacket.LabList[i].PosY, labPacket.LabList[i].PosZ));
                 }
-                else if (laboPacket.laboTwoTeam == obj.layer)
+                else if (labPacket.LabList[i].Team == (ushort)Team.BlueTeam)
                 {
-                    Managers.Monster.Register(laboPacket.laboTwoId, obj);
-                    obj.GetComponent<BaseObject>().ObjectId = laboPacket.laboTwoId;
+                    obj = Managers.Resource.Instantiate("BlueTeamLabo", new Vector3(labPacket.LabList[i].PosX, labPacket.LabList[i].PosY, labPacket.LabList[i].PosZ));
                 }
+
+                Managers.Monster.Register(labPacket.LabList[i].Id, obj);
             }
         }
 
