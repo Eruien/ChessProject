@@ -35,6 +35,7 @@ namespace Assets.Scripts
                 }
 
                 Managers.Monster.Register(labPacket.LabList[i].Id, obj);
+                obj.GetComponent<BaseObject>().ObjectId = labPacket.LabList[i].Id;
             }
         }
 
@@ -108,6 +109,8 @@ namespace Assets.Scripts
             Managers.Monster.Register(monsterPacket.objectId, obj);
             obj.GetComponent<BaseMonster>().SetPosition(monsterPacket.PosX, monsterPacket.PosY, monsterPacket.PosZ);
             obj.GetComponent<BaseMonster>().ObjectId = monsterPacket.objectId;
+            obj.GetComponent<BaseMonster>().TargetLabo = Managers.Monster.GetMonster(monsterPacket.targetLabId);
+            obj.GetComponent<BaseMonster>().Target = obj.GetComponent<BaseMonster>().TargetLabo;
         }
 
         public void S_HitPacketHandler(Session session, IPacket packet)

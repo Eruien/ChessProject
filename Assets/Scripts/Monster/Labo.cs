@@ -1,6 +1,4 @@
 using Assets.Scripts;
-using Unity.VisualScripting;
-using UnityEngine.UIElements;
 
 public class Labo : BaseObject
 {

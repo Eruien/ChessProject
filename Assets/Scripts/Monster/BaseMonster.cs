@@ -179,7 +179,6 @@ public class BaseMonster : BaseObject
 
     protected override void SetBlackBoardKey()
     {
-        blackBoard.m_TargetObject.Key = Target;
         blackBoard.m_HP.Key = Managers.Data.monsterDict[this.GetType().Name].hp;
         blackBoard.m_AttackDistance.Key = Managers.Data.monsterDict[this.GetType().Name].attackDistance;
         blackBoard.m_AttackRange.Key = Managers.Data.monsterDict[this.GetType().Name].attackRange;

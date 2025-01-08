@@ -36,7 +36,6 @@ public class Beholder : BaseMonster
     protected override void SetBlackBoardKey()
     {
         MonsterType = Managers.Data.monsterDict[this.GetType().Name].monsterType;
-        blackBoard.m_TargetObject.Key = Target;
         blackBoard.m_HP.Key = Managers.Data.monsterDict[this.GetType().Name].hp;
         blackBoard.m_AttackDistance.Key = Managers.Data.monsterDict[this.GetType().Name].attackDistance;
         blackBoard.m_AttackRange.Key = Managers.Data.monsterDict[this.GetType().Name].attackRange;
@@ -59,7 +58,7 @@ public class Beholder : BaseMonster
     {
         projectTile = Instantiate(projectTilePrefab, weaponSocket.transform.position, Quaternion.identity);
         ProjectTile projectTileScript = projectTile.GetComponent<ProjectTile>();
-        projectTileScript.TargetObject = blackBoard.m_TargetObject;
+        projectTileScript.TargetObject.Key = Target;
         projectTileScript.AttackRange = blackBoard.m_AttackRange.Key;
         projectTileScript.AttackRangeCorrectionValue = blackBoard.m_AttackRangeCorrectionValue.Key;
         projectTileScript.ProjectTileSpeed = blackBoard.m_ProjectTileSpeed.Key;
