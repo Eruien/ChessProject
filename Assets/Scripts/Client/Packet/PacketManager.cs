@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using ServerCore;
-using Unity.VisualScripting;
-using static System.Collections.Specialized.BitVector32;
 
 namespace Assets.Scripts
 {
@@ -21,35 +19,29 @@ namespace Assets.Scripts
 
         void Init()
         {
-            m_MakePacketDict.Add((ushort)PacketType.S_SetInitialData, MakePacket<S_SetInitialDataPacket>);
-            m_RunFunctionDict.Add((ushort)PacketType.S_SetInitialData, PacketHandler.Instance.S_SetInitialDataPacketHandler);
+            m_MakePacketDict.Add((ushort)PacketType.S_SetInitialDataPacket, MakePacket<S_SetInitialDataPacket>);
+            m_RunFunctionDict.Add((ushort)PacketType.S_SetInitialDataPacket, PacketHandler.Instance.S_SetInitialDataPacketHandler);
 
-            m_MakePacketDict.Add((ushort)PacketType.S_LabList, MakePacket<S_LabListPacket>);
-            m_RunFunctionDict.Add((ushort)PacketType.S_LabList, PacketHandler.Instance.S_LabListPacketHandler);
+            m_MakePacketDict.Add((ushort)PacketType.S_LabListPacket, MakePacket<S_LabListPacket>);
+            m_RunFunctionDict.Add((ushort)PacketType.S_LabListPacket, PacketHandler.Instance.S_LabListPacketHandler);
 
-            m_MakePacketDict.Add((ushort)PacketType.PurchaseAllowedPacket, MakePacket<PurchaseAllowedPacket>);
-            m_RunFunctionDict.Add((ushort)PacketType.PurchaseAllowedPacket, PacketHandler.Instance.PurchaseAllowedPacket);
+            m_MakePacketDict.Add((ushort)PacketType.S_PurchaseAllowedPacket, MakePacket<S_PurchaseAllowedPacket>);
+            m_RunFunctionDict.Add((ushort)PacketType.S_PurchaseAllowedPacket, PacketHandler.Instance.S_PurchaseAllowedPacketHandler);
 
-            m_MakePacketDict.Add((ushort)PacketType.MovePacket, MakePacket<MovePacket>);
-            m_RunFunctionDict.Add((ushort)PacketType.MovePacket, PacketHandler.Instance.MovePacketHandler);
+            m_MakePacketDict.Add((ushort)PacketType.S_BroadcastMonsterCreatePacket, MakePacket<S_BroadcastMonsterCreatePacket>);
+            m_RunFunctionDict.Add((ushort)PacketType.S_BroadcastMonsterCreatePacket, PacketHandler.Instance.S_BroadcastMonsterCreatePacketHandler);
 
-            m_MakePacketDict.Add((ushort)PacketType.S_MonsterState, MakePacket<S_MonsterStatePacket>);
-            m_RunFunctionDict.Add((ushort)PacketType.S_MonsterState, PacketHandler.Instance.S_MonsterStatePacketHandler);
+            m_MakePacketDict.Add((ushort)PacketType.S_BroadcastMonsterStatePacket, MakePacket<S_BroadcastMonsterStatePacket>);
+            m_RunFunctionDict.Add((ushort)PacketType.S_BroadcastMonsterStatePacket, PacketHandler.Instance.S_BroadcastMonsterStatePacketHandler);
 
-            m_MakePacketDict.Add((ushort)PacketType.PlayerList, MakePacket<PlayerList>);
-            m_RunFunctionDict.Add((ushort)PacketType.PlayerList, PacketHandler.Instance.PlayerListHandler);
+            m_MakePacketDict.Add((ushort)PacketType.S_BroadcastMovePacket, MakePacket<S_BroadcastMovePacket>);
+            m_RunFunctionDict.Add((ushort)PacketType.S_BroadcastMovePacket, PacketHandler.Instance.S_BroadcastMovePacketHandler);
 
-            m_MakePacketDict.Add((ushort)PacketType.S_BroadcastEnterGame, MakePacket<S_BroadcastEnterGame>);
-            m_RunFunctionDict.Add((ushort)PacketType.S_BroadcastEnterGame, PacketHandler.Instance.S_BroadcastEnterGameHandler);
+            m_MakePacketDict.Add((ushort)PacketType.S_BroadcastHitPacket, MakePacket<S_BroadcastHitPacket>);
+            m_RunFunctionDict.Add((ushort)PacketType.S_BroadcastHitPacket, PacketHandler.Instance.S_BroadcastHitPacketHandler);
 
-            m_MakePacketDict.Add((ushort)PacketType.S_BroadcastMonsterCreate, MakePacket<S_BroadcastMonsterCreatePacket>);
-            m_RunFunctionDict.Add((ushort)PacketType.S_BroadcastMonsterCreate, PacketHandler.Instance.S_BroadcastMonsterCreatePacketHandler);
-
-            m_MakePacketDict.Add((ushort)PacketType.S_Hit, MakePacket<S_HitPacket>);
-            m_RunFunctionDict.Add((ushort)PacketType.S_Hit, PacketHandler.Instance.S_HitPacketHandler);
-
-            m_MakePacketDict.Add((ushort)PacketType.S_ChangeTarget, MakePacket<S_ChangeTargetPacket>);
-            m_RunFunctionDict.Add((ushort)PacketType.S_ChangeTarget, PacketHandler.Instance.S_ChangeTargetPacketHandler);
+            m_MakePacketDict.Add((ushort)PacketType.S_BroadcastChangeTargetPacket, MakePacket<S_BroadcastChangeTargetPacket>);
+            m_RunFunctionDict.Add((ushort)PacketType.S_BroadcastChangeTargetPacket, PacketHandler.Instance.S_BroadcastChangeTargetPacketHandler);
         }
 
         public int OnRecvPacket(Session session, ArraySegment<byte> buffer, Action<Session, IPacket> onRecvCallback = null)

@@ -93,8 +93,8 @@ public class BaseMonster : BaseObject
                 if (TargetLabo != null)
                 {
                     C_ChangeTargetPacket changeTargetPacket = new C_ChangeTargetPacket();
-                    changeTargetPacket.objectId = (ushort)ObjectId;
-                    changeTargetPacket.targetObjectId = (ushort)TargetLabo.GetComponent<BaseObject>().ObjectId;
+                    changeTargetPacket.m_ObjectId = (ushort)ObjectId;
+                    changeTargetPacket.m_TargetObjectId = (ushort)TargetLabo.GetComponent<BaseObject>().ObjectId;
 
                     TransportOnePacket(() => SessionManager.Instance.GetServerSession().Send(changeTargetPacket.Write()));
                 }
@@ -151,8 +151,8 @@ public class BaseMonster : BaseObject
         float dis = Mathf.Pow(vec.x * vec.x + vec.z * vec.z, 0.5f);
 
         C_AttackDistancePacket attackDistancePacket = new C_AttackDistancePacket();
-        attackDistancePacket.objectId = (ushort)ObjectId;
-        attackDistancePacket.attackDistance = dis;
+        attackDistancePacket.m_MonsterId = (ushort)ObjectId;
+        attackDistancePacket.m_AttackDistance = dis;
         TransportPacket(() => SessionManager.Instance.GetServerSession().Send(attackDistancePacket.Write()));
     }
 
@@ -303,6 +303,14 @@ public class BaseMonster : BaseObject
     }
 
     // 유니티 이벤트 모음
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.GetComponent<BaseObject>())
+        {
+            Debug.Log(transform.position);
+        }
+    }
+
     // CollisionCheck의 이벤트 용
     public void OnHitEvent(Collider other)
     {
@@ -311,10 +319,10 @@ public class BaseMonster : BaseObject
         if (!IsHit && AttackType() && !IsDeath)
         {
             C_HitPacket hitPacket = new C_HitPacket();
-            hitPacket.objectId = (ushort)ObjectId;
+            hitPacket.m_MonsterId = (ushort)ObjectId;
             BaseObject otherObject = other.gameObject.GetComponent<BaseObject>();
-            hitPacket.targetMonsterId = (ushort)otherObject.ObjectId;
-            hitPacket.attackType = 0;
+            hitPacket.m_TargetObjectId = (ushort)otherObject.ObjectId;
+            hitPacket.m_AttackType = 0;
 
             TransportOnePacket(() => SessionManager.Instance.GetServerSession().Send(hitPacket.Write()));
             IsHit = true;
@@ -349,8 +357,8 @@ public class BaseMonster : BaseObject
 
         if (targetObjectId == 0) return;
         C_ChangeTargetPacket changeTargetPacket = new C_ChangeTargetPacket();
-        changeTargetPacket.objectId = (ushort)ObjectId;
-        changeTargetPacket.targetObjectId = (ushort)targetObjectId;
+        changeTargetPacket.m_ObjectId = (ushort)ObjectId;
+        changeTargetPacket.m_TargetObjectId = (ushort)targetObjectId;
 
         TransportOnePacket(() => SessionManager.Instance.GetServerSession().Send(changeTargetPacket.Write()));
     }

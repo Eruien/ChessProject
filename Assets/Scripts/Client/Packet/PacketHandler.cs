@@ -1,6 +1,4 @@
-﻿using System;
-using ServerCore;
-using Unity.VisualScripting;
+﻿using ServerCore;
 using UnityEngine;
 
 namespace Assets.Scripts
@@ -13,7 +11,7 @@ namespace Assets.Scripts
         public void S_SetInitialDataPacketHandler(Session session, IPacket packet)
         {
             S_SetInitialDataPacket setDataPacket = packet as S_SetInitialDataPacket;
-            Global.g_MyTeam = (Team)setDataPacket.myTeam;
+            Global.g_MyTeam = (Team)setDataPacket.m_MyTeam;
             Debug.Log($"지금 팀은 {Global.g_MyTeam}");
         }
 
@@ -21,38 +19,38 @@ namespace Assets.Scripts
         {
             S_LabListPacket labPacket = packet as S_LabListPacket;
 
-            for (int i = 0; i < labPacket.LabList.Count; i++)
+            for (int i = 0; i < labPacket.m_LabList.Count; i++)
             {
                 GameObject obj = null;
 
-                if (labPacket.LabList[i].Team == (ushort)Team.RedTeam)
+                if (labPacket.m_LabList[i].m_Team == (ushort)Team.RedTeam)
                 {
-                    obj = Managers.Resource.Instantiate("RedTeamLabo", new Vector3(labPacket.LabList[i].PosX, labPacket.LabList[i].PosY, labPacket.LabList[i].PosZ));
+                    obj = Managers.Resource.Instantiate("RedTeamLabo", new Vector3(labPacket.m_LabList[i].m_PosX, labPacket.m_LabList[i].m_PosY, labPacket.m_LabList[i].m_PosZ));
                 }
-                else if (labPacket.LabList[i].Team == (ushort)Team.BlueTeam)
+                else if (labPacket.m_LabList[i].m_Team == (ushort)Team.BlueTeam)
                 {
-                    obj = Managers.Resource.Instantiate("BlueTeamLabo", new Vector3(labPacket.LabList[i].PosX, labPacket.LabList[i].PosY, labPacket.LabList[i].PosZ));
+                    obj = Managers.Resource.Instantiate("BlueTeamLabo", new Vector3(labPacket.m_LabList[i].m_PosX, labPacket.m_LabList[i].m_PosY, labPacket.m_LabList[i].m_PosZ));
                 }
 
-                Managers.Monster.Register(labPacket.LabList[i].Id, obj);
-                obj.GetComponent<BaseObject>().ObjectId = labPacket.LabList[i].Id;
+                Managers.Monster.Register(labPacket.m_LabList[i].m_LabId, obj);
+                obj.GetComponent<BaseObject>().ObjectId = labPacket.m_LabList[i].m_LabId;
             }
         }
 
-        public void PurchaseAllowedPacket(Session session, IPacket packet)
+        public void S_PurchaseAllowedPacketHandler(Session session, IPacket packet)
         {
-            PurchaseAllowedPacket purchaseAllowed = packet as PurchaseAllowedPacket;
+            S_PurchaseAllowedPacket purchaseAllowed = packet as S_PurchaseAllowedPacket;
 
-            if (purchaseAllowed.IsPurchase)
+            if (purchaseAllowed.m_IsPurchase)
             {
                 Debug.Log("샀어요");
           
                 C_MonsterCreatePacket monsterCreatePacket = new C_MonsterCreatePacket();
               
-                monsterCreatePacket.monsterTeam = 1;
-                monsterCreatePacket.PosX = purchaseAllowed.PosX;
-                monsterCreatePacket.PosY = purchaseAllowed.PosY;
-                monsterCreatePacket.PosZ = purchaseAllowed.PosZ;
+                monsterCreatePacket.m_MonsterTeam = 1;
+                monsterCreatePacket.m_PosX = purchaseAllowed.m_PosX;
+                monsterCreatePacket.m_PosY = purchaseAllowed.m_PosY;
+                monsterCreatePacket.m_PosZ = purchaseAllowed.m_PosZ;
                 SessionManager.Instance.GetServerSession().Send(monsterCreatePacket.Write());
             }
             else
@@ -61,79 +59,61 @@ namespace Assets.Scripts
             }
         }
 
-        public void MovePacketHandler(Session session, IPacket packet)
+        public void S_BroadcastMovePacketHandler(Session session, IPacket packet)
         {
-            MovePacket movePacket = packet as MovePacket;
-            GameObject obj = Managers.Monster.GetMonster(movePacket.objectId);
+            S_BroadcastMovePacket movePacket = packet as S_BroadcastMovePacket;
+            GameObject obj = Managers.Monster.GetMonster(movePacket.m_MonsterId);
 
             if (obj != null)
             {
-                obj.GetComponent<BaseMonster>().MovePos = new Vector3(movePacket.PosX, movePacket.PosY, movePacket.PosZ);
+                obj.GetComponent<BaseMonster>().MovePos = new Vector3(movePacket.m_PosX, movePacket.m_PosY, movePacket.m_PosZ);
             }
         }
 
-        public void S_MonsterStatePacketHandler(Session session, IPacket packet)
+        public void S_BroadcastMonsterStatePacketHandler(Session session, IPacket packet)
         {
-            S_MonsterStatePacket monsterStatePacket = packet as S_MonsterStatePacket;
-            GameObject obj = Managers.Monster.GetMonster(monsterStatePacket.objectId);
+            S_BroadcastMonsterStatePacket monsterStatePacket = packet as S_BroadcastMonsterStatePacket;
+            GameObject obj = Managers.Monster.GetMonster(monsterStatePacket.m_MonsterId);
 
             if (obj != null)
             {
-                obj.GetComponent<BaseMonster>().MonsterState = (MonsterState)monsterStatePacket.currentState;
+                obj.GetComponent<BaseMonster>().MonsterState = (MonsterState)monsterStatePacket.m_CurrentState;
             }
-        }
-
-        public void PlayerListHandler(Session session, IPacket packet)
-        {
-            Console.WriteLine("클라이언트에 플레이어 목록 등록");
-            //Program.g_ClientPlayerList = packet as PlayerList;
-        }
-
-        public void S_BroadcastEnterGameHandler(Session session, IPacket packet)
-        {
-            S_BroadcastEnterGame enterPlayer = packet as S_BroadcastEnterGame;
-           /* Program.g_ClientPlayerList.Add(new PlayerList.Player
-            {
-                PlayerId = enterPlayer.playerId,
-                PosX = enterPlayer.posX,
-                PosY = enterPlayer.posY,
-                PosZ = enterPlayer.posZ,
-            });*/
         }
 
         public void S_BroadcastMonsterCreatePacketHandler(Session session, IPacket packet)
         {
             S_BroadcastMonsterCreatePacket monsterPacket = packet as S_BroadcastMonsterCreatePacket;
-            GameObject obj = Managers.Resource.Instantiate("Skeleton", new Vector3(0.0f, 1.0f, 0.0f));
-            obj.layer = monsterPacket.monsterTeam;
-            Managers.Monster.Register(monsterPacket.objectId, obj);
-            obj.GetComponent<BaseMonster>().SetPosition(monsterPacket.PosX, monsterPacket.PosY, monsterPacket.PosZ);
-            obj.GetComponent<BaseMonster>().ObjectId = monsterPacket.objectId;
-            obj.GetComponent<BaseMonster>().TargetLabo = Managers.Monster.GetMonster(monsterPacket.targetLabId);
+            GameObject obj = Managers.Resource.Instantiate("Mage", new Vector3(0.0f, 1.0f, 0.0f));
+            obj.layer = monsterPacket.m_MonsterTeam;
+            Managers.Monster.Register(monsterPacket.m_MonsterId, obj);
+            obj.GetComponent<BaseMonster>().SetPosition(monsterPacket.m_PosX, monsterPacket.m_PosY, monsterPacket.m_PosZ);
+            obj.GetComponent<BaseMonster>().ObjectId = monsterPacket.m_MonsterId;
+            obj.GetComponent<BaseMonster>().TargetLabo = Managers.Monster.GetMonster(monsterPacket.m_TargetLabId);
             obj.GetComponent<BaseMonster>().Target = obj.GetComponent<BaseMonster>().TargetLabo;
         }
 
-        public void S_HitPacketHandler(Session session, IPacket packet)
+        public void S_BroadcastHitPacketHandler(Session session, IPacket packet)
         {
-            S_HitPacket hitPacket = packet as S_HitPacket;
+            S_BroadcastHitPacket hitPacket = packet as S_BroadcastHitPacket;
             
-            GameObject obj = Managers.Monster.GetMonster(hitPacket.objectId);
+            GameObject obj = Managers.Monster.GetMonster(hitPacket.m_ObjectId);
 
             if (obj != null)
             {
-                obj.GetComponent<BaseObject>().blackBoard.m_HP.Key = hitPacket.objectHP;
+                obj.GetComponent<BaseObject>().blackBoard.m_HP.Key = hitPacket.m_ObjectHP;
             }
         }
 
-        public void S_ChangeTargetPacketHandler(Session session, IPacket packet)
+        public void S_BroadcastChangeTargetPacketHandler(Session session, IPacket packet)
         {
-            S_ChangeTargetPacket changeTargetPacket = packet as S_ChangeTargetPacket;
+            S_BroadcastChangeTargetPacket changeTargetPacket = packet as S_BroadcastChangeTargetPacket;
 
-            GameObject obj = Managers.Monster.GetMonster(changeTargetPacket.objectId);
+            GameObject obj = Managers.Monster.GetMonster(changeTargetPacket.m_ObjectId);
 
             if (obj != null)
             {
-                obj.GetComponent<BaseMonster>().Target = Managers.Monster.GetMonster(changeTargetPacket.targetObjectId);
+                obj.GetComponent<BaseMonster>().Target = Managers.Monster.GetMonster(changeTargetPacket.m_TargetObjectId);
             }
         }
     }

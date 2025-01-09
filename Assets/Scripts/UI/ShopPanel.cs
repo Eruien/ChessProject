@@ -9,20 +9,20 @@ public class ShopPanel : MonoBehaviour
 
     public void OnCreateSkeleton()
     {
-        MonsterPurchasePacket purchasePacket = new MonsterPurchasePacket();
-        purchasePacket.userGameMoney = gameMoney;
-        purchasePacket.monsterPrice = 500;
-        purchasePacket.PosX = 0.0f;
-        purchasePacket.PosY = 1.0f;
-        purchasePacket.PosZ = 0.0f;
+        C_MonsterPurchasePacket purchasePacket = new C_MonsterPurchasePacket();
+        purchasePacket.m_UserGameMoney = gameMoney;
+        purchasePacket.m_MonsterPrice = 500;
+        purchasePacket.m_PosX = 0.0f;
+        purchasePacket.m_PosY = 1.0f;
+        purchasePacket.m_PosZ = 0.0f;
 
         SessionManager.Instance.GetServerSession().Send(purchasePacket.Write());
     }
 
     public void OnGameStart()
     {
-        GameStartPacket gameStartPacket = new GameStartPacket();
-        gameStartPacket.IsGameStart = true;
+        C_GameStartPacket gameStartPacket = new C_GameStartPacket();
+        gameStartPacket.m_IsGameStart = true;
         
         SessionManager.Instance.GetServerSession().Send(gameStartPacket.Write());
     }

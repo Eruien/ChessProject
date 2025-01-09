@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class ProjectTile : MonoBehaviour
 {
-    public b_GameObject TargetObject { get; set; }
+    public b_GameObject TargetObject { get; set; } = new b_GameObject();
     public float AttackRange { get; set; }
     public float AttackRangeCorrectionValue { get; set; }
     public float ProjectTileSpeed { get; set; }

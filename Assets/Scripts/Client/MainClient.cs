@@ -8,8 +8,6 @@ namespace Assets.Scripts
 {
     class MainClient : MonoBehaviour
     {
-        public static PlayerList g_ClientPlayerList = new PlayerList();
-
         private void Awake()
         {
             string host = Dns.GetHostName();
