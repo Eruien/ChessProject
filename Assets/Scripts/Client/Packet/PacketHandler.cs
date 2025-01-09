@@ -25,11 +25,11 @@ namespace Assets.Scripts
 
                 if (labPacket.m_LabList[i].m_Team == (ushort)Team.RedTeam)
                 {
-                    obj = Managers.Resource.Instantiate("RedTeamLabo", new Vector3(labPacket.m_LabList[i].m_PosX, labPacket.m_LabList[i].m_PosY, labPacket.m_LabList[i].m_PosZ));
+                    obj = Managers.Resource.Instantiate("RedTeamLab", new Vector3(labPacket.m_LabList[i].m_PosX, labPacket.m_LabList[i].m_PosY, labPacket.m_LabList[i].m_PosZ));
                 }
                 else if (labPacket.m_LabList[i].m_Team == (ushort)Team.BlueTeam)
                 {
-                    obj = Managers.Resource.Instantiate("BlueTeamLabo", new Vector3(labPacket.m_LabList[i].m_PosX, labPacket.m_LabList[i].m_PosY, labPacket.m_LabList[i].m_PosZ));
+                    obj = Managers.Resource.Instantiate("BlueTeamLab", new Vector3(labPacket.m_LabList[i].m_PosX, labPacket.m_LabList[i].m_PosY, labPacket.m_LabList[i].m_PosZ));
                 }
 
                 Managers.Monster.Register(labPacket.m_LabList[i].m_LabId, obj);
@@ -47,7 +47,6 @@ namespace Assets.Scripts
           
                 C_MonsterCreatePacket monsterCreatePacket = new C_MonsterCreatePacket();
               
-                monsterCreatePacket.m_MonsterTeam = 1;
                 monsterCreatePacket.m_PosX = purchaseAllowed.m_PosX;
                 monsterCreatePacket.m_PosY = purchaseAllowed.m_PosY;
                 monsterCreatePacket.m_PosZ = purchaseAllowed.m_PosZ;
@@ -84,7 +83,7 @@ namespace Assets.Scripts
         public void S_BroadcastMonsterCreatePacketHandler(Session session, IPacket packet)
         {
             S_BroadcastMonsterCreatePacket monsterPacket = packet as S_BroadcastMonsterCreatePacket;
-            GameObject obj = Managers.Resource.Instantiate("Mage", new Vector3(0.0f, 1.0f, 0.0f));
+            GameObject obj = Managers.Resource.Instantiate("Skeleton", new Vector3(0.0f, 1.0f, 0.0f));
             obj.layer = monsterPacket.m_MonsterTeam;
             Managers.Monster.Register(monsterPacket.m_MonsterId, obj);
             obj.GetComponent<BaseMonster>().SetPosition(monsterPacket.m_PosX, monsterPacket.m_PosY, monsterPacket.m_PosZ);

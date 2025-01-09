@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 8487715477559364025}
   - component: {fileID: 6714978164520873222}
   m_Layer: 8
-  m_Name: BlueTeamLabo
+  m_Name: BlueTeamLab
   m_TagString: Labo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

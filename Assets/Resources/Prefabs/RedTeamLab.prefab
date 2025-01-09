@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7758427509212654492}
   - component: {fileID: 2832010570359841051}
   m_Layer: 9
-  m_Name: RedTeamLabo
+  m_Name: RedTeamLab
   m_TagString: Labo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
