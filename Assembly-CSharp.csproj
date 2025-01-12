@@ -94,8 +94,6 @@
     <Compile Include="Assets\Scripts\Client\ServerCore\RecvBuffer.cs" />
     <Compile Include="Assets\Scripts\Client\SessionManager.cs" />
     <Compile Include="Assets\Scripts\Monster\BaseMonster.cs" />
-    <Compile Include="Assets\Scripts\BehaviorTree\Composite.cs" />
-    <Compile Include="Assets\Scripts\BehaviorTree\DecorateFunc.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexJitter.cs" />
     <Compile Include="Assets\AssetStore\SpecialSkillsEffectsPack\Scripts\ForEffects\ObjectMove.cs" />
     <Compile Include="Assets\Scripts\Client\Packet\PacketQueue.cs" />

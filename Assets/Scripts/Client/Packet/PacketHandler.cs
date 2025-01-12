@@ -58,15 +58,16 @@ namespace Assets.Scripts
             }
         }
 
-        public void S_BroadcastMovePacketHandler(Session session, IPacket packet)
+        public void S_BroadcastMonsterCreatePacketHandler(Session session, IPacket packet)
         {
-            S_BroadcastMovePacket movePacket = packet as S_BroadcastMovePacket;
-            GameObject obj = Managers.Monster.GetMonster(movePacket.m_MonsterId);
-
-            if (obj != null)
-            {
-                obj.GetComponent<BaseMonster>().MovePos = new Vector3(movePacket.m_PosX, movePacket.m_PosY, movePacket.m_PosZ);
-            }
+            S_BroadcastMonsterCreatePacket monsterPacket = packet as S_BroadcastMonsterCreatePacket;
+            GameObject obj = Managers.Resource.Instantiate("Skeleton", new Vector3(0.0f, 1.0f, 0.0f));
+            obj.layer = monsterPacket.m_MonsterTeam;
+            Managers.Monster.Register(monsterPacket.m_MonsterId, obj);
+            obj.GetComponent<BaseMonster>().SetPosition(monsterPacket.m_PosX, monsterPacket.m_PosY, monsterPacket.m_PosZ);
+            obj.GetComponent<BaseMonster>().ObjectId = monsterPacket.m_MonsterId;
+            obj.GetComponent<BaseMonster>().TargetLabo = Managers.Monster.GetMonster(monsterPacket.m_TargetLabId);
+            obj.GetComponent<BaseMonster>().Target = obj.GetComponent<BaseMonster>().TargetLabo;
         }
 
         public void S_BroadcastMonsterStatePacketHandler(Session session, IPacket packet)
@@ -80,16 +81,15 @@ namespace Assets.Scripts
             }
         }
 
-        public void S_BroadcastMonsterCreatePacketHandler(Session session, IPacket packet)
+        public void S_BroadcastMovePacketHandler(Session session, IPacket packet)
         {
-            S_BroadcastMonsterCreatePacket monsterPacket = packet as S_BroadcastMonsterCreatePacket;
-            GameObject obj = Managers.Resource.Instantiate("Skeleton", new Vector3(0.0f, 1.0f, 0.0f));
-            obj.layer = monsterPacket.m_MonsterTeam;
-            Managers.Monster.Register(monsterPacket.m_MonsterId, obj);
-            obj.GetComponent<BaseMonster>().SetPosition(monsterPacket.m_PosX, monsterPacket.m_PosY, monsterPacket.m_PosZ);
-            obj.GetComponent<BaseMonster>().ObjectId = monsterPacket.m_MonsterId;
-            obj.GetComponent<BaseMonster>().TargetLabo = Managers.Monster.GetMonster(monsterPacket.m_TargetLabId);
-            obj.GetComponent<BaseMonster>().Target = obj.GetComponent<BaseMonster>().TargetLabo;
+            S_BroadcastMovePacket movePacket = packet as S_BroadcastMovePacket;
+            GameObject obj = Managers.Monster.GetMonster(movePacket.m_MonsterId);
+
+            if (obj != null)
+            {
+                obj.GetComponent<BaseMonster>().MovePos = new Vector3(movePacket.m_PosX, movePacket.m_PosY, movePacket.m_PosZ);
+            }
         }
 
         public void S_BroadcastHitPacketHandler(Session session, IPacket packet)

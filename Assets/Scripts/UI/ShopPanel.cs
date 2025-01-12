@@ -1,6 +1,7 @@
 using Assets.Scripts;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class ShopPanel : MonoBehaviour
@@ -10,6 +11,9 @@ public class ShopPanel : MonoBehaviour
     public void OnCreateSkeleton()
     {
         C_MonsterPurchasePacket purchasePacket = new C_MonsterPurchasePacket();
+        string monsterType = "Skeleton";
+        purchasePacket.m_StringSize = (ushort)monsterType.Length;
+        purchasePacket.m_MonsterType = monsterType;
         purchasePacket.m_UserGameMoney = gameMoney;
         purchasePacket.m_MonsterPrice = 500;
         purchasePacket.m_PosX = 0.0f;

@@ -372,8 +372,6 @@
 "Assets/AssetStore/SpecialSkillsEffectsPack/Scripts/VariousRotateObject.cs"
 "Assets/AssetStore/SpecialSkillsEffectsPack/Scripts/VariousTranslateMove.cs"
 "Assets/Scripts/BehaviorTree/BlackBoard.cs"
-"Assets/Scripts/BehaviorTree/Composite.cs"
-"Assets/Scripts/BehaviorTree/DecorateFunc.cs"
 "Assets/Scripts/Client/MainClient.cs"
 "Assets/Scripts/Client/Packet/Packet.cs"
 "Assets/Scripts/Client/Packet/PacketHandler.cs"

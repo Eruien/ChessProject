@@ -3,12 +3,28 @@
   "WorkspaceRootPath": "C:\\Users\\ogkim\\Desktop\\UnityClient\\ChessProject\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{44D6AA39-E445-1F57-1F48-299BDDE4D9D2}|Assembly-CSharp.csproj|C:\\Users\\ogkim\\Desktop\\UnityClient\\ChessProject\\assets\\scripts\\behaviortree\\decoratefunc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{44D6AA39-E445-1F57-1F48-299BDDE4D9D2}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\behaviortree\\decoratefunc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{44D6AA39-E445-1F57-1F48-299BDDE4D9D2}|Assembly-CSharp.csproj|C:\\Users\\ogkim\\Desktop\\UnityClient\\ChessProject\\assets\\scripts\\behaviortree\\composite.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{44D6AA39-E445-1F57-1F48-299BDDE4D9D2}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\behaviortree\\composite.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{44D6AA39-E445-1F57-1F48-299BDDE4D9D2}|Assembly-CSharp.csproj|C:\\Users\\ogkim\\Desktop\\UnityClient\\ChessProject\\assets\\scripts\\behaviortree\\blackboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{44D6AA39-E445-1F57-1F48-299BDDE4D9D2}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\behaviortree\\blackboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{44D6AA39-E445-1F57-1F48-299BDDE4D9D2}|Assembly-CSharp.csproj|C:\\Users\\ogkim\\Desktop\\UnityClient\\ChessProject\\assets\\scripts\\client\\packet\\packethandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{44D6AA39-E445-1F57-1F48-299BDDE4D9D2}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\client\\packet\\packethandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{44D6AA39-E445-1F57-1F48-299BDDE4D9D2}|Assembly-CSharp.csproj|C:\\Users\\ogkim\\Desktop\\UnityClient\\ChessProject\\assets\\scripts\\client\\packet\\packet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{44D6AA39-E445-1F57-1F48-299BDDE4D9D2}|Assembly-CSharp.csproj|c:\\users\\ogkim\\desktop\\unityclient\\chessproject\\assets\\scripts\\client\\packet\\packet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{44D6AA39-E445-1F57-1F48-299BDDE4D9D2}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\client\\packet\\packet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{44D6AA39-E445-1F57-1F48-299BDDE4D9D2}|Assembly-CSharp.csproj|C:\\Users\\ogkim\\Desktop\\UnityClient\\ChessProject\\assets\\scripts\\monster\\specter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{44D6AA39-E445-1F57-1F48-299BDDE4D9D2}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\monster\\specter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{44D6AA39-E445-1F57-1F48-299BDDE4D9D2}|Assembly-CSharp.csproj|C:\\Users\\ogkim\\Desktop\\UnityClient\\ChessProject\\assets\\scripts\\client\\packet\\packetmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -23,7 +39,7 @@
       "RelativeMoniker": "D:0:0:{44D6AA39-E445-1F57-1F48-299BDDE4D9D2}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\ui\\shoppanel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{44D6AA39-E445-1F57-1F48-299BDDE4D9D2}|Assembly-CSharp.csproj|c:\\users\\ogkim\\desktop\\unityclient\\chessproject\\assets\\scripts\\monster\\basemonster.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{44D6AA39-E445-1F57-1F48-299BDDE4D9D2}|Assembly-CSharp.csproj|C:\\Users\\ogkim\\Desktop\\UnityClient\\ChessProject\\assets\\scripts\\monster\\basemonster.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{44D6AA39-E445-1F57-1F48-299BDDE4D9D2}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\monster\\basemonster.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -51,10 +67,6 @@
       "RelativeMoniker": "D:0:0:{44D6AA39-E445-1F57-1F48-299BDDE4D9D2}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\util\\behaviortreelog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{44D6AA39-E445-1F57-1F48-299BDDE4D9D2}|Assembly-CSharp.csproj|C:\\Users\\ogkim\\Desktop\\UnityClient\\ChessProject\\assets\\scripts\\behaviortree\\blackboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{44D6AA39-E445-1F57-1F48-299BDDE4D9D2}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\behaviortree\\blackboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{44D6AA39-E445-1F57-1F48-299BDDE4D9D2}|Assembly-CSharp.csproj|C:\\Users\\ogkim\\Desktop\\UnityClient\\ChessProject\\assets\\scripts\\monster\\baseobject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{44D6AA39-E445-1F57-1F48-299BDDE4D9D2}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\monster\\baseobject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -77,10 +89,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{44D6AA39-E445-1F57-1F48-299BDDE4D9D2}|Assembly-CSharp.csproj|C:\\Users\\ogkim\\Desktop\\UnityClient\\ChessProject\\assets\\scripts\\monster\\battlebee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{44D6AA39-E445-1F57-1F48-299BDDE4D9D2}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\monster\\battlebee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{44D6AA39-E445-1F57-1F48-299BDDE4D9D2}|Assembly-CSharp.csproj|C:\\Users\\ogkim\\Desktop\\UnityClient\\ChessProject\\assets\\scripts\\monster\\specter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{44D6AA39-E445-1F57-1F48-299BDDE4D9D2}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\monster\\specter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{44D6AA39-E445-1F57-1F48-299BDDE4D9D2}|Assembly-CSharp.csproj|C:\\Users\\ogkim\\Desktop\\UnityClient\\ChessProject\\assets\\scripts\\monster\\skeleton.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -151,14 +159,6 @@
       "RelativeMoniker": "D:0:0:{44D6AA39-E445-1F57-1F48-299BDDE4D9D2}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\managers\\datamanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{44D6AA39-E445-1F57-1F48-299BDDE4D9D2}|Assembly-CSharp.csproj|C:\\Users\\ogkim\\Desktop\\UnityClient\\ChessProject\\assets\\scripts\\behaviortree\\composite.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{44D6AA39-E445-1F57-1F48-299BDDE4D9D2}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\behaviortree\\composite.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{44D6AA39-E445-1F57-1F48-299BDDE4D9D2}|Assembly-CSharp.csproj|C:\\Users\\ogkim\\Desktop\\UnityClient\\ChessProject\\assets\\scripts\\behaviortree\\decoratefunc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{44D6AA39-E445-1F57-1F48-299BDDE4D9D2}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\behaviortree\\decoratefunc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{44D6AA39-E445-1F57-1F48-299BDDE4D9D2}|Assembly-CSharp.csproj|C:\\Users\\ogkim\\Desktop\\UnityClient\\ChessProject\\assets\\scripts\\managers\\resourcemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{44D6AA39-E445-1F57-1F48-299BDDE4D9D2}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\managers\\resourcemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
@@ -170,11 +170,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 39,
+          "SelectedChildIndex": 29,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 12,
               "Title": "PacketQueue.cs",
               "DocumentMoniker": "C:\\Users\\ogkim\\Desktop\\UnityClient\\ChessProject\\Assets\\Scripts\\Client\\Packet\\PacketQueue.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Client\\Packet\\PacketQueue.cs",
@@ -186,7 +186,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 29,
               "Title": "TestScripts.cs",
               "DocumentMoniker": "C:\\Users\\ogkim\\Desktop\\UnityClient\\ChessProject\\Assets\\Scripts\\TestScripts.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\TestScripts.cs",
@@ -198,7 +198,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 31,
+              "DocumentIndex": 33,
               "Title": "RecvBuffer.cs",
               "DocumentMoniker": "C:\\Users\\ogkim\\Desktop\\UnityClient\\ChessProject\\Assets\\Scripts\\Client\\ServerCore\\RecvBuffer.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Client\\ServerCore\\RecvBuffer.cs",
@@ -210,7 +210,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 31,
               "Title": "Listener.cs",
               "DocumentMoniker": "C:\\Users\\ogkim\\Desktop\\UnityClient\\ChessProject\\Assets\\Scripts\\Client\\ServerCore\\Listener.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Client\\ServerCore\\Listener.cs",
@@ -222,7 +222,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 30,
+              "DocumentIndex": 32,
               "Title": "Global.cs",
               "DocumentMoniker": "C:\\Users\\ogkim\\Desktop\\UnityClient\\ChessProject\\Assets\\Scripts\\Util\\Global.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Util\\Global.cs",
@@ -234,7 +234,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 34,
+              "DocumentIndex": 36,
               "Title": "AttackAnimationCheck.cs",
               "DocumentMoniker": "C:\\Users\\ogkim\\Desktop\\UnityClient\\ChessProject\\Assets\\Scripts\\Util\\AttackAnimationCheck.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Util\\AttackAnimationCheck.cs",
@@ -246,7 +246,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 15,
               "Title": "BehaviorTreeLog.cs",
               "DocumentMoniker": "C:\\Users\\ogkim\\Desktop\\UnityClient\\ChessProject\\Assets\\Scripts\\Util\\BehaviorTreeLog.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Util\\BehaviorTreeLog.cs",
@@ -258,7 +258,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 14,
               "Title": "CollisionCheck.cs",
               "DocumentMoniker": "C:\\Users\\ogkim\\Desktop\\UnityClient\\ChessProject\\Assets\\Scripts\\Util\\CollisionCheck.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Util\\CollisionCheck.cs",
@@ -270,7 +270,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 32,
+              "DocumentIndex": 34,
               "Title": "SearchCollision.cs",
               "DocumentMoniker": "C:\\Users\\ogkim\\Desktop\\UnityClient\\ChessProject\\Assets\\Scripts\\Util\\SearchCollision.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Util\\SearchCollision.cs",
@@ -282,7 +282,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 35,
+              "DocumentIndex": 37,
               "Title": "Timer.cs",
               "DocumentMoniker": "C:\\Users\\ogkim\\Desktop\\UnityClient\\ChessProject\\Assets\\Scripts\\Util\\Timer.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Util\\Timer.cs",
@@ -293,19 +293,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 5,
               "Title": "Specter.cs",
               "DocumentMoniker": "C:\\Users\\ogkim\\Desktop\\UnityClient\\ChessProject\\Assets\\Scripts\\Monster\\Specter.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Monster\\Specter.cs",
               "ToolTip": "C:\\Users\\ogkim\\Desktop\\UnityClient\\ChessProject\\Assets\\Scripts\\Monster\\Specter.cs",
               "RelativeToolTip": "Assets\\Scripts\\Monster\\Specter.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAB4AAABRAAAA",
+              "ViewState": "AQIAAAwAAAAAAAAAAAAIwAcAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-28T17:18:22.555Z"
+              "WhenOpened": "2024-12-28T17:18:22.555Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 22,
               "Title": "Skeleton.cs",
               "DocumentMoniker": "C:\\Users\\ogkim\\Desktop\\UnityClient\\ChessProject\\Assets\\Scripts\\Monster\\Skeleton.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Monster\\Skeleton.cs",
@@ -317,7 +318,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 23,
               "Title": "Mage.cs",
               "DocumentMoniker": "C:\\Users\\ogkim\\Desktop\\UnityClient\\ChessProject\\Assets\\Scripts\\Monster\\Mage.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Monster\\Mage.cs",
@@ -329,7 +330,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 19,
               "Title": "Beholder.cs",
               "DocumentMoniker": "C:\\Users\\ogkim\\Desktop\\UnityClient\\ChessProject\\Assets\\Scripts\\Monster\\Beholder.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Monster\\Beholder.cs",
@@ -341,7 +342,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 20,
               "Title": "Bee.cs",
               "DocumentMoniker": "C:\\Users\\ogkim\\Desktop\\UnityClient\\ChessProject\\Assets\\Scripts\\Monster\\Bee.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Monster\\Bee.cs",
@@ -353,7 +354,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 13,
               "Title": "ProjectTile.cs",
               "DocumentMoniker": "C:\\Users\\ogkim\\Desktop\\UnityClient\\ChessProject\\Assets\\Scripts\\ProjectTile\\ProjectTile.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\ProjectTile\\ProjectTile.cs",
@@ -365,7 +366,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 36,
+              "DocumentIndex": 38,
               "Title": "DataManager.cs",
               "DocumentMoniker": "C:\\Users\\ogkim\\Desktop\\UnityClient\\ChessProject\\Assets\\Scripts\\Managers\\DataManager.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Managers\\DataManager.cs",
@@ -377,7 +378,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 7,
               "Title": "UtilityLog.cs",
               "DocumentMoniker": "C:\\Users\\ogkim\\Desktop\\UnityClient\\ChessProject\\Assets\\Scripts\\Util\\UtilityLog.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Util\\UtilityLog.cs",
@@ -385,12 +386,11 @@
               "RelativeToolTip": "Assets\\Scripts\\Util\\UtilityLog.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAAAUAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-28T14:26:26.831Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-28T14:26:26.831Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 11,
               "Title": "Conncector.cs",
               "DocumentMoniker": "C:\\Users\\ogkim\\Desktop\\UnityClient\\ChessProject\\Assets\\Scripts\\Client\\ServerCore\\Conncector.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Client\\ServerCore\\Conncector.cs",
@@ -414,7 +414,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 30,
               "Title": "VisualStudioIntegration.cs",
               "DocumentMoniker": "C:\\Users\\ogkim\\Desktop\\UnityClient\\ChessProject\\Library\\PackageCache\\com.unity.ide.visualstudio@2.0.22\\Editor\\VisualStudioIntegration.cs",
               "RelativeDocumentMoniker": "Library\\PackageCache\\com.unity.ide.visualstudio@2.0.22\\Editor\\VisualStudioIntegration.cs",
@@ -426,7 +426,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 17,
               "Title": "Labo.cs",
               "DocumentMoniker": "C:\\Users\\ogkim\\Desktop\\UnityClient\\ChessProject\\Assets\\Scripts\\Monster\\Labo.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Monster\\Labo.cs",
@@ -438,7 +438,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 33,
+              "DocumentIndex": 35,
               "Title": "Global.cs",
               "DocumentMoniker": "C:\\Users\\ogkim\\Desktop\\UnityClient\\ChessProject\\Assets\\Scripts\\Client\\ServerCore\\Global.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Client\\ServerCore\\Global.cs",
@@ -449,7 +449,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 21,
               "Title": "BattleBee.cs",
               "DocumentMoniker": "C:\\Users\\ogkim\\Desktop\\UnityClient\\ChessProject\\Assets\\Scripts\\Monster\\BattleBee.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Monster\\BattleBee.cs",
@@ -461,7 +461,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 24,
               "Title": "ServerSession.cs",
               "DocumentMoniker": "C:\\Users\\ogkim\\Desktop\\UnityClient\\ChessProject\\Assets\\Scripts\\Client\\ServerSession.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Client\\ServerSession.cs",
@@ -473,7 +473,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 27,
               "Title": "SessionManager.cs",
               "DocumentMoniker": "C:\\Users\\ogkim\\Desktop\\UnityClient\\ChessProject\\Assets\\Scripts\\Client\\SessionManager.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Client\\SessionManager.cs",
@@ -485,7 +485,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 28,
               "Title": "Managers.cs",
               "DocumentMoniker": "C:\\Users\\ogkim\\Desktop\\UnityClient\\ChessProject\\Assets\\Scripts\\Managers\\Managers.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Managers\\Managers.cs",
@@ -497,7 +497,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 10,
               "Title": "MainClient.cs",
               "DocumentMoniker": "C:\\Users\\ogkim\\Desktop\\UnityClient\\ChessProject\\Assets\\Scripts\\Client\\MainClient.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Client\\MainClient.cs",
@@ -509,7 +509,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 8,
               "Title": "ShopPanel.cs",
               "DocumentMoniker": "C:\\Users\\ogkim\\Desktop\\UnityClient\\ChessProject\\Assets\\Scripts\\UI\\ShopPanel.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\UI\\ShopPanel.cs",
@@ -517,24 +517,24 @@
               "RelativeToolTip": "Assets\\Scripts\\UI\\ShopPanel.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAABQAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-27T08:00:59.847Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-27T08:00:59.847Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 38,
+              "DocumentIndex": 0,
               "Title": "DecorateFunc.cs",
               "DocumentMoniker": "C:\\Users\\ogkim\\Desktop\\UnityClient\\ChessProject\\Assets\\Scripts\\BehaviorTree\\DecorateFunc.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\BehaviorTree\\DecorateFunc.cs",
               "ToolTip": "C:\\Users\\ogkim\\Desktop\\UnityClient\\ChessProject\\Assets\\Scripts\\BehaviorTree\\DecorateFunc.cs",
               "RelativeToolTip": "Assets\\Scripts\\BehaviorTree\\DecorateFunc.cs",
-              "ViewState": "AQIAADoAAAAAAAAAAAAQwEoAAAAMAAAA",
+              "ViewState": "AQIAADwAAAAAAAAAAAAUwEoAAAAMAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-27T07:30:41.278Z"
+              "WhenOpened": "2024-12-27T07:30:41.278Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 2,
               "Title": "BlackBoard.cs",
               "DocumentMoniker": "C:\\Users\\ogkim\\Desktop\\UnityClient\\ChessProject\\Assets\\Scripts\\BehaviorTree\\BlackBoard.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\BehaviorTree\\BlackBoard.cs",
@@ -542,23 +542,25 @@
               "RelativeToolTip": "Assets\\Scripts\\BehaviorTree\\BlackBoard.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAFAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-27T07:30:40.692Z"
+              "WhenOpened": "2024-12-27T07:30:40.692Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 37,
+              "DocumentIndex": 1,
               "Title": "Composite.cs",
               "DocumentMoniker": "C:\\Users\\ogkim\\Desktop\\UnityClient\\ChessProject\\Assets\\Scripts\\BehaviorTree\\Composite.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\BehaviorTree\\Composite.cs",
               "ToolTip": "C:\\Users\\ogkim\\Desktop\\UnityClient\\ChessProject\\Assets\\Scripts\\BehaviorTree\\Composite.cs",
               "RelativeToolTip": "Assets\\Scripts\\BehaviorTree\\Composite.cs",
-              "ViewState": "AQIAAO4AAAAAAAAAAAAYwAABAAA+AAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-27T07:30:20.519Z"
+              "WhenOpened": "2024-12-27T07:30:20.519Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 16,
               "Title": "BaseObject.cs",
               "DocumentMoniker": "C:\\Users\\ogkim\\Desktop\\UnityClient\\ChessProject\\Assets\\Scripts\\Monster\\BaseObject.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Monster\\BaseObject.cs",
@@ -570,20 +572,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 4,
               "Title": "Packet.cs",
               "DocumentMoniker": "C:\\Users\\ogkim\\Desktop\\UnityClient\\ChessProject\\Assets\\Scripts\\Client\\Packet\\Packet.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Client\\Packet\\Packet.cs",
               "ToolTip": "C:\\Users\\ogkim\\Desktop\\UnityClient\\ChessProject\\Assets\\Scripts\\Client\\Packet\\Packet.cs",
               "RelativeToolTip": "Assets\\Scripts\\Client\\Packet\\Packet.cs",
-              "ViewState": "AQIAANkCAAAAAAAAAAAcwOgCAAABAAAA",
+              "ViewState": "AQIAAFwBAAAAAAAAAAAgwCUBAAAoAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-26T13:51:04.546Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 25,
               "Title": "Session.cs",
               "DocumentMoniker": "C:\\Users\\ogkim\\Desktop\\UnityClient\\ChessProject\\Assets\\Scripts\\Client\\ServerCore\\Session.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Client\\ServerCore\\Session.cs",
@@ -595,7 +597,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 26,
               "Title": "MonsterManager.cs",
               "DocumentMoniker": "C:\\Users\\ogkim\\Desktop\\UnityClient\\ChessProject\\Assets\\Scripts\\Managers\\MonsterManager.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Managers\\MonsterManager.cs",
@@ -607,7 +609,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 9,
               "Title": "BaseMonster.cs",
               "DocumentMoniker": "C:\\Users\\ogkim\\Desktop\\UnityClient\\ChessProject\\Assets\\Scripts\\Monster\\BaseMonster.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Monster\\BaseMonster.cs",
@@ -615,12 +617,11 @@
               "RelativeToolTip": "Assets\\Scripts\\Monster\\BaseMonster.cs",
               "ViewState": "AQIAAFcBAAAAAAAAAAAzwHMBAAAFAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-26T13:49:49.209Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-26T13:49:49.209Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 18,
               "Title": "Golem.cs",
               "DocumentMoniker": "C:\\Users\\ogkim\\Desktop\\UnityClient\\ChessProject\\Assets\\Scripts\\Monster\\Golem.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Monster\\Golem.cs",
@@ -632,7 +633,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 6,
               "Title": "PacketManager.cs",
               "DocumentMoniker": "C:\\Users\\ogkim\\Desktop\\UnityClient\\ChessProject\\Assets\\Scripts\\Client\\Packet\\PacketManager.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Client\\Packet\\PacketManager.cs",
@@ -640,18 +641,17 @@
               "RelativeToolTip": "Assets\\Scripts\\Client\\Packet\\PacketManager.cs",
               "ViewState": "AQIAABMAAAAAAAAAAAAswCYAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-26T13:44:54.087Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-26T13:44:54.087Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
               "Title": "PacketHandler.cs",
               "DocumentMoniker": "C:\\Users\\ogkim\\Desktop\\UnityClient\\ChessProject\\Assets\\Scripts\\Client\\Packet\\PacketHandler.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Client\\Packet\\PacketHandler.cs",
               "ToolTip": "C:\\Users\\ogkim\\Desktop\\UnityClient\\ChessProject\\Assets\\Scripts\\Client\\Packet\\PacketHandler.cs",
               "RelativeToolTip": "Assets\\Scripts\\Client\\Packet\\PacketHandler.cs",
-              "ViewState": "AQIAAEIAAAAAAAAAAAAAAEAAAAAAAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAACkAAAAjAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-26T13:40:22.467Z",
               "EditorCaption": ""
