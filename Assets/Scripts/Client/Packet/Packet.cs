@@ -275,6 +275,10 @@ namespace Assets.Scripts
             int count = 0;
             count += sizeof(ushort);
             count += sizeof(ushort);
+            this.m_StringSize = BitConverter.ToUInt16(segment.Array, segment.Offset + count);
+            count += sizeof(ushort);
+            this.m_MonsterType = BitConverter.ToString(segment.Array, segment.Offset + count);
+            count += m_StringSize;
             this.m_IsPurchase = BitConverter.ToBoolean(segment.Array, segment.Offset + count);
             count += sizeof(bool);
             this.m_PosX = BitConverter.ToSingle(segment.Array, segment.Offset + count);
@@ -293,6 +297,10 @@ namespace Assets.Scripts
             count += sizeof(ushort);
             Array.Copy(BitConverter.GetBytes(this.PacketID), 0, segment.Array, segment.Offset + count, sizeof(ushort));
             count += sizeof(ushort);
+            Array.Copy(BitConverter.GetBytes(m_StringSize), 0, segment.Array, segment.Offset + count, sizeof(ushort));
+            count += sizeof(ushort);
+            Array.Copy(Encoding.UTF8.GetBytes(m_MonsterType), 0, segment.Array, segment.Offset + count, m_StringSize);
+            count += m_StringSize;
             Array.Copy(BitConverter.GetBytes(this.m_IsPurchase), 0, segment.Array, segment.Offset + count, sizeof(bool));
             count += sizeof(bool);
             Array.Copy(BitConverter.GetBytes(this.m_PosX), 0, segment.Array, segment.Offset + count, sizeof(float));
