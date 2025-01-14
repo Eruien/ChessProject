@@ -40,13 +40,14 @@ namespace Assets.Scripts
         public void S_PurchaseAllowedPacketHandler(Session session, IPacket packet)
         {
             S_PurchaseAllowedPacket purchaseAllowed = packet as S_PurchaseAllowedPacket;
+            C_MonsterCreatePacket monsterCreatePacket = new C_MonsterCreatePacket();
+            monsterCreatePacket.m_StringSize = purchaseAllowed.m_StringSize;
+            monsterCreatePacket.m_MonsterType = purchaseAllowed.m_MonsterType;
 
             if (purchaseAllowed.m_IsPurchase)
             {
                 Debug.Log("샀어요");
-          
-                C_MonsterCreatePacket monsterCreatePacket = new C_MonsterCreatePacket();
-              
+       
                 monsterCreatePacket.m_PosX = purchaseAllowed.m_PosX;
                 monsterCreatePacket.m_PosY = purchaseAllowed.m_PosY;
                 monsterCreatePacket.m_PosZ = purchaseAllowed.m_PosZ;
@@ -61,13 +62,13 @@ namespace Assets.Scripts
         public void S_BroadcastMonsterCreatePacketHandler(Session session, IPacket packet)
         {
             S_BroadcastMonsterCreatePacket monsterPacket = packet as S_BroadcastMonsterCreatePacket;
-            GameObject obj = Managers.Resource.Instantiate("Skeleton", new Vector3(0.0f, 1.0f, 0.0f));
+            GameObject obj = Managers.Resource.Instantiate(monsterPacket.m_MonsterType, new Vector3(0.0f, 1.0f, 0.0f));
             obj.layer = monsterPacket.m_MonsterTeam;
             Managers.Monster.Register(monsterPacket.m_MonsterId, obj);
             obj.GetComponent<BaseMonster>().SetPosition(monsterPacket.m_PosX, monsterPacket.m_PosY, monsterPacket.m_PosZ);
             obj.GetComponent<BaseMonster>().ObjectId = monsterPacket.m_MonsterId;
-            obj.GetComponent<BaseMonster>().TargetLabo = Managers.Monster.GetMonster(monsterPacket.m_TargetLabId);
-            obj.GetComponent<BaseMonster>().Target = obj.GetComponent<BaseMonster>().TargetLabo;
+            obj.GetComponent<BaseMonster>().TargetLab = Managers.Monster.GetMonster(monsterPacket.m_TargetLabId);
+            obj.GetComponent<BaseMonster>().Target = obj.GetComponent<BaseMonster>().TargetLab;
         }
 
         public void S_BroadcastMonsterStatePacketHandler(Session session, IPacket packet)
@@ -96,11 +97,15 @@ namespace Assets.Scripts
         {
             S_BroadcastHitPacket hitPacket = packet as S_BroadcastHitPacket;
             
-            GameObject obj = Managers.Monster.GetMonster(hitPacket.m_ObjectId);
+            GameObject obj = Managers.Monster.GetMonster(hitPacket.m_TargetId);
 
             if (obj != null)
             {
-                obj.GetComponent<BaseObject>().blackBoard.m_HP.Key = hitPacket.m_ObjectHP;
+                obj.GetComponent<BaseObject>().blackBoard.m_HP.Key = hitPacket.m_TargetHP;
+                if (obj.GetComponent<BaseObject>().blackBoard.m_HP.Key <= 0)
+                {
+                     Managers.Monster.GetMonster(hitPacket.m_ObjectId).GetComponent<BaseMonster>().Target = null;
+                }
             }
         }
 

@@ -1,7 +1,11 @@
 using Assets.Scripts;
+using UnityEngine;
 
 public class Labo : BaseObject
 {
+    [SerializeField]
+    public float viewHP = 0.0f;
+
     protected override void SetBlackBoardKey()
     {
         blackBoard.m_HP.Key = 100.0f;
@@ -20,6 +24,8 @@ public class Labo : BaseObject
 
     private void Update()
     {
+        viewHP = blackBoard.m_HP.Key;
+
         IsHPZero();
     }
 

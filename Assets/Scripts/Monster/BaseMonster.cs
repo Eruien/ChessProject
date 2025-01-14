@@ -1,10 +1,7 @@
 using Assets.Scripts;
-using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
-using UnityEngine.UIElements;
-using static UnityEngine.GraphicsBuffer;
 
 public class BaseMonster : BaseObject
 {
@@ -20,7 +17,7 @@ public class BaseMonster : BaseObject
     static public UnityEvent monsterDeathEvent = new UnityEvent();
 
     public GameObject Target { get; set; }
-    public GameObject TargetLabo { get; set; }
+    public GameObject TargetLab { get; set; }
 
     public Vector3 InitialPos { get; set; } = Vector3.zero;
     public Vector3 MovePos { get; set; } = Vector3.zero;
@@ -47,8 +44,6 @@ public class BaseMonster : BaseObject
         MonsterState = MonsterState.Move;
         SelfType = ObjectType.Monster;
         material = FindMaterial();
-        TargetLabo = FindTeamObjectWithTag("Labo");
-        Target = TargetLabo;
         monsterAnimation = GetComponentInChildren<Animator>();
         selfCollider = GetComponent<CapsuleCollider>();
         initialY = transform.position.y;
@@ -90,11 +85,11 @@ public class BaseMonster : BaseObject
 
             if (Target == null)
             {
-                if (TargetLabo != null)
+                if (TargetLab != null)
                 {
                     C_ChangeTargetPacket changeTargetPacket = new C_ChangeTargetPacket();
                     changeTargetPacket.m_ObjectId = (ushort)ObjectId;
-                    changeTargetPacket.m_TargetObjectId = (ushort)TargetLabo.GetComponent<BaseObject>().ObjectId;
+                    changeTargetPacket.m_TargetObjectId = (ushort)TargetLab.GetComponent<BaseObject>().ObjectId;
 
                     TransportOnePacket(() => SessionManager.Instance.GetServerSession().Send(changeTargetPacket.Write()));
                 }
