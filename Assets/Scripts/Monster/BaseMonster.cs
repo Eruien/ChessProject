@@ -16,7 +16,8 @@ public class BaseMonster : BaseObject
 
     static public UnityEvent monsterDeathEvent = new UnityEvent();
 
-    public GameObject Target { get; set; }
+    [SerializeField]
+    public GameObject Target;
     public GameObject TargetLab { get; set; }
 
     public Vector3 InitialPos { get; set; } = Vector3.zero;

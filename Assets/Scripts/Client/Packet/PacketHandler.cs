@@ -104,7 +104,7 @@ namespace Assets.Scripts
                 obj.GetComponent<BaseObject>().blackBoard.m_HP.Key = hitPacket.m_TargetHP;
                 if (obj.GetComponent<BaseObject>().blackBoard.m_HP.Key <= 0)
                 {
-                     Managers.Monster.GetMonster(hitPacket.m_ObjectId).GetComponent<BaseMonster>().Target = null;
+                    Managers.Monster.UnRegister(obj);
                 }
             }
         }
