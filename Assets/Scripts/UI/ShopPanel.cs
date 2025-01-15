@@ -8,7 +8,7 @@ public class ShopPanel : MonoBehaviour
     public void OnCreateSkeleton()
     {
         C_MonsterPurchasePacket purchasePacket = new C_MonsterPurchasePacket();
-        string monsterType = "Mage";
+        string monsterType = "Skeleton";
         purchasePacket.m_StringSize = (ushort)monsterType.Length;
         purchasePacket.m_MonsterType = monsterType;
         purchasePacket.m_UserGameMoney = gameMoney;
