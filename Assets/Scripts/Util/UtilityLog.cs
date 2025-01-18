@@ -25,6 +25,7 @@ namespace Assets.Scripts
     public enum MonsterState
     {
         None,
+        Idle,
         Move,
         Attack,
         Death,

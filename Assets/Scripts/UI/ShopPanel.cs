@@ -13,9 +13,10 @@ public class ShopPanel : MonoBehaviour
         purchasePacket.m_MonsterType = monsterType;
         purchasePacket.m_UserGameMoney = gameMoney;
         purchasePacket.m_MonsterPrice = 500;
-        purchasePacket.m_PosX = 0.0f;
-        purchasePacket.m_PosY = 1.0f;
-        purchasePacket.m_PosZ = 0.0f;
+        Vector3 spawnPoint = Managers.Spawn.ComputeSpawnPoint(Global.g_MyTeam, monsterType);
+        purchasePacket.m_PosX = spawnPoint.x;
+        purchasePacket.m_PosY = spawnPoint.y;
+        purchasePacket.m_PosZ = spawnPoint.z;
 
         SessionManager.Instance.GetServerSession().Send(purchasePacket.Write());
     }

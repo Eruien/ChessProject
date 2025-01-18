@@ -62,10 +62,9 @@ namespace Assets.Scripts
         public void S_BroadcastMonsterCreatePacketHandler(Session session, IPacket packet)
         {
             S_BroadcastMonsterCreatePacket monsterPacket = packet as S_BroadcastMonsterCreatePacket;
-            GameObject obj = Managers.Resource.Instantiate(monsterPacket.m_MonsterType, new Vector3(0.0f, 1.0f, 0.0f));
+            GameObject obj = Managers.Resource.Instantiate(monsterPacket.m_MonsterType, new Vector3(monsterPacket.m_PosX, monsterPacket.m_PosY, monsterPacket.m_PosZ));
             obj.layer = monsterPacket.m_MonsterTeam;
             Managers.Monster.Register(monsterPacket.m_MonsterId, obj);
-            obj.GetComponent<BaseMonster>().SetPosition(monsterPacket.m_PosX, monsterPacket.m_PosY, monsterPacket.m_PosZ);
             obj.GetComponent<BaseMonster>().ObjectId = monsterPacket.m_MonsterId;
             obj.GetComponent<BaseMonster>().TargetLab = Managers.Monster.GetMonster(monsterPacket.m_TargetLabId);
             obj.GetComponent<BaseMonster>().Target = obj.GetComponent<BaseMonster>().TargetLab;

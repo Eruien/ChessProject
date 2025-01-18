@@ -8,10 +8,12 @@ public class Managers : MonoBehaviour
     private ResourceManager _resource = new ResourceManager();
     private MonsterManager _monster = new MonsterManager();
     private DataManager _data = new DataManager();
+    private SpawnManager _spawn = new SpawnManager();
 
     public static ResourceManager Resource { get { return Instance._resource; } }
     public static MonsterManager Monster { get { return Instance._monster; } }
     public static DataManager Data { get { return Instance._data; } }
+    public static SpawnManager Spawn { get { return Instance._spawn; } }
 
     private void Start()
     {
@@ -35,6 +37,7 @@ public class Managers : MonoBehaviour
 
             // 매니저들 초기화 작업
             _instance._data.Init();
+            _instance._spawn.Init();
         }
     }
 

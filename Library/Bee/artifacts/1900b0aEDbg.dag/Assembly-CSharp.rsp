@@ -390,6 +390,7 @@
 "Assets/Scripts/Managers/Managers.cs"
 "Assets/Scripts/Managers/MonsterManager.cs"
 "Assets/Scripts/Managers/ResourceManager.cs"
+"Assets/Scripts/Managers/SpawnManager.cs"
 "Assets/Scripts/Monster/BaseMonster.cs"
 "Assets/Scripts/Monster/BaseObject.cs"
 "Assets/Scripts/Monster/BattleBee.cs"

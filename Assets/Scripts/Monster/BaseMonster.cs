@@ -42,7 +42,7 @@ public class BaseMonster : BaseObject
     // 유니티 라이프 사이클 함수 
     protected void Awake()
     {
-        MonsterState = MonsterState.Move;
+        MonsterState = MonsterState.Idle;
         SelfType = ObjectType.Monster;
         material = FindMaterial();
         monsterAnimation = GetComponentInChildren<Animator>();
@@ -246,6 +246,9 @@ public class BaseMonster : BaseObject
     {
         switch (MonsterState)
         {
+            case MonsterState.Idle:
+                IDLE();
+                break;
             case MonsterState.Move:
                 Move();
                 break;
@@ -277,6 +280,11 @@ public class BaseMonster : BaseObject
 
     // 자식에게서 추가 행동이 있을 경우
     protected virtual void ChildAttack() {}
+
+    private void IDLE()
+    {
+        
+    }
 
     private void Move()
     {
