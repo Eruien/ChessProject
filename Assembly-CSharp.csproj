@@ -60,7 +60,12 @@
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\2022.3.33f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\AssetStore\Unity UI Samples\Scripts\ResizePanel.cs" />
+    <Compile Include="Assets\AssetStore\Unity UI Samples\Scripts\ShowSliderValue.cs" />
+    <Compile Include="Assets\AssetStore\Unity UI Samples\Scripts\DragMe.cs" />
     <Compile Include="Assets\Scripts\Managers\DataManager.cs" />
+    <Compile Include="Assets\AssetStore\Unity UI Samples\Scripts\PanelManager.cs" />
+    <Compile Include="Assets\AssetStore\Unity UI Samples\Scripts\ScrollDetailTexture.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextEventHandler.cs" />
     <Compile Include="Assets\Scripts\Util\Global.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexShakeA.cs" />
@@ -88,6 +93,7 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark04.cs" />
     <Compile Include="Assets\AssetStore\SpecialSkillsEffectsPack\Scripts\ChangeSizeColor.cs" />
     <Compile Include="Assets\Scripts\Monster\Bee.cs" />
+    <Compile Include="Assets\AssetStore\Unity UI Samples\Scripts\ApplicationManager.cs" />
     <Compile Include="Assets\Scripts\Managers\ResourceManager.cs" />
     <Compile Include="Assets\AssetStore\SpecialSkillsEffectsPack\Scripts\VariousEffectsScene.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ChatController.cs" />
@@ -111,12 +117,15 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextEventCheck.cs" />
     <Compile Include="Assets\Scripts\Monster\Golem.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_UiFrameRateCounter.cs" />
+    <Compile Include="Assets\AssetStore\Unity UI Samples\Scripts\ActiveStateToggler.cs" />
     <Compile Include="Assets\Scripts\Monster\Skeleton.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TextMeshSpawner.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexZoom.cs" />
+    <Compile Include="Assets\AssetStore\Unity UI Samples\Scripts\ChangeColor.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark02.cs" />
     <Compile Include="Assets\AssetStore\SpecialSkillsEffectsPack\Scripts\VariousMouseOrbit.cs" />
+    <Compile Include="Assets\AssetStore\Unity UI Samples\Scripts\TiltWindow.cs" />
     <Compile Include="Assets\AssetStore\SpecialSkillsEffectsPack\Scripts\VariousTranslateMove.cs" />
     <Compile Include="Assets\Scripts\Util\SearchCollision.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextSelector_B.cs" />
@@ -137,6 +146,7 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\CameraController.cs" />
     <Compile Include="Assets\Scripts\Client\Packet\PacketHandler.cs" />
     <Compile Include="Assets\Scripts\Monster\Mage.cs" />
+    <Compile Include="Assets\AssetStore\Unity UI Samples\Scripts\DropMe.cs" />
     <Compile Include="Assets\AssetStore\SpecialSkillsEffectsPack\Scripts\DestroyObject.cs" />
     <Compile Include="Assets\Scripts\TestScripts.cs" />
     <Compile Include="Assets\Scripts\Util\CollisionCheck.cs" />
@@ -149,6 +159,7 @@
     <Compile Include="Assets\Scripts\Client\MainClient.cs" />
     <Compile Include="Assets\Scripts\ProjectTile\ProjectTile.cs" />
     <Compile Include="Assets\Scripts\ColliderExclude\SelectColliderExclude.cs" />
+    <Compile Include="Assets\AssetStore\Unity UI Samples\Scripts\DragPanel.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextInfoDebugTool.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -159,7 +170,9 @@
     <None Include="Assets\TextMesh Pro\Examples &amp; Extras\Fonts\Oswald-Bold - OFL.txt" />
     <None Include="Assets\TextMesh Pro\Examples &amp; Extras\Fonts\Anton OFL.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Mobile.cginc" />
+    <None Include="Assets\AssetStore\Unity UI Samples\Textures and Sprites\SF UI\Background\LICENSE.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF SSD.shader" />
+    <None Include="Assets\AssetStore\Unity UI Samples\Materials\UI-Default-No-Alpha.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface-Mobile.shader" />
     <None Include="Assets\AssetStore\SpecialSkillsEffectsPack\Shader_ForEffects\Shader_DistortionEffect.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface.shader" />
@@ -172,6 +185,7 @@
     <None Include="Assets\AssetStore\RPGMonsterBundlePBR\HowToTestHDRP_URP.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Surface.cginc" />
     <None Include="Assets\AssetStore\RPGMonsterBundlePBR\CommonStuffs\Shader\PBRMaskTint.shader" />
+    <None Include="Assets\AssetStore\Unity UI Samples\Fonts\Jupiter\LICENSE.txt" />
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Masking.shader" />
     <None Include="Assets\AssetStore\SpecialSkillsEffectsPack\Shader_ForEffects\Shader_IntegratedEffect.shader" />

@@ -21,6 +21,102 @@ public class ShopPanel : MonoBehaviour
         SessionManager.Instance.GetServerSession().Send(purchasePacket.Write());
     }
 
+    public void OnCreateMage()
+    {
+        C_MonsterPurchasePacket purchasePacket = new C_MonsterPurchasePacket();
+        string monsterType = "Mage";
+        purchasePacket.m_StringSize = (ushort)monsterType.Length;
+        purchasePacket.m_MonsterType = monsterType;
+        purchasePacket.m_UserGameMoney = gameMoney;
+        purchasePacket.m_MonsterPrice = 500;
+        Vector3 spawnPoint = Managers.Spawn.ComputeSpawnPoint(Global.g_MyTeam, monsterType);
+        purchasePacket.m_PosX = spawnPoint.x;
+        purchasePacket.m_PosY = spawnPoint.y;
+        purchasePacket.m_PosZ = spawnPoint.z;
+
+        SessionManager.Instance.GetServerSession().Send(purchasePacket.Write());
+    }
+
+    public void OnCreateGolem()
+    {
+        C_MonsterPurchasePacket purchasePacket = new C_MonsterPurchasePacket();
+        string monsterType = "Golem";
+        purchasePacket.m_StringSize = (ushort)monsterType.Length;
+        purchasePacket.m_MonsterType = monsterType;
+        purchasePacket.m_UserGameMoney = gameMoney;
+        purchasePacket.m_MonsterPrice = 500;
+        Vector3 spawnPoint = Managers.Spawn.ComputeSpawnPoint(Global.g_MyTeam, monsterType);
+        purchasePacket.m_PosX = spawnPoint.x;
+        purchasePacket.m_PosY = spawnPoint.y;
+        purchasePacket.m_PosZ = spawnPoint.z;
+
+        SessionManager.Instance.GetServerSession().Send(purchasePacket.Write());
+    }
+
+    public void OnCreateSpecter()
+    {
+        C_MonsterPurchasePacket purchasePacket = new C_MonsterPurchasePacket();
+        string monsterType = "Specter";
+        purchasePacket.m_StringSize = (ushort)monsterType.Length;
+        purchasePacket.m_MonsterType = monsterType;
+        purchasePacket.m_UserGameMoney = gameMoney;
+        purchasePacket.m_MonsterPrice = 500;
+        Vector3 spawnPoint = Managers.Spawn.ComputeSpawnPoint(Global.g_MyTeam, monsterType);
+        purchasePacket.m_PosX = spawnPoint.x;
+        purchasePacket.m_PosY = spawnPoint.y;
+        purchasePacket.m_PosZ = spawnPoint.z;
+
+        SessionManager.Instance.GetServerSession().Send(purchasePacket.Write());
+    }
+
+    public void OnCreateBee()
+    {
+        C_MonsterPurchasePacket purchasePacket = new C_MonsterPurchasePacket();
+        string monsterType = "Bee";
+        purchasePacket.m_StringSize = (ushort)monsterType.Length;
+        purchasePacket.m_MonsterType = monsterType;
+        purchasePacket.m_UserGameMoney = gameMoney;
+        purchasePacket.m_MonsterPrice = 500;
+        Vector3 spawnPoint = Managers.Spawn.ComputeSpawnPoint(Global.g_MyTeam, monsterType);
+        purchasePacket.m_PosX = spawnPoint.x;
+        purchasePacket.m_PosY = spawnPoint.y;
+        purchasePacket.m_PosZ = spawnPoint.z;
+
+        SessionManager.Instance.GetServerSession().Send(purchasePacket.Write());
+    }
+
+    public void OnCreateBattleBee()
+    {
+        C_MonsterPurchasePacket purchasePacket = new C_MonsterPurchasePacket();
+        string monsterType = "BattleBee";
+        purchasePacket.m_StringSize = (ushort)monsterType.Length;
+        purchasePacket.m_MonsterType = monsterType;
+        purchasePacket.m_UserGameMoney = gameMoney;
+        purchasePacket.m_MonsterPrice = 500;
+        Vector3 spawnPoint = Managers.Spawn.ComputeSpawnPoint(Global.g_MyTeam, monsterType);
+        purchasePacket.m_PosX = spawnPoint.x;
+        purchasePacket.m_PosY = spawnPoint.y;
+        purchasePacket.m_PosZ = spawnPoint.z;
+
+        SessionManager.Instance.GetServerSession().Send(purchasePacket.Write());
+    }
+
+    public void OnCreateBeholder()
+    {
+        C_MonsterPurchasePacket purchasePacket = new C_MonsterPurchasePacket();
+        string monsterType = "Beholder";
+        purchasePacket.m_StringSize = (ushort)monsterType.Length;
+        purchasePacket.m_MonsterType = monsterType;
+        purchasePacket.m_UserGameMoney = gameMoney;
+        purchasePacket.m_MonsterPrice = 500;
+        Vector3 spawnPoint = Managers.Spawn.ComputeSpawnPoint(Global.g_MyTeam, monsterType);
+        purchasePacket.m_PosX = spawnPoint.x;
+        purchasePacket.m_PosY = spawnPoint.y;
+        purchasePacket.m_PosZ = spawnPoint.z;
+
+        SessionManager.Instance.GetServerSession().Send(purchasePacket.Write());
+    }
+
     public void OnGameStart()
     {
         C_GameStartPacket gameStartPacket = new C_GameStartPacket();

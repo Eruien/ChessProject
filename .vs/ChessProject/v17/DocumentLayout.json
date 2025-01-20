@@ -3,11 +3,23 @@
   "WorkspaceRootPath": "C:\\Users\\ogkim\\Desktop\\UnityClient\\ChessProject\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{44D6AA39-E445-1F57-1F48-299BDDE4D9D2}|Assembly-CSharp.csproj|C:\\Users\\ogkim\\Desktop\\UnityClient\\ChessProject\\assets\\scripts\\ui\\shoppanel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{44D6AA39-E445-1F57-1F48-299BDDE4D9D2}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\ui\\shoppanel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{44D6AA39-E445-1F57-1F48-299BDDE4D9D2}|Assembly-CSharp.csproj|C:\\Users\\ogkim\\Desktop\\UnityClient\\ChessProject\\assets\\scripts\\util\\behaviortreelog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{44D6AA39-E445-1F57-1F48-299BDDE4D9D2}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\util\\behaviortreelog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{44D6AA39-E445-1F57-1F48-299BDDE4D9D2}|Assembly-CSharp.csproj|c:\\users\\ogkim\\desktop\\unityclient\\chessproject\\assets\\scripts\\util\\saverendertargetimage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{44D6AA39-E445-1F57-1F48-299BDDE4D9D2}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\util\\saverendertargetimage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{44D6AA39-E445-1F57-1F48-299BDDE4D9D2}|Assembly-CSharp.csproj|C:\\Users\\ogkim\\Desktop\\UnityClient\\ChessProject\\assets\\scripts\\util\\utilitylog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{44D6AA39-E445-1F57-1F48-299BDDE4D9D2}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\util\\utilitylog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{44D6AA39-E445-1F57-1F48-299BDDE4D9D2}|Assembly-CSharp.csproj|c:\\users\\ogkim\\desktop\\unityclient\\chessproject\\assets\\scripts\\util\\dragobject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{44D6AA39-E445-1F57-1F48-299BDDE4D9D2}|Assembly-CSharp.csproj|C:\\Users\\ogkim\\Desktop\\UnityClient\\ChessProject\\assets\\scripts\\util\\dragobject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{44D6AA39-E445-1F57-1F48-299BDDE4D9D2}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\util\\dragobject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -31,20 +43,12 @@
       "RelativeMoniker": "D:0:0:{44D6AA39-E445-1F57-1F48-299BDDE4D9D2}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\managers\\resourcemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{44D6AA39-E445-1F57-1F48-299BDDE4D9D2}|Assembly-CSharp.csproj|C:\\Users\\ogkim\\Desktop\\UnityClient\\ChessProject\\assets\\scripts\\util\\saverendertargetimage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{44D6AA39-E445-1F57-1F48-299BDDE4D9D2}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\util\\saverendertargetimage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{44D6AA39-E445-1F57-1F48-299BDDE4D9D2}|Assembly-CSharp.csproj|C:\\Users\\ogkim\\Desktop\\UnityClient\\ChessProject\\assets\\scripts\\monster\\basemonster.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{44D6AA39-E445-1F57-1F48-299BDDE4D9D2}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\monster\\basemonster.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{44D6AA39-E445-1F57-1F48-299BDDE4D9D2}|Assembly-CSharp.csproj|C:\\Users\\ogkim\\Desktop\\UnityClient\\ChessProject\\assets\\scripts\\util\\collisioncheck.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{44D6AA39-E445-1F57-1F48-299BDDE4D9D2}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\util\\collisioncheck.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{44D6AA39-E445-1F57-1F48-299BDDE4D9D2}|Assembly-CSharp.csproj|C:\\Users\\ogkim\\Desktop\\UnityClient\\ChessProject\\assets\\scripts\\ui\\shoppanel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{44D6AA39-E445-1F57-1F48-299BDDE4D9D2}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\ui\\shoppanel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{44D6AA39-E445-1F57-1F48-299BDDE4D9D2}|Assembly-CSharp.csproj|C:\\Users\\ogkim\\Desktop\\UnityClient\\ChessProject\\assets\\scripts\\monster\\specter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -65,10 +69,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{44D6AA39-E445-1F57-1F48-299BDDE4D9D2}|Assembly-CSharp.csproj|C:\\Users\\ogkim\\Desktop\\UnityClient\\ChessProject\\assets\\scripts\\monster\\skeleton.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{44D6AA39-E445-1F57-1F48-299BDDE4D9D2}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\monster\\skeleton.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{44D6AA39-E445-1F57-1F48-299BDDE4D9D2}|Assembly-CSharp.csproj|C:\\Users\\ogkim\\Desktop\\UnityClient\\ChessProject\\assets\\scripts\\util\\behaviortreelog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{44D6AA39-E445-1F57-1F48-299BDDE4D9D2}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\util\\behaviortreelog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{44D6AA39-E445-1F57-1F48-299BDDE4D9D2}|Assembly-CSharp.csproj|C:\\Users\\ogkim\\Desktop\\UnityClient\\ChessProject\\assets\\scripts\\util\\attackanimationcheck.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -194,72 +194,122 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 9,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "DragObject.cs",
-              "DocumentMoniker": "C:\\Users\\ogkim\\Desktop\\UnityClient\\ChessProject\\Assets\\Scripts\\Util\\DragObject.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Util\\DragObject.cs",
-              "ToolTip": "C:\\Users\\ogkim\\Desktop\\UnityClient\\ChessProject\\Assets\\Scripts\\Util\\DragObject.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Util\\DragObject.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAEEAAAAIAAAA",
+              "DocumentIndex": 12,
+              "Title": "Specter.cs",
+              "DocumentMoniker": "C:\\Users\\ogkim\\Desktop\\UnityClient\\ChessProject\\Assets\\Scripts\\Monster\\Specter.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Monster\\Specter.cs",
+              "ToolTip": "C:\\Users\\ogkim\\Desktop\\UnityClient\\ChessProject\\Assets\\Scripts\\Monster\\Specter.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Monster\\Specter.cs",
+              "ViewState": "AQIAAB0AAAAAAAAAAAAtwCcAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-18T21:48:54.402Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "BaseMonster.cs",
-              "DocumentMoniker": "C:\\Users\\ogkim\\Desktop\\UnityClient\\ChessProject\\Assets\\Scripts\\Monster\\BaseMonster.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Monster\\BaseMonster.cs",
-              "ToolTip": "C:\\Users\\ogkim\\Desktop\\UnityClient\\ChessProject\\Assets\\Scripts\\Monster\\BaseMonster.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Monster\\BaseMonster.cs",
-              "ViewState": "AQIAAHEAAAAAAAAAAAArwHsAAAAFAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-26T13:49:49.209Z"
+              "WhenOpened": "2024-12-28T17:18:22.555Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "SpawnManager.cs",
-              "DocumentMoniker": "C:\\Users\\ogkim\\Desktop\\UnityClient\\ChessProject\\Assets\\Scripts\\Managers\\SpawnManager.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Managers\\SpawnManager.cs",
-              "ToolTip": "C:\\Users\\ogkim\\Desktop\\UnityClient\\ChessProject\\Assets\\Scripts\\Managers\\SpawnManager.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Managers\\SpawnManager.cs",
-              "ViewState": "AQIAABsAAAAAAAAAAAAqwC4AAAAAAAAA",
+              "Title": "UtilityLog.cs",
+              "DocumentMoniker": "C:\\Users\\ogkim\\Desktop\\UnityClient\\ChessProject\\Assets\\Scripts\\Util\\UtilityLog.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Util\\UtilityLog.cs",
+              "ToolTip": "C:\\Users\\ogkim\\Desktop\\UnityClient\\ChessProject\\Assets\\Scripts\\Util\\UtilityLog.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Util\\UtilityLog.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAACYAAAAFAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-18T12:41:40.935Z"
+              "WhenOpened": "2024-12-28T14:26:26.831Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 11,
+              "Title": "CollisionCheck.cs",
+              "DocumentMoniker": "C:\\Users\\ogkim\\Desktop\\UnityClient\\ChessProject\\Assets\\Scripts\\Util\\CollisionCheck.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Util\\CollisionCheck.cs",
+              "ToolTip": "C:\\Users\\ogkim\\Desktop\\UnityClient\\ChessProject\\Assets\\Scripts\\Util\\CollisionCheck.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Util\\CollisionCheck.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-31T10:21:31.228Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "ResourceManager.cs",
+              "DocumentMoniker": "C:\\Users\\ogkim\\Desktop\\UnityClient\\ChessProject\\Assets\\Scripts\\Managers\\ResourceManager.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Managers\\ResourceManager.cs",
+              "ToolTip": "C:\\Users\\ogkim\\Desktop\\UnityClient\\ChessProject\\Assets\\Scripts\\Managers\\ResourceManager.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Managers\\ResourceManager.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAAAQAAAANAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-27T12:31:50.591Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "PacketHandler.cs",
+              "DocumentMoniker": "C:\\Users\\ogkim\\Desktop\\UnityClient\\ChessProject\\Assets\\Scripts\\Client\\Packet\\PacketHandler.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Client\\Packet\\PacketHandler.cs",
+              "ToolTip": "C:\\Users\\ogkim\\Desktop\\UnityClient\\ChessProject\\Assets\\Scripts\\Client\\Packet\\PacketHandler.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Client\\Packet\\PacketHandler.cs",
+              "ViewState": "AQIAADEAAAAAAAAAAAAMwEMAAABiAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-26T13:40:22.467Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "BehaviorTreeLog.cs",
+              "DocumentMoniker": "C:\\Users\\ogkim\\Desktop\\UnityClient\\ChessProject\\Assets\\Scripts\\Util\\BehaviorTreeLog.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Util\\BehaviorTreeLog.cs",
+              "ToolTip": "C:\\Users\\ogkim\\Desktop\\UnityClient\\ChessProject\\Assets\\Scripts\\Util\\BehaviorTreeLog.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Util\\BehaviorTreeLog.cs",
+              "ViewState": "AQIAAA8AAAAAAAAAAAAIwA8AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-31T10:21:31.937Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
               "Title": "ShopPanel.cs",
               "DocumentMoniker": "C:\\Users\\ogkim\\Desktop\\UnityClient\\ChessProject\\Assets\\Scripts\\UI\\ShopPanel.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\UI\\ShopPanel.cs",
               "ToolTip": "C:\\Users\\ogkim\\Desktop\\UnityClient\\ChessProject\\Assets\\Scripts\\UI\\ShopPanel.cs",
               "RelativeToolTip": "Assets\\Scripts\\UI\\ShopPanel.cs",
-              "ViewState": "AQIAAAsAAAAAAAAAAAAuwBQAAABQAAAA",
+              "ViewState": "AQIAAAgAAAAAAAAAAAASwBQAAABQAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-27T08:00:59.847Z"
+              "WhenOpened": "2024-12-27T08:00:59.847Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "MonsterManager.cs",
-              "DocumentMoniker": "C:\\Users\\ogkim\\Desktop\\UnityClient\\ChessProject\\Assets\\Scripts\\Managers\\MonsterManager.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Managers\\MonsterManager.cs",
-              "ToolTip": "C:\\Users\\ogkim\\Desktop\\UnityClient\\ChessProject\\Assets\\Scripts\\Managers\\MonsterManager.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Managers\\MonsterManager.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAuwAcAAAAQAAAA",
+              "DocumentIndex": 13,
+              "Title": "Managers.cs",
+              "DocumentMoniker": "C:\\Users\\ogkim\\Desktop\\UnityClient\\ChessProject\\Assets\\Scripts\\Managers\\Managers.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Managers\\Managers.cs",
+              "ToolTip": "C:\\Users\\ogkim\\Desktop\\UnityClient\\ChessProject\\Assets\\Scripts\\Managers\\Managers.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Managers\\Managers.cs",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAiwA8AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-26T13:50:34.168Z"
+              "WhenOpened": "2024-12-27T08:25:41.056Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
+              "Title": "SaveRenderTargetImage.cs",
+              "DocumentMoniker": "C:\\Users\\ogkim\\Desktop\\UnityClient\\ChessProject\\Assets\\Scripts\\Util\\SaveRenderTargetImage.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Util\\SaveRenderTargetImage.cs",
+              "ToolTip": "C:\\Users\\ogkim\\Desktop\\UnityClient\\ChessProject\\Assets\\Scripts\\Util\\SaveRenderTargetImage.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Util\\SaveRenderTargetImage.cs",
+              "ViewState": "AQIAAAEAAAAAAAAAAABIwBEAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-20T16:19:50.088Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "Session.cs",
               "DocumentMoniker": "C:\\Users\\ogkim\\Desktop\\UnityClient\\ChessProject\\Assets\\Scripts\\Client\\ServerCore\\Session.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Client\\ServerCore\\Session.cs",
@@ -272,91 +322,54 @@
             {
               "$type": "Document",
               "DocumentIndex": 7,
-              "Title": "SaveRenderTargetImage.cs",
-              "DocumentMoniker": "C:\\Users\\ogkim\\Desktop\\UnityClient\\ChessProject\\Assets\\Scripts\\Util\\SaveRenderTargetImage.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Util\\SaveRenderTargetImage.cs",
-              "ToolTip": "C:\\Users\\ogkim\\Desktop\\UnityClient\\ChessProject\\Assets\\Scripts\\Util\\SaveRenderTargetImage.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Util\\SaveRenderTargetImage.cs",
-              "ViewState": "AQIAAAYAAAAAAAAAAADwvxEAAAAAAAAA",
+              "Title": "MonsterManager.cs",
+              "DocumentMoniker": "C:\\Users\\ogkim\\Desktop\\UnityClient\\ChessProject\\Assets\\Scripts\\Managers\\MonsterManager.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Managers\\MonsterManager.cs",
+              "ToolTip": "C:\\Users\\ogkim\\Desktop\\UnityClient\\ChessProject\\Assets\\Scripts\\Managers\\MonsterManager.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Managers\\MonsterManager.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAuwAcAAAAQAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-20T16:19:50.088Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "Managers.cs",
-              "DocumentMoniker": "C:\\Users\\ogkim\\Desktop\\UnityClient\\ChessProject\\Assets\\Scripts\\Managers\\Managers.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Managers\\Managers.cs",
-              "ToolTip": "C:\\Users\\ogkim\\Desktop\\UnityClient\\ChessProject\\Assets\\Scripts\\Managers\\Managers.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Managers\\Managers.cs",
-              "ViewState": "AQIAAAkAAAAAAAAAAAAiwA8AAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-27T08:25:41.056Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "Specter.cs",
-              "DocumentMoniker": "C:\\Users\\ogkim\\Desktop\\UnityClient\\ChessProject\\Assets\\Scripts\\Monster\\Specter.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Monster\\Specter.cs",
-              "ToolTip": "C:\\Users\\ogkim\\Desktop\\UnityClient\\ChessProject\\Assets\\Scripts\\Monster\\Specter.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Monster\\Specter.cs",
-              "ViewState": "AQIAAB0AAAAAAAAAAAAtwCcAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-28T17:18:22.555Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "UtilityLog.cs",
-              "DocumentMoniker": "C:\\Users\\ogkim\\Desktop\\UnityClient\\ChessProject\\Assets\\Scripts\\Util\\UtilityLog.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Util\\UtilityLog.cs",
-              "ToolTip": "C:\\Users\\ogkim\\Desktop\\UnityClient\\ChessProject\\Assets\\Scripts\\Util\\UtilityLog.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Util\\UtilityLog.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAACYAAAAFAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-28T14:26:26.831Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "CollisionCheck.cs",
-              "DocumentMoniker": "C:\\Users\\ogkim\\Desktop\\UnityClient\\ChessProject\\Assets\\Scripts\\Util\\CollisionCheck.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Util\\CollisionCheck.cs",
-              "ToolTip": "C:\\Users\\ogkim\\Desktop\\UnityClient\\ChessProject\\Assets\\Scripts\\Util\\CollisionCheck.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Util\\CollisionCheck.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-31T10:21:31.228Z"
+              "WhenOpened": "2024-12-26T13:50:34.168Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 6,
-              "Title": "ResourceManager.cs",
-              "DocumentMoniker": "C:\\Users\\ogkim\\Desktop\\UnityClient\\ChessProject\\Assets\\Scripts\\Managers\\ResourceManager.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Managers\\ResourceManager.cs",
-              "ToolTip": "C:\\Users\\ogkim\\Desktop\\UnityClient\\ChessProject\\Assets\\Scripts\\Managers\\ResourceManager.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Managers\\ResourceManager.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAAAQAAAANAAAA",
+              "Title": "SpawnManager.cs",
+              "DocumentMoniker": "C:\\Users\\ogkim\\Desktop\\UnityClient\\ChessProject\\Assets\\Scripts\\Managers\\SpawnManager.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Managers\\SpawnManager.cs",
+              "ToolTip": "C:\\Users\\ogkim\\Desktop\\UnityClient\\ChessProject\\Assets\\Scripts\\Managers\\SpawnManager.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Managers\\SpawnManager.cs",
+              "ViewState": "AQIAABsAAAAAAAAAAAAqwC4AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-27T12:31:50.591Z"
+              "WhenOpened": "2025-01-18T12:41:40.935Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "PacketHandler.cs",
-              "DocumentMoniker": "C:\\Users\\ogkim\\Desktop\\UnityClient\\ChessProject\\Assets\\Scripts\\Client\\Packet\\PacketHandler.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Client\\Packet\\PacketHandler.cs",
-              "ToolTip": "C:\\Users\\ogkim\\Desktop\\UnityClient\\ChessProject\\Assets\\Scripts\\Client\\Packet\\PacketHandler.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Client\\Packet\\PacketHandler.cs",
-              "ViewState": "AQIAADEAAAAAAAAAAAAMwEMAAABiAAAA",
+              "DocumentIndex": 10,
+              "Title": "BaseMonster.cs",
+              "DocumentMoniker": "C:\\Users\\ogkim\\Desktop\\UnityClient\\ChessProject\\Assets\\Scripts\\Monster\\BaseMonster.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Monster\\BaseMonster.cs",
+              "ToolTip": "C:\\Users\\ogkim\\Desktop\\UnityClient\\ChessProject\\Assets\\Scripts\\Monster\\BaseMonster.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Monster\\BaseMonster.cs",
+              "ViewState": "AQIAAHEAAAAAAAAAAAArwHsAAAAFAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-26T13:40:22.467Z"
+              "WhenOpened": "2024-12-26T13:49:49.209Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 4,
+              "Title": "DragObject.cs",
+              "DocumentMoniker": "C:\\Users\\ogkim\\Desktop\\UnityClient\\ChessProject\\Assets\\Scripts\\Util\\DragObject.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Util\\DragObject.cs",
+              "ToolTip": "C:\\Users\\ogkim\\Desktop\\UnityClient\\ChessProject\\Assets\\Scripts\\Util\\DragObject.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Util\\DragObject.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAEEAAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-18T21:48:54.402Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
               "Title": "TestScripts.cs",
               "DocumentMoniker": "C:\\Users\\ogkim\\Desktop\\UnityClient\\ChessProject\\Assets\\Scripts\\TestScripts.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\TestScripts.cs",
@@ -368,7 +381,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 16,
               "Title": "Skeleton.cs",
               "DocumentMoniker": "C:\\Users\\ogkim\\Desktop\\UnityClient\\ChessProject\\Assets\\Scripts\\Monster\\Skeleton.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Monster\\Skeleton.cs",
@@ -440,19 +453,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "BehaviorTreeLog.cs",
-              "DocumentMoniker": "C:\\Users\\ogkim\\Desktop\\UnityClient\\ChessProject\\Assets\\Scripts\\Util\\BehaviorTreeLog.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Util\\BehaviorTreeLog.cs",
-              "ToolTip": "C:\\Users\\ogkim\\Desktop\\UnityClient\\ChessProject\\Assets\\Scripts\\Util\\BehaviorTreeLog.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Util\\BehaviorTreeLog.cs",
-              "ViewState": "AQIAAA8AAAAAAAAAAAAIwA8AAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-31T10:21:31.937Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 15,
               "Title": "DataManager.cs",
               "DocumentMoniker": "C:\\Users\\ogkim\\Desktop\\UnityClient\\ChessProject\\Assets\\Scripts\\Managers\\DataManager.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Managers\\DataManager.cs",
