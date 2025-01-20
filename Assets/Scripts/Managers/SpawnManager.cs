@@ -1,8 +1,10 @@
 using Assets.Scripts;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class SpawnManager
 {
+    public List<GameObject> SpawnPanelList = new List<GameObject>();
     private Vector3 RedTeamSpawnStartPos { get; set; } = new Vector3();
     private Vector3 BlueTeamSpawnStartPos { get; set; } = new Vector3();
 
@@ -24,7 +26,7 @@ public class SpawnManager
 
     public Vector3 ComputeSpawnPoint(Team team, string monsterType)
     {
-        BoxCollider box = SearchBoxCollider(Managers.Resource.Load<GameObject>($"Prefabs/{monsterType}"), "SpawnPlane");
+        BoxCollider box = SearchPanelGameObject(Managers.Resource.Load<GameObject>($"Prefabs/{monsterType}"), "SpawnPlane").GetComponent<BoxCollider>();
         Vector3 panelSize = new Vector3
             (box.size.x * box.gameObject.transform.localScale.x,
             box.size.y * box.gameObject.transform.localScale.y,
@@ -53,7 +55,7 @@ public class SpawnManager
         return spawnPoint;
     }
 
-    private BoxCollider SearchBoxCollider(GameObject obj, string objName)
+    public GameObject SearchPanelGameObject(GameObject obj, string objName)
     {
         Transform[] allObjects = obj.transform.GetComponentsInChildren<Transform>();
 
@@ -61,10 +63,21 @@ public class SpawnManager
         {
             if (child.gameObject.name == objName)
             {
-                return child.GetComponent<BoxCollider>();
+                return child.gameObject;
             }
         }
 
         return null;
     }
+
+    public void RegisterPanel(GameObject obj)
+    {
+        SpawnPanelList.Add(obj);
+    }
+
+    public void RegisterPanelAllClear()
+    {
+        SpawnPanelList.Clear();
+    }
+
 }

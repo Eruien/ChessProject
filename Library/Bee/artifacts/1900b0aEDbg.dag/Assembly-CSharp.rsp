@@ -409,6 +409,7 @@
 "Assets/Scripts/Util/CollisionCheck.cs"
 "Assets/Scripts/Util/DragObject.cs"
 "Assets/Scripts/Util/Global.cs"
+"Assets/Scripts/Util/SaveRenderTargetImage.cs"
 "Assets/Scripts/Util/SearchCollision.cs"
 "Assets/Scripts/Util/UtilityLog.cs"
 "Assets/TextMesh Pro/Examples & Extras/Scripts/Benchmark01.cs"

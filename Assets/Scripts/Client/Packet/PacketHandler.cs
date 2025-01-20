@@ -65,6 +65,7 @@ namespace Assets.Scripts
             GameObject obj = Managers.Resource.Instantiate(monsterPacket.m_MonsterType, new Vector3(monsterPacket.m_PosX, monsterPacket.m_PosY, monsterPacket.m_PosZ));
             obj.layer = monsterPacket.m_MonsterTeam;
             Managers.Monster.Register(monsterPacket.m_MonsterId, obj);
+            Managers.Spawn.RegisterPanel(Managers.Spawn.SearchPanelGameObject(obj, "SpawnPlane"));
             obj.GetComponent<BaseMonster>().ObjectId = monsterPacket.m_MonsterId;
             obj.GetComponent<BaseMonster>().TargetLab = Managers.Monster.GetMonster(monsterPacket.m_TargetLabId);
             obj.GetComponent<BaseMonster>().Target = obj.GetComponent<BaseMonster>().TargetLab;

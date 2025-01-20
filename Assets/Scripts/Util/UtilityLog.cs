@@ -30,4 +30,11 @@ namespace Assets.Scripts
         Attack,
         Death,
     }
+
+    public enum PanelState
+    {
+        None,
+        Select,
+        SelectMove,
+    }
 }

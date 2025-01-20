@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class MonsterManager
 {
-    private Dictionary<int, GameObject> MonsterList = new Dictionary<int, GameObject>(); 
+    public Dictionary<int, GameObject> MonsterList = new Dictionary<int, GameObject>(); 
 
     public void Register(int monsterCount, GameObject obj)
     {
