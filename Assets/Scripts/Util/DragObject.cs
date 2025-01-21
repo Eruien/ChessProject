@@ -1,16 +1,22 @@
 using Assets.Scripts;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.LowLevel;
+using UnityEngine.UIElements;
 
 public class DragObject : MonoBehaviour
 {
     static public UnityEvent objectSelectEvent = new UnityEvent();
 
     private GameObject SpawnPanel = null;
+    private GameObject RedPlane = null;
+    private GameObject BluePlane = null;
     private MeshRenderer SpawnPanelMeshRender = null;
     private Camera mainCamera = null;
     private Vector3 offset = Vector3.zero; // 마우스와 오브젝트 사이의 거리
     private Vector3 upPos = new Vector3(0.0f, 3.0f, 0.0f);
+    private Vector3 planeMax = Vector3.zero;
+    private Vector3 planeMin = Vector3.zero;
     private Plane dragPlane; // 드래그 평면
     private PanelState currentState = PanelState.None;
     private float InitialY = 0.0f;
@@ -27,7 +33,28 @@ public class DragObject : MonoBehaviour
         mainCamera = Camera.main;
         SpawnPanel = Managers.Spawn.SearchPanelGameObject(gameObject, "SpawnPlane");
         SpawnPanelMeshRender = SpawnPanel.GetComponent<MeshRenderer>();
+        RedPlane = GameObject.Find("RedPlane");
+        BluePlane = GameObject.Find("BluePlane");
         InitialY = transform.position.y;
+
+        if (Global.g_MyTeam == Team.RedTeam)
+        {
+            planeMax = RedPlane.GetComponent<MeshCollider>().bounds.max;
+            planeMin = RedPlane.GetComponent<MeshCollider>().bounds.min;
+        }
+        else
+        {
+            planeMax = BluePlane.GetComponent<MeshCollider>().bounds.max;
+            planeMin = BluePlane.GetComponent<MeshCollider>().bounds.min;
+        }
+
+        BoxCollider box = SpawnPanel.GetComponent<BoxCollider>();
+        float boxX = box.size.x * SpawnPanel.gameObject.transform.localScale.x * 0.5f;
+        float boxZ = box.size.z * SpawnPanel.gameObject.transform.localScale.z * 0.5f;
+        planeMax.x -= boxX; 
+        planeMax.z -= boxZ;
+        planeMin.x += boxX;
+        planeMin.z += boxZ; 
     }
 
     private void Update()
@@ -72,6 +99,19 @@ public class DragObject : MonoBehaviour
             {
                 Vector3 newPosition = ray.GetPoint(distance) + offset;
                 transform.position = newPosition + upPos;
+                if (transform.position.x >= planeMax.x || transform.position.z >= planeMax.z)
+                {
+                    float maxX = Mathf.Min(transform.position.x, planeMax.x);
+                    float maxZ = Mathf.Min(transform.position.z, planeMax.z);
+                    transform.position = new Vector3(maxX, transform.position.y, maxZ);
+                }
+
+                if (transform.position.x <= planeMin.x || transform.position.z <= planeMin.z)
+                {
+                    float minX = Mathf.Max(transform.position.x, planeMin.x);
+                    float minZ = Mathf.Max(transform.position.z, planeMin.z);
+                    transform.position = new Vector3(minX, transform.position.y, minZ);
+                }
             }
         }  
     }
