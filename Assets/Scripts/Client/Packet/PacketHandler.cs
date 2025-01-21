@@ -12,6 +12,8 @@ namespace Assets.Scripts
         {
             S_SetInitialDataPacket setDataPacket = packet as S_SetInitialDataPacket;
             Global.g_MyTeam = (Team)setDataPacket.m_MyTeam;
+            Camera.main.gameObject.GetComponent<CameraController>().SetTeamCameraTransform(Global.g_MyTeam);
+            
             Debug.Log($"지금 팀은 {Global.g_MyTeam}");
         }
 

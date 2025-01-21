@@ -1,8 +1,6 @@
 using Assets.Scripts;
 using UnityEngine;
 using UnityEngine.Events;
-using UnityEngine.LowLevel;
-using UnityEngine.UIElements;
 
 public class DragObject : MonoBehaviour
 {
@@ -28,7 +26,7 @@ public class DragObject : MonoBehaviour
         DragObject.objectSelectEvent.AddListener(OnSelectInitialize);
     }
 
-    private void Start()
+    private void Awake()
     {
         mainCamera = Camera.main;
         SpawnPanel = Managers.Spawn.SearchPanelGameObject(gameObject, "SpawnPlane");

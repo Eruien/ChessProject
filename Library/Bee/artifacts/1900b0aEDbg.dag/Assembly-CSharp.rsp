@@ -383,6 +383,7 @@
 "Assets/AssetStore/Unity UI Samples/Scripts/ShowSliderValue.cs"
 "Assets/AssetStore/Unity UI Samples/Scripts/TiltWindow.cs"
 "Assets/Scripts/BehaviorTree/BlackBoard.cs"
+"Assets/Scripts/Camera/CameraController.cs"
 "Assets/Scripts/Client/MainClient.cs"
 "Assets/Scripts/Client/Packet/Packet.cs"
 "Assets/Scripts/Client/Packet/PacketHandler.cs"

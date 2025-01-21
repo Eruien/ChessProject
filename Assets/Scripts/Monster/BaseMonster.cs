@@ -307,14 +307,6 @@ public class BaseMonster : BaseObject
     }
 
     // 유니티 이벤트 모음
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.GetComponent<BaseObject>())
-        {
-            Debug.Log(transform.position);
-        }
-    }
-
     // CollisionCheck의 이벤트 용
     public void OnHitEvent(Collider other)
     {
