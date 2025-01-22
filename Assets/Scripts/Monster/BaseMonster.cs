@@ -55,6 +55,7 @@ public class BaseMonster : BaseObject
     protected void OnEnable()
     {
         BaseMonster.monsterDeathEvent.AddListener(OnDeathEvent);
+        GameStartEvent.GameStart.AddListener(DeActivePanel);
     }
 
     protected void Start()
@@ -124,6 +125,11 @@ public class BaseMonster : BaseObject
     }
 
     // 일반 함수
+
+    private void DeActivePanel()
+    {
+        Managers.Spawn.SearchPanelGameObject(gameObject, "SpawnPlane").SetActive(false);
+    }
 
     private void TransportOnePacket(System.Action action)
     {

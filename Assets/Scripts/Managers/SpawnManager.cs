@@ -79,5 +79,4 @@ public class SpawnManager
     {
         SpawnPanelList.Clear();
     }
-
 }

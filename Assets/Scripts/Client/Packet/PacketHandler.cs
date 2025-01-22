@@ -39,6 +39,16 @@ namespace Assets.Scripts
             }
         }
 
+        public void S_BroadcastGameStartPacketHandler(Session session, IPacket packet)
+        {
+            S_BroadcastGameStartPacket gameStart = packet as S_BroadcastGameStartPacket;
+
+            if (gameStart.m_IsGameStart)
+            {
+                GameStartEvent.GameStart.Invoke();
+            }
+        }
+
         public void S_PurchaseAllowedPacketHandler(Session session, IPacket packet)
         {
             S_PurchaseAllowedPacket purchaseAllowed = packet as S_PurchaseAllowedPacket;

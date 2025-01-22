@@ -25,6 +25,9 @@ namespace Assets.Scripts
             m_MakePacketDict.Add((ushort)PacketType.S_LabListPacket, MakePacket<S_LabListPacket>);
             m_RunFunctionDict.Add((ushort)PacketType.S_LabListPacket, PacketHandler.Instance.S_LabListPacketHandler);
 
+            m_MakePacketDict.Add((ushort)PacketType.S_BroadcastGameStartPacket, MakePacket<S_BroadcastGameStartPacket>);
+            m_RunFunctionDict.Add((ushort)PacketType.S_BroadcastGameStartPacket, PacketHandler.Instance.S_BroadcastGameStartPacketHandler);
+
             m_MakePacketDict.Add((ushort)PacketType.S_PurchaseAllowedPacket, MakePacket<S_PurchaseAllowedPacket>);
             m_RunFunctionDict.Add((ushort)PacketType.S_PurchaseAllowedPacket, PacketHandler.Instance.S_PurchaseAllowedPacketHandler);
 
