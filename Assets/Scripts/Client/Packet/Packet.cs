@@ -712,9 +712,8 @@ namespace Assets.Scripts
     public class C_ChangeTargetPacket : IPacket
     {
         public ushort m_ObjectId = 0;
-        public ushort m_TargetObjectId = 0;
-
-        public ushort PacketSize { get { return sizeof(ushort) * 2 + sizeof(ushort) * 2; } }
+       
+        public ushort PacketSize { get { return sizeof(ushort) * 2 + sizeof(ushort) * 1; } }
         public ushort PacketID { get { return (ushort)PacketType.C_ChangeTargetPacket; } }
 
         public void Read(ArraySegment<byte> segment)
@@ -723,8 +722,6 @@ namespace Assets.Scripts
             count += sizeof(ushort);
             count += sizeof(ushort);
             this.m_ObjectId = BitConverter.ToUInt16(segment.Array, segment.Offset + count);
-            count += sizeof(ushort);
-            this.m_TargetObjectId = BitConverter.ToUInt16(segment.Array, segment.Offset + count);
             count += sizeof(ushort);
         }
 
@@ -738,9 +735,7 @@ namespace Assets.Scripts
             count += sizeof(ushort);
             Array.Copy(BitConverter.GetBytes(this.m_ObjectId), 0, segment.Array, segment.Offset + count, sizeof(ushort));
             count += sizeof(ushort);
-            Array.Copy(BitConverter.GetBytes(this.m_TargetObjectId), 0, segment.Array, segment.Offset + count, sizeof(ushort));
-            count += sizeof(ushort);
-
+           
             return SendBufferHelper.Close(count);
         }
     }

@@ -91,8 +91,7 @@ public class BaseMonster : BaseObject
                 {
                     C_ChangeTargetPacket changeTargetPacket = new C_ChangeTargetPacket();
                     changeTargetPacket.m_ObjectId = (ushort)ObjectId;
-                    changeTargetPacket.m_TargetObjectId = (ushort)TargetLab.GetComponent<BaseObject>().ObjectId;
-
+                   
                     TransportOnePacket(() => SessionManager.Instance.GetServerSession().Send(changeTargetPacket.Write()));
                 }
             }
@@ -348,15 +347,10 @@ public class BaseMonster : BaseObject
         {
             BaseObject obj = Target.gameObject.GetComponent<BaseObject>();
             if (!obj.IsDeath && obj.SelfType == ObjectType.Monster) return;
-            targetObjectId = other.gameObject.GetComponent<BaseObject>().ObjectId;
+            C_ChangeTargetPacket changeTargetPacket = new C_ChangeTargetPacket();
+            changeTargetPacket.m_ObjectId = (ushort)ObjectId;
+            TransportOnePacket(() => SessionManager.Instance.GetServerSession().Send(changeTargetPacket.Write()));
         }
-
-        if (targetObjectId == 0) return;
-        C_ChangeTargetPacket changeTargetPacket = new C_ChangeTargetPacket();
-        changeTargetPacket.m_ObjectId = (ushort)ObjectId;
-        changeTargetPacket.m_TargetObjectId = (ushort)targetObjectId;
-
-        TransportOnePacket(() => SessionManager.Instance.GetServerSession().Send(changeTargetPacket.Write()));
     }
 
     // 타격을 한 번만 입히게 하기 위해

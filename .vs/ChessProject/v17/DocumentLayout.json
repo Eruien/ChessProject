@@ -3,8 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\ogkim\\Desktop\\UnityClient\\ChessProject\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{44D6AA39-E445-1F57-1F48-299BDDE4D9D2}|Assembly-CSharp.csproj|C:\\Users\\ogkim\\Desktop\\UnityClient\\ChessProject\\assets\\scripts\\monster\\basemonster.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{44D6AA39-E445-1F57-1F48-299BDDE4D9D2}|Assembly-CSharp.csproj|c:\\users\\ogkim\\desktop\\unityclient\\chessproject\\assets\\scripts\\monster\\basemonster.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{44D6AA39-E445-1F57-1F48-299BDDE4D9D2}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\monster\\basemonster.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{44D6AA39-E445-1F57-1F48-299BDDE4D9D2}|Assembly-CSharp.csproj|C:\\Users\\ogkim\\Desktop\\UnityClient\\ChessProject\\assets\\scripts\\client\\packet\\packet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{44D6AA39-E445-1F57-1F48-299BDDE4D9D2}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\client\\packet\\packet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{44D6AA39-E445-1F57-1F48-299BDDE4D9D2}|Assembly-CSharp.csproj|C:\\Users\\ogkim\\Desktop\\UnityClient\\ChessProject\\assets\\scripts\\util\\utilitylog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -23,10 +27,6 @@
       "RelativeMoniker": "D:0:0:{44D6AA39-E445-1F57-1F48-299BDDE4D9D2}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\client\\packet\\packethandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{44D6AA39-E445-1F57-1F48-299BDDE4D9D2}|Assembly-CSharp.csproj|C:\\Users\\ogkim\\Desktop\\UnityClient\\ChessProject\\assets\\scripts\\client\\packet\\packet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{44D6AA39-E445-1F57-1F48-299BDDE4D9D2}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\client\\packet\\packet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{44D6AA39-E445-1F57-1F48-299BDDE4D9D2}|Assembly-CSharp.csproj|C:\\Users\\ogkim\\Desktop\\UnityClient\\ChessProject\\assets\\scripts\\monster\\baseobject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{44D6AA39-E445-1F57-1F48-299BDDE4D9D2}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\monster\\baseobject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -43,7 +43,7 @@
       "RelativeMoniker": "D:0:0:{44D6AA39-E445-1F57-1F48-299BDDE4D9D2}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\testscripts.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{44D6AA39-E445-1F57-1F48-299BDDE4D9D2}|Assembly-CSharp.csproj|c:\\users\\ogkim\\desktop\\unityclient\\chessproject\\assets\\scripts\\util\\gamestartevent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{44D6AA39-E445-1F57-1F48-299BDDE4D9D2}|Assembly-CSharp.csproj|C:\\Users\\ogkim\\Desktop\\UnityClient\\ChessProject\\assets\\scripts\\util\\gamestartevent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{44D6AA39-E445-1F57-1F48-299BDDE4D9D2}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\util\\gamestartevent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -212,7 +212,7 @@
               "RelativeDocumentMoniker": "Assets\\Scripts\\Monster\\BaseMonster.cs",
               "ToolTip": "C:\\Users\\ogkim\\Desktop\\UnityClient\\ChessProject\\Assets\\Scripts\\Monster\\BaseMonster.cs",
               "RelativeToolTip": "Assets\\Scripts\\Monster\\BaseMonster.cs",
-              "ViewState": "AQIAACkBAAAAAAAAAAAowC0BAAAFAAAA",
+              "ViewState": "AQIAAFMAAAAAAAAAAAAtwF0AAAATAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-26T13:49:49.209Z",
               "EditorCaption": ""
@@ -227,12 +227,11 @@
               "RelativeToolTip": "Assets\\Scripts\\Client\\ServerCore\\Session.cs",
               "ViewState": "AQIAALkAAAAAAAAAAAAMwLsAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-26T13:50:41.292Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-26T13:50:41.292Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "PacketManager.cs",
               "DocumentMoniker": "C:\\Users\\ogkim\\Desktop\\UnityClient\\ChessProject\\Assets\\Scripts\\Client\\Packet\\PacketManager.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Client\\Packet\\PacketManager.cs",
@@ -240,8 +239,7 @@
               "RelativeToolTip": "Assets\\Scripts\\Client\\Packet\\PacketManager.cs",
               "ViewState": "AQIAAA8AAAAAAAAAAAAIwBwAAAA1AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-26T13:44:54.087Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-26T13:44:54.087Z"
             },
             {
               "$type": "Document",
@@ -253,8 +251,7 @@
               "RelativeToolTip": "Assets\\Scripts\\Managers\\MonsterManager.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAuwAcAAAAQAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-26T13:50:34.168Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-26T13:50:34.168Z"
             },
             {
               "$type": "Document",
@@ -266,12 +263,11 @@
               "RelativeToolTip": "Assets\\Scripts\\Managers\\SpawnManager.cs",
               "ViewState": "AQIAAAwAAAAAAAAAAAAkwBIAAAAWAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-18T12:41:40.935Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-18T12:41:40.935Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "PacketHandler.cs",
               "DocumentMoniker": "C:\\Users\\ogkim\\Desktop\\UnityClient\\ChessProject\\Assets\\Scripts\\Client\\Packet\\PacketHandler.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Client\\Packet\\PacketHandler.cs",
@@ -279,8 +275,7 @@
               "RelativeToolTip": "Assets\\Scripts\\Client\\Packet\\PacketHandler.cs",
               "ViewState": "AQIAACAAAAAAAAAAAAAQwGcAAAA4AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-26T13:40:22.467Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-26T13:40:22.467Z"
             },
             {
               "$type": "Document",
@@ -292,18 +287,17 @@
               "RelativeToolTip": "Assets\\Scripts\\Monster\\BattleBee.cs",
               "ViewState": "AQIAADEAAAAAAAAAAAA+wEAAAABNAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-27T11:16:07.67Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-27T11:16:07.67Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 1,
               "Title": "Packet.cs",
               "DocumentMoniker": "C:\\Users\\ogkim\\Desktop\\UnityClient\\ChessProject\\Assets\\Scripts\\Client\\Packet\\Packet.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Client\\Packet\\Packet.cs",
               "ToolTip": "C:\\Users\\ogkim\\Desktop\\UnityClient\\ChessProject\\Assets\\Scripts\\Client\\Packet\\Packet.cs",
               "RelativeToolTip": "Assets\\Scripts\\Client\\Packet\\Packet.cs",
-              "ViewState": "AQIAAAkAAAAAAAAAAAAAAAcAAAAYAAAA",
+              "ViewState": "AQIAAMcCAAAAAAAAAAAgwPwCAAA4AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-26T13:51:04.546Z",
               "EditorCaption": ""
@@ -318,8 +312,7 @@
               "RelativeToolTip": "Assets\\Scripts\\Monster\\Skeleton.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAB4AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-28T17:18:14.675Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-28T17:18:14.675Z"
             },
             {
               "$type": "Document",
@@ -331,12 +324,11 @@
               "RelativeToolTip": "Assets\\Scripts\\Managers\\ResourceManager.cs",
               "ViewState": "AQIAAAUAAAAAAAAAAAAtwBIAAABPAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-27T12:31:50.591Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-27T12:31:50.591Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "UtilityLog.cs",
               "DocumentMoniker": "C:\\Users\\ogkim\\Desktop\\UnityClient\\ChessProject\\Assets\\Scripts\\Util\\UtilityLog.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Util\\UtilityLog.cs",
@@ -344,8 +336,7 @@
               "RelativeToolTip": "Assets\\Scripts\\Util\\UtilityLog.cs",
               "ViewState": "AQIAAAwAAAAAAAAAAAAmwB0AAAAPAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-28T14:26:26.831Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-28T14:26:26.831Z"
             },
             {
               "$type": "Document",
@@ -357,8 +348,7 @@
               "RelativeToolTip": "Assets\\Scripts\\TestScripts.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-31T16:41:56.431Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-31T16:41:56.431Z"
             },
             {
               "$type": "Document",
@@ -370,8 +360,7 @@
               "RelativeToolTip": "Assets\\Scripts\\UI\\ShopPanel.cs",
               "ViewState": "AQIAAGMAAAAAAAAAAAAswHkAAAAZAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-27T08:00:59.847Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-27T08:00:59.847Z"
             },
             {
               "$type": "Document",
@@ -383,8 +372,7 @@
               "RelativeToolTip": "Assets\\Scripts\\ColliderExclude\\ColliderExclude.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAADAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-14T12:06:10.054Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-14T12:06:10.054Z"
             },
             {
               "$type": "Document",
@@ -396,8 +384,7 @@
               "RelativeToolTip": "Assets\\Scripts\\ProjectTile\\ProjectTile.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-28T16:30:39.825Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-28T16:30:39.825Z"
             },
             {
               "$type": "Document",
@@ -409,12 +396,11 @@
               "RelativeToolTip": "Assets\\Scripts\\Monster\\BaseObject.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAUAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-26T13:52:12.971Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-26T13:52:12.971Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "Global.cs",
               "DocumentMoniker": "C:\\Users\\ogkim\\Desktop\\UnityClient\\ChessProject\\Assets\\Scripts\\Util\\Global.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Util\\Global.cs",
@@ -422,8 +408,7 @@
               "RelativeToolTip": "Assets\\Scripts\\Util\\Global.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-31T10:42:47.244Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-31T10:42:47.244Z"
             },
             {
               "$type": "Document",
@@ -435,8 +420,7 @@
               "RelativeToolTip": "Assets\\Scripts\\Client\\ServerSession.cs",
               "ViewState": "AQIAAAoAAAAAAAAAAAAAwAQAAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-27T08:40:19.163Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-27T08:40:19.163Z"
             },
             {
               "$type": "Document",
@@ -448,8 +432,7 @@
               "RelativeToolTip": "Assets\\Scripts\\Util\\GameStartEvent.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-22T13:14:56.763Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-22T13:14:56.763Z"
             },
             {
               "$type": "Document",
@@ -461,8 +444,7 @@
               "RelativeToolTip": "Assets\\Scripts\\Managers\\Managers.cs",
               "ViewState": "AQIAAAkAAAAAAAAAAAAiwA8AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-27T08:25:41.056Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-27T08:25:41.056Z"
             },
             {
               "$type": "Document",
@@ -474,8 +456,7 @@
               "RelativeToolTip": "Assets\\Scripts\\ColliderExclude\\SelectColliderExclude.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAEAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-14T12:06:15.817Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-14T12:06:15.817Z"
             },
             {
               "$type": "Document",
@@ -487,8 +468,7 @@
               "RelativeToolTip": "Assets\\Scripts\\Util\\DragObject.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAB8AAAAqAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-18T21:48:54.402Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-18T21:48:54.402Z"
             },
             {
               "$type": "Document",
@@ -500,8 +480,7 @@
               "RelativeToolTip": "Assets\\Scripts\\Camera\\CameraController.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAqAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-21T17:53:15.721Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-21T17:53:15.721Z"
             },
             {
               "$type": "Document",
@@ -513,8 +492,7 @@
               "RelativeToolTip": "Assets\\Scripts\\Util\\SaveRenderTargetImage.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAmwBEAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-20T16:19:50.088Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-20T16:19:50.088Z"
             },
             {
               "$type": "Document",
@@ -526,8 +504,7 @@
               "RelativeToolTip": "Assets\\Scripts\\Client\\MainClient.cs",
               "ViewState": "AQIAAAYAAAAAAAAAAAA+wAAAAAARAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-27T08:25:36.592Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-27T08:25:36.592Z"
             },
             {
               "$type": "Document",
@@ -539,8 +516,7 @@
               "RelativeToolTip": "Assets\\Scripts\\Util\\AttackAnimationCheck.cs",
               "ViewState": "AQIAABQAAAAAAAAAAADwvwIAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-31T10:21:35.286Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-31T10:21:35.286Z"
             },
             {
               "$type": "Document",
@@ -552,8 +528,7 @@
               "RelativeToolTip": "Assets\\Scripts\\Util\\SearchCollision.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-30T12:29:37.042Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-30T12:29:37.042Z"
             },
             {
               "$type": "Document",
@@ -565,8 +540,7 @@
               "RelativeToolTip": "Assets\\Scripts\\Managers\\DataManager.cs",
               "ViewState": "AQIAABUAAAAAAAAAAAAIwBUAAAAXAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-28T14:46:14.222Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-28T14:46:14.222Z"
             },
             {
               "$type": "Document",
@@ -578,8 +552,7 @@
               "RelativeToolTip": "Assets\\Scripts\\Util\\BehaviorTreeLog.cs",
               "ViewState": "AQIAAA8AAAAAAAAAAAAIwA8AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-31T10:21:31.937Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-31T10:21:31.937Z"
             },
             {
               "$type": "Document",
@@ -591,8 +564,7 @@
               "RelativeToolTip": "Assets\\Scripts\\Util\\CollisionCheck.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-31T10:21:31.228Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-31T10:21:31.228Z"
             },
             {
               "$type": "Document",
@@ -604,8 +576,7 @@
               "RelativeToolTip": "Assets\\Scripts\\Monster\\Specter.cs",
               "ViewState": "AQIAAB0AAAAAAAAAAAAtwCcAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-28T17:18:22.555Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-28T17:18:22.555Z"
             },
             {
               "$type": "Document",
@@ -617,8 +588,7 @@
               "RelativeToolTip": "Assets\\Scripts\\Monster\\Bee.cs",
               "ViewState": "AQIAABwAAAAAAAAAAIBPwB8AAAAbAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-28T17:17:15.32Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-28T17:17:15.32Z"
             },
             {
               "$type": "Document",
@@ -630,8 +600,7 @@
               "RelativeToolTip": "Assets\\Scripts\\Monster\\Beholder.cs",
               "ViewState": "AQIAACMAAAAAAAAAAIBPwCYAAAAbAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-28T17:17:24.525Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-28T17:17:24.525Z"
             },
             {
               "$type": "Document",
@@ -643,8 +612,7 @@
               "RelativeToolTip": "Assets\\Scripts\\Monster\\Labo.cs",
               "ViewState": "AQIAAB4AAAAAAAAAAAAIwB4AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-27T12:25:45.061Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-27T12:25:45.061Z"
             },
             {
               "$type": "Document",
@@ -656,8 +624,7 @@
               "RelativeToolTip": "Assets\\Scripts\\Monster\\Mage.cs",
               "ViewState": "AQIAAAEAAAAAAAAAAAASwAoAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-28T17:18:07.233Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-28T17:18:07.233Z"
             },
             {
               "$type": "Document",
@@ -669,8 +636,7 @@
               "RelativeToolTip": "Assets\\Scripts\\Client\\ServerCore\\Conncector.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-28T14:24:02.923Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-28T14:24:02.923Z"
             },
             {
               "$type": "Document",
@@ -682,8 +648,7 @@
               "RelativeToolTip": "Assets\\Scripts\\Client\\ServerCore\\RecvBuffer.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-31T10:46:40.797Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-31T10:46:40.797Z"
             },
             {
               "$type": "Document",
@@ -695,8 +660,7 @@
               "RelativeToolTip": "Assets\\Scripts\\Client\\ServerCore\\Listener.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAACsAAAAqAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-31T10:45:05.249Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-31T10:45:05.249Z"
             },
             {
               "$type": "Document",
@@ -708,8 +672,7 @@
               "RelativeToolTip": "Assets\\Scripts\\Client\\SessionManager.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAEAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-27T08:40:09.719Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-27T08:40:09.719Z"
             },
             {
               "$type": "Document",
@@ -721,8 +684,7 @@
               "RelativeToolTip": "Assets\\Scripts\\Client\\ServerCore\\SendBuffer.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-14T12:04:18.102Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-14T12:04:18.102Z"
             },
             {
               "$type": "Document",
@@ -734,8 +696,7 @@
               "RelativeToolTip": "Assets\\Scripts\\Client\\Packet\\PacketQueue.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAB8AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-01T20:52:09.895Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-01T20:52:09.895Z"
             },
             {
               "$type": "Document",
@@ -758,8 +719,7 @@
               "RelativeToolTip": "Assets\\Scripts\\BehaviorTree\\BlackBoard.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAFAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-27T07:30:40.692Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-27T07:30:40.692Z"
             },
             {
               "$type": "Document",
@@ -816,8 +776,7 @@
               "RelativeToolTip": "Assets\\Scripts\\Monster\\Golem.cs",
               "ViewState": "AQIAAA4AAAAAAAAAAAAQwB4AAABRAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-26T13:49:45.488Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-26T13:49:45.488Z"
             }
           ]
         }
