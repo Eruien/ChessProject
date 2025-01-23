@@ -69,6 +69,7 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextEventHandler.cs" />
     <Compile Include="Assets\Scripts\Util\Global.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexShakeA.cs" />
+    <Compile Include="Assets\Scripts\UI\UserMoney.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_ExampleScript_01.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMPro_InstructionOverlay.cs" />
     <Compile Include="Assets\Scripts\Util\DragObject.cs" />
@@ -89,6 +90,7 @@
     <Compile Include="Assets\AssetStore\SpecialSkillsEffectsPack\Scripts\VariousRotateObject.cs" />
     <Compile Include="Assets\Scripts\Util\SaveRenderTargetImage.cs" />
     <Compile Include="Assets\Scripts\Managers\SpawnManager.cs" />
+    <Compile Include="Assets\Scripts\UI\ReadyTimer.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01_UGUI.cs" />
     <Compile Include="Assets\Scripts\Client\ServerCore\Session.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\SimpleScript.cs" />
@@ -128,6 +130,7 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark02.cs" />
     <Compile Include="Assets\Scripts\Monster\Lab.cs" />
     <Compile Include="Assets\AssetStore\SpecialSkillsEffectsPack\Scripts\VariousMouseOrbit.cs" />
+    <Compile Include="Assets\Scripts\UI\PriceMapping.cs" />
     <Compile Include="Assets\AssetStore\Unity UI Samples\Scripts\TiltWindow.cs" />
     <Compile Include="Assets\AssetStore\SpecialSkillsEffectsPack\Scripts\VariousTranslateMove.cs" />
     <Compile Include="Assets\Scripts\Util\SearchCollision.cs" />

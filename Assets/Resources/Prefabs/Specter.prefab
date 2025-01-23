@@ -1822,6 +1822,7 @@ GameObject:
   - component: {fileID: 3697771643498067067}
   - component: {fileID: 9030289868893937928}
   - component: {fileID: 3831573582133707821}
+  - component: {fileID: 1741586204069526032}
   m_Layer: 8
   m_Name: Specter
   m_TagString: Untagged
@@ -1913,6 +1914,18 @@ MonoBehaviour:
   fixPos: 0
   stopMoving: 0
   Target: {fileID: 0}
+--- !u!114 &1741586204069526032
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5507847722187960008}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d4f671a508362640b36b9752091f103, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5880577953223798074
 GameObject:
   m_ObjectHideFlags: 0

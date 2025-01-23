@@ -12,6 +12,8 @@ namespace Assets.Scripts
         {
             S_SetInitialDataPacket setDataPacket = packet as S_SetInitialDataPacket;
             Global.g_MyTeam = (Team)setDataPacket.m_MyTeam;
+            Global.g_UserMoney = setDataPacket.m_InitialUserMoney;
+            UserMoney.changeUserMoneyText.Invoke();
             Camera.main.gameObject.GetComponent<CameraController>().SetTeamCameraTransform(Global.g_MyTeam);
             
             Debug.Log($"지금 팀은 {Global.g_MyTeam}");
@@ -52,6 +54,8 @@ namespace Assets.Scripts
         public void S_PurchaseAllowedPacketHandler(Session session, IPacket packet)
         {
             S_PurchaseAllowedPacket purchaseAllowed = packet as S_PurchaseAllowedPacket;
+            Global.g_UserMoney = purchaseAllowed.m_UserGameMoney;
+            UserMoney.changeUserMoneyText.Invoke();
             C_MonsterCreatePacket monsterCreatePacket = new C_MonsterCreatePacket();
             monsterCreatePacket.m_StringSize = purchaseAllowed.m_StringSize;
             monsterCreatePacket.m_MonsterType = purchaseAllowed.m_MonsterType;

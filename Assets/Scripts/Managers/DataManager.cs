@@ -20,6 +20,7 @@ public class MonsterStat
     public float moveSpeed;
     public float projectTileSpeed;
     public MonsterType monsterType;
+    public int monsterPrice;
 }
 
 [Serializable]

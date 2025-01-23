@@ -3,16 +3,14 @@ using UnityEngine;
 
 public class ShopPanel : MonoBehaviour
 {
-    private int gameMoney = 4000;
-
     public void OnCreateSkeleton()
     {
         C_MonsterPurchasePacket purchasePacket = new C_MonsterPurchasePacket();
         string monsterType = "Skeleton";
         purchasePacket.m_StringSize = (ushort)monsterType.Length;
         purchasePacket.m_MonsterType = monsterType;
-        purchasePacket.m_UserGameMoney = gameMoney;
-        purchasePacket.m_MonsterPrice = 500;
+        purchasePacket.m_UserGameMoney = (ushort)Global.g_UserMoney;
+        purchasePacket.m_MonsterPrice = (ushort)Managers.Data.monsterDict[monsterType].monsterPrice;
         Vector3 spawnPoint = Managers.Spawn.ComputeSpawnPoint(Global.g_MyTeam, monsterType);
         purchasePacket.m_PosX = spawnPoint.x;
         purchasePacket.m_PosY = spawnPoint.y;
@@ -27,8 +25,8 @@ public class ShopPanel : MonoBehaviour
         string monsterType = "Mage";
         purchasePacket.m_StringSize = (ushort)monsterType.Length;
         purchasePacket.m_MonsterType = monsterType;
-        purchasePacket.m_UserGameMoney = gameMoney;
-        purchasePacket.m_MonsterPrice = 500;
+        purchasePacket.m_UserGameMoney = (ushort)Global.g_UserMoney;
+        purchasePacket.m_MonsterPrice = (ushort)Managers.Data.monsterDict[monsterType].monsterPrice;
         Vector3 spawnPoint = Managers.Spawn.ComputeSpawnPoint(Global.g_MyTeam, monsterType);
         purchasePacket.m_PosX = spawnPoint.x;
         purchasePacket.m_PosY = spawnPoint.y;
@@ -43,8 +41,8 @@ public class ShopPanel : MonoBehaviour
         string monsterType = "Golem";
         purchasePacket.m_StringSize = (ushort)monsterType.Length;
         purchasePacket.m_MonsterType = monsterType;
-        purchasePacket.m_UserGameMoney = gameMoney;
-        purchasePacket.m_MonsterPrice = 500;
+        purchasePacket.m_UserGameMoney = (ushort)Global.g_UserMoney;
+        purchasePacket.m_MonsterPrice = (ushort)Managers.Data.monsterDict[monsterType].monsterPrice;
         Vector3 spawnPoint = Managers.Spawn.ComputeSpawnPoint(Global.g_MyTeam, monsterType);
         purchasePacket.m_PosX = spawnPoint.x;
         purchasePacket.m_PosY = spawnPoint.y;
@@ -59,8 +57,8 @@ public class ShopPanel : MonoBehaviour
         string monsterType = "Specter";
         purchasePacket.m_StringSize = (ushort)monsterType.Length;
         purchasePacket.m_MonsterType = monsterType;
-        purchasePacket.m_UserGameMoney = gameMoney;
-        purchasePacket.m_MonsterPrice = 500;
+        purchasePacket.m_UserGameMoney = (ushort)Global.g_UserMoney;
+        purchasePacket.m_MonsterPrice = (ushort)Managers.Data.monsterDict[monsterType].monsterPrice;
         Vector3 spawnPoint = Managers.Spawn.ComputeSpawnPoint(Global.g_MyTeam, monsterType);
         purchasePacket.m_PosX = spawnPoint.x;
         purchasePacket.m_PosY = spawnPoint.y;
@@ -75,8 +73,8 @@ public class ShopPanel : MonoBehaviour
         string monsterType = "Bee";
         purchasePacket.m_StringSize = (ushort)monsterType.Length;
         purchasePacket.m_MonsterType = monsterType;
-        purchasePacket.m_UserGameMoney = gameMoney;
-        purchasePacket.m_MonsterPrice = 500;
+        purchasePacket.m_UserGameMoney = (ushort)Global.g_UserMoney;
+        purchasePacket.m_MonsterPrice = (ushort)Managers.Data.monsterDict[monsterType].monsterPrice;
         Vector3 spawnPoint = Managers.Spawn.ComputeSpawnPoint(Global.g_MyTeam, monsterType);
         purchasePacket.m_PosX = spawnPoint.x;
         purchasePacket.m_PosY = spawnPoint.y;
@@ -91,8 +89,8 @@ public class ShopPanel : MonoBehaviour
         string monsterType = "BattleBee";
         purchasePacket.m_StringSize = (ushort)monsterType.Length;
         purchasePacket.m_MonsterType = monsterType;
-        purchasePacket.m_UserGameMoney = gameMoney;
-        purchasePacket.m_MonsterPrice = 500;
+        purchasePacket.m_UserGameMoney = (ushort)Global.g_UserMoney;
+        purchasePacket.m_MonsterPrice = (ushort)Managers.Data.monsterDict[monsterType].monsterPrice;
         Vector3 spawnPoint = Managers.Spawn.ComputeSpawnPoint(Global.g_MyTeam, monsterType);
         purchasePacket.m_PosX = spawnPoint.x;
         purchasePacket.m_PosY = spawnPoint.y;
@@ -107,8 +105,8 @@ public class ShopPanel : MonoBehaviour
         string monsterType = "Beholder";
         purchasePacket.m_StringSize = (ushort)monsterType.Length;
         purchasePacket.m_MonsterType = monsterType;
-        purchasePacket.m_UserGameMoney = gameMoney;
-        purchasePacket.m_MonsterPrice = 500;
+        purchasePacket.m_UserGameMoney = (ushort)Global.g_UserMoney;
+        purchasePacket.m_MonsterPrice = (ushort)Managers.Data.monsterDict[monsterType].monsterPrice;
         Vector3 spawnPoint = Managers.Spawn.ComputeSpawnPoint(Global.g_MyTeam, monsterType);
         purchasePacket.m_PosX = spawnPoint.x;
         purchasePacket.m_PosY = spawnPoint.y;
