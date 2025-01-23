@@ -261,9 +261,6 @@ public class BaseMonster : BaseObject
             case MonsterState.Attack:
                 Attack();
                 break;
-            case MonsterState.Death:
-                Death();
-                break;
             case MonsterState.None:
                 Debug.Log("아무 상태도 없습니다.");
                 break;
@@ -301,15 +298,12 @@ public class BaseMonster : BaseObject
         transform.position = fixYPos;
     }
 
-    private void Death()
+    public void Death()
     {
-        if (blackBoard.m_HP.Key <= 0)
-        {
-            monsterAnimation.SetBool("IsDeath", true);
-            StartCoroutine(DecreaseAlpha());
-            IsDeath = true;
-            BaseMonster.monsterDeathEvent.Invoke();
-        }
+        monsterAnimation.SetBool("IsDeath", true);
+        StartCoroutine(DecreaseAlpha());
+        IsDeath = true;
+        BaseMonster.monsterDeathEvent.Invoke();
     }
 
     // 유니티 이벤트 모음

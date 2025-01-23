@@ -28,7 +28,6 @@ namespace Assets.Scripts
         Idle,
         Move,
         Attack,
-        Death,
     }
 
     public enum PanelState

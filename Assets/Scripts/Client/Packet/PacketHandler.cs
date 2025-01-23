@@ -94,6 +94,17 @@ namespace Assets.Scripts
             }
         }
 
+        public void S_BroadcastMonsterDeathPacketHandler(Session session, IPacket packet)
+        {
+            S_BroadcastMonsterDeathPacket monsterDeathPacket = packet as S_BroadcastMonsterDeathPacket;
+            GameObject obj = Managers.Monster.GetMonster(monsterDeathPacket.m_MonsterId);
+
+            if (obj != null)
+            {
+                obj.GetComponent<BaseMonster>().Death();
+            }
+        }
+
         public void S_BroadcastMovePacketHandler(Session session, IPacket packet)
         {
             S_BroadcastMovePacket movePacket = packet as S_BroadcastMovePacket;
@@ -111,14 +122,14 @@ namespace Assets.Scripts
             
             GameObject obj = Managers.Monster.GetMonster(hitPacket.m_TargetId);
 
-            if (obj != null)
+           /* if (obj != null)
             {
                 obj.GetComponent<BaseObject>().blackBoard.m_HP.Key = hitPacket.m_TargetHP;
                 if (obj.GetComponent<BaseObject>().blackBoard.m_HP.Key <= 0)
                 {
                     Managers.Monster.UnRegister(obj);
                 }
-            }
+            }*/
         }
 
         public void S_BroadcastChangeTargetPacketHandler(Session session, IPacket packet)

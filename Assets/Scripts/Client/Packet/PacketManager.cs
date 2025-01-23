@@ -37,6 +37,9 @@ namespace Assets.Scripts
             m_MakePacketDict.Add((ushort)PacketType.S_BroadcastMonsterStatePacket, MakePacket<S_BroadcastMonsterStatePacket>);
             m_RunFunctionDict.Add((ushort)PacketType.S_BroadcastMonsterStatePacket, PacketHandler.Instance.S_BroadcastMonsterStatePacketHandler);
 
+            m_MakePacketDict.Add((ushort)PacketType.S_BroadcastMonsterDeathPacket, MakePacket<S_BroadcastMonsterDeathPacket>);
+            m_RunFunctionDict.Add((ushort)PacketType.S_BroadcastMonsterDeathPacket, PacketHandler.Instance.S_BroadcastMonsterDeathPacketHandler);
+
             m_MakePacketDict.Add((ushort)PacketType.S_BroadcastMovePacket, MakePacket<S_BroadcastMovePacket>);
             m_RunFunctionDict.Add((ushort)PacketType.S_BroadcastMovePacket, PacketHandler.Instance.S_BroadcastMovePacketHandler);
 
