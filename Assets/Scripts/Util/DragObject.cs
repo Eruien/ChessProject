@@ -139,6 +139,14 @@ public class DragObject : MonoBehaviour
             currentState = PanelState.None;
             SpawnPanelMeshRender.material = Managers.Resource.Load<Material>($"Material/SpawnDefault");
             transform.position = new Vector3(transform.position.x, InitialY, transform.position.z);
+
+            C_SetPositionPacket positionPacket = new C_SetPositionPacket();
+            positionPacket.m_MonsterId = (ushort)transform.root.GetComponent<BaseObject>().ObjectId;
+            positionPacket.m_PosX = transform.position.x;
+            positionPacket.m_PosY = transform.position.y;
+            positionPacket.m_PosZ = transform.position.z;
+
+            SessionManager.Instance.GetServerSession().Send(positionPacket.Write());
         }
     }
 

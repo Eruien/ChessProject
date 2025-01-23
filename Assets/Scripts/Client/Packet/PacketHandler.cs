@@ -115,6 +115,17 @@ namespace Assets.Scripts
             }
         }
 
+        public void S_BroadcastSetPositionPacketHandler(Session session, IPacket packet)
+        {
+            S_BroadcastSetPositionPacket positionPacket = packet as S_BroadcastSetPositionPacket;
+            GameObject obj = Managers.Monster.GetMonster(positionPacket.m_MonsterId);
+
+            if (obj != null)
+            {
+                obj.GetComponent<BaseMonster>().transform.position = new Vector3(positionPacket.m_PosX, positionPacket.m_PosY, positionPacket.m_PosZ);
+            }
+        }
+
         public void S_BroadcastMovePacketHandler(Session session, IPacket packet)
         {
             S_BroadcastMovePacket movePacket = packet as S_BroadcastMovePacket;
