@@ -12,6 +12,7 @@ namespace Assets.Scripts
         public int ObjectId { get; set; } = 0;
 
         public abstract void SetPosition(float x, float y, float z);
+        public abstract void Death();
         protected abstract void SetBlackBoardKey();
     }
 }

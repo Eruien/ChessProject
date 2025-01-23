@@ -297,7 +297,7 @@ public class BaseMonster : BaseObject
         transform.position = fixYPos;
     }
 
-    public void Death()
+    public override void Death()
     {
         monsterAnimation.SetBool("IsDeath", true);
         StartCoroutine(DecreaseAlpha());
@@ -341,8 +341,6 @@ public class BaseMonster : BaseObject
     // SearchCollision의 이벤트 용
     public void OnSearchCollisionEvent(Collider other)
     {
-        int targetObjectId = 0;
-
         if (Target != null)
         {
             BaseObject obj = Target.gameObject.GetComponent<BaseObject>();

@@ -75,6 +75,12 @@ namespace Assets.Scripts
         {
             S_BroadcastMonsterCreatePacket monsterPacket = packet as S_BroadcastMonsterCreatePacket;
             GameObject obj = Managers.Resource.Instantiate(monsterPacket.m_MonsterType, new Vector3(monsterPacket.m_PosX, monsterPacket.m_PosY, monsterPacket.m_PosZ));
+
+            if (monsterPacket.m_MonsterTeam == (ushort)Team.BlueTeam)
+            {
+                obj.transform.eulerAngles = new Vector3(0, -180, 0);
+            }
+
             obj.layer = monsterPacket.m_MonsterTeam;
             Managers.Monster.Register(monsterPacket.m_MonsterId, obj);
             Managers.Spawn.RegisterPanel(Managers.Spawn.SearchPanelGameObject(obj, "SpawnPlane"));
@@ -101,7 +107,7 @@ namespace Assets.Scripts
 
             if (obj != null)
             {
-                obj.GetComponent<BaseMonster>().Death();
+                obj.GetComponent<BaseObject>().Death();
             }
         }
 

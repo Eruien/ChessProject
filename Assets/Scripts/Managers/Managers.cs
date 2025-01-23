@@ -6,12 +6,12 @@ public class Managers : MonoBehaviour
     public static Managers Instance { get { Init(); return _instance; } }
 
     private ResourceManager _resource = new ResourceManager();
-    private MonsterManager _monster = new MonsterManager();
+    private ObjectManager _monster = new ObjectManager();
     private DataManager _data = new DataManager();
     private SpawnManager _spawn = new SpawnManager();
     
     public static ResourceManager Resource { get { return Instance._resource; } }
-    public static MonsterManager Monster { get { return Instance._monster; } }
+    public static ObjectManager Monster { get { return Instance._monster; } }
     public static DataManager Data { get { return Instance._data; } }
     public static SpawnManager Spawn { get { return Instance._spawn; } }
     
