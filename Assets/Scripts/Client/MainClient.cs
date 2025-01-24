@@ -11,8 +11,8 @@ namespace Assets.Scripts
             string host = Dns.GetHostName();
 
             IPHostEntry ipHost = Dns.GetHostEntry(host);
-            IPAddress ipAddr = IPAddress.Parse("25.31.78.91");
-            IPEndPoint endPoint = new IPEndPoint(ipHost.AddressList[0], Global.g_PortNumber);
+            IPAddress ipAddr = IPAddress.Parse("192.168.0.5");
+            IPEndPoint endPoint = new IPEndPoint(ipAddr, Global.g_PortNumber);
             // 세션 생성한다음에 메시지 주고 받기 일단 주는것 부터
             Connector connector = new Connector();
             connector.Connect(endPoint, SessionManager.Instance.Create);

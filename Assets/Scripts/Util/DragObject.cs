@@ -19,8 +19,11 @@ public class DragObject : MonoBehaviour
     private PanelState currentState = PanelState.None;
     private float InitialY = 0.0f;
     private float fixValue = -0.1f;
+    private int layerToIgnore = 0;
+    private int layerMask = 0;
     private bool IsGreen = false;
-  
+   
+
     private void OnEnable()
     {
         DragObject.objectSelectEvent.AddListener(OnSelectInitialize);
@@ -28,6 +31,8 @@ public class DragObject : MonoBehaviour
 
     private void Awake()
     {
+        layerToIgnore = LayerMask.GetMask("Self");
+        layerMask = ~layerToIgnore;
         mainCamera = Camera.main;
         SpawnPanel = Managers.Spawn.SearchPanelGameObject(gameObject, "SpawnPlane");
         SpawnPanelMeshRender = SpawnPanel.GetComponent<MeshRenderer>();
@@ -124,7 +129,7 @@ public class DragObject : MonoBehaviour
         Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
 
-        if (Physics.Raycast(ray, out hit) && hit.transform == transform)
+        if (Physics.Raycast(ray, out hit, Mathf.Infinity, layerMask) && hit.transform == transform)
         {
             objectSelectEvent.Invoke();
             currentState = PanelState.Select;
@@ -155,7 +160,7 @@ public class DragObject : MonoBehaviour
         Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
 
-        if (Physics.Raycast(ray, out hit) && hit.transform == transform)
+        if (Physics.Raycast(ray, out hit, Mathf.Infinity, layerMask) && hit.transform == transform)
         {
             currentState = PanelState.SelectMove;
             // 드래그 평면 설정
