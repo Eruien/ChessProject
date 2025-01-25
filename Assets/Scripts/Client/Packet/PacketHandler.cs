@@ -100,6 +100,20 @@ namespace Assets.Scripts
 
             if (obj != null)
             {
+                Vector3 serverPos = new Vector3(monsterStatePacket.m_PosX, monsterStatePacket.m_PosY, monsterStatePacket.m_PosZ);
+               
+                if (obj.GetComponent<BaseMonster>().MonsterState != MonsterState.Attack &&
+                    (MonsterState)monsterStatePacket.m_CurrentState == MonsterState.Attack)
+                {
+                    if (Vector3.Distance(obj.transform.position, serverPos) >= 0.1f)
+                    {
+                        if (obj.layer != (int)Global.g_MyTeam) return;
+                        C_ConfirmMovePacket confirmMovePacket = new C_ConfirmMovePacket();
+                        confirmMovePacket.m_MonsterId = (ushort)obj.GetComponent<BaseObject>().ObjectId;
+                        SessionManager.Instance.GetServerSession().Send(confirmMovePacket.Write());
+                        return;
+                    }
+                }
                 obj.GetComponent<BaseMonster>().MonsterState = (MonsterState)monsterStatePacket.m_CurrentState;
             }
         }

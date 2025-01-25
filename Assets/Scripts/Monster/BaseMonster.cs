@@ -98,7 +98,6 @@ public class BaseMonster : BaseObject
 
             if (Target != null)
             {
-                ComputeAttackDistance();
                 StateUpdate();
             }
            
