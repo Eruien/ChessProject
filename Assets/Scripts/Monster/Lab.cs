@@ -15,6 +15,7 @@ public class Lab : BaseObject
 
     public override void Death()
     {
+        GameDecision.EndGameEvent.Invoke((Team)gameObject.layer);
         Managers.Monster.UnRegister(gameObject);
     }
 

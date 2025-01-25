@@ -150,6 +150,7 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ShaderPropAnimator.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\CameraController.cs" />
     <Compile Include="Assets\Scripts\Client\Packet\PacketHandler.cs" />
+    <Compile Include="Assets\Scripts\UI\GameDecision.cs" />
     <Compile Include="Assets\Scripts\Monster\Mage.cs" />
     <Compile Include="Assets\AssetStore\Unity UI Samples\Scripts\DropMe.cs" />
     <Compile Include="Assets\AssetStore\SpecialSkillsEffectsPack\Scripts\DestroyObject.cs" />
