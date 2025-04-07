@@ -1,4 +1,5 @@
 ﻿using ServerCore;
+using Unity.VisualScripting;
 using UnityEngine;
 
 namespace Assets.Scripts
@@ -100,20 +101,6 @@ namespace Assets.Scripts
 
             if (obj != null)
             {
-                Vector3 serverPos = new Vector3(monsterStatePacket.m_PosX, monsterStatePacket.m_PosY, monsterStatePacket.m_PosZ);
-               
-                if (obj.GetComponent<BaseMonster>().MonsterState != MonsterState.Attack &&
-                    (MonsterState)monsterStatePacket.m_CurrentState == MonsterState.Attack)
-                {
-                    if (Vector3.Distance(obj.transform.position, serverPos) >= 0.1f)
-                    {
-                        if (obj.layer != (int)Global.g_MyTeam) return;
-                        C_ConfirmMovePacket confirmMovePacket = new C_ConfirmMovePacket();
-                        confirmMovePacket.m_MonsterId = (ushort)obj.GetComponent<BaseObject>().ObjectId;
-                        SessionManager.Instance.GetServerSession().Send(confirmMovePacket.Write());
-                        return;
-                    }
-                }
                 obj.GetComponent<BaseMonster>().MonsterState = (MonsterState)monsterStatePacket.m_CurrentState;
             }
         }
@@ -137,6 +124,33 @@ namespace Assets.Scripts
             if (obj != null)
             {
                 obj.GetComponent<BaseMonster>().transform.position = new Vector3(positionPacket.m_PosX, positionPacket.m_PosY, positionPacket.m_PosZ);
+            }
+        }
+
+        public void S_ConfirmMovePacketHandler(Session session, IPacket packet)
+        {
+
+            S_ConfirmMovePacket confirmMovePacket = packet as S_ConfirmMovePacket;
+            GameObject obj = Managers.Monster.GetMonster(confirmMovePacket.m_MonsterId);
+
+            if (obj.layer != (int)Global.g_MyTeam) return;
+
+            if (obj != null)
+            {
+                C_ConfirmMovePacket clientConfirmMovePacket = new C_ConfirmMovePacket();
+                clientConfirmMovePacket.m_MonsterId = confirmMovePacket.m_MonsterId;
+                Vector3 serverPos = new Vector3(confirmMovePacket.m_PosX, confirmMovePacket.m_PosY, confirmMovePacket.m_PosZ);
+
+                if ((serverPos - obj.transform.position).magnitude < 0.2f)
+                {
+                    clientConfirmMovePacket.m_IsCorrect = true;
+                }
+                else
+                {
+                    clientConfirmMovePacket.m_IsCorrect = false;
+                }
+
+                SessionManager.Instance.GetServerSession().Send(clientConfirmMovePacket.Write());
             }
         }
 

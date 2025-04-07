@@ -43,6 +43,9 @@ namespace Assets.Scripts
             m_MakePacketDict.Add((ushort)PacketType.S_BroadcastSetPositionPacket, MakePacket<S_BroadcastSetPositionPacket>);
             m_RunFunctionDict.Add((ushort)PacketType.S_BroadcastSetPositionPacket, PacketHandler.Instance.S_BroadcastSetPositionPacketHandler);
 
+            m_MakePacketDict.Add((ushort)PacketType.S_ConfirmMovePacket, MakePacket<S_ConfirmMovePacket>);
+            m_RunFunctionDict.Add((ushort)PacketType.S_ConfirmMovePacket, PacketHandler.Instance.S_ConfirmMovePacketHandler);
+
             m_MakePacketDict.Add((ushort)PacketType.S_BroadcastMovePacket, MakePacket<S_BroadcastMovePacket>);
             m_RunFunctionDict.Add((ushort)PacketType.S_BroadcastMovePacket, PacketHandler.Instance.S_BroadcastMovePacketHandler);
 
