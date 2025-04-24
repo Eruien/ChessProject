@@ -85,17 +85,6 @@ public class BaseMonster : BaseObject
         {
             currentTime += Time.deltaTime;
 
-            if (Target == null)
-            {
-                if (TargetLab != null)
-                {
-                    C_ChangeTargetPacket changeTargetPacket = new C_ChangeTargetPacket();
-                    changeTargetPacket.m_ObjectId = (ushort)ObjectId;
-                   
-                    TransportOnePacket(() => SessionManager.Instance.GetServerSession().Send(changeTargetPacket.Write()));
-                }
-            }
-
             if (Target != null)
             {
                 StateUpdate();
