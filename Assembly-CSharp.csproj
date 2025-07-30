@@ -100,7 +100,9 @@
     <Compile Include="Assets\Scripts\Monster\Bee.cs" />
     <Compile Include="Assets\AssetStore\Unity UI Samples\Scripts\ApplicationManager.cs" />
     <Compile Include="Assets\Scripts\Managers\ResourceManager.cs" />
+    <Compile Include="Assets\AssetStore\KawaiiLand\Scripts\TileEdge.cs" />
     <Compile Include="Assets\AssetStore\SpecialSkillsEffectsPack\Scripts\VariousEffectsScene.cs" />
+    <Compile Include="Assets\AssetStore\KawaiiLand\Scripts\CameraDepthTextureMode.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ChatController.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ObjectSpin.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_PhoneNumberValidator.cs" />
@@ -170,21 +172,27 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
+    <None Include="Assets\AssetStore\KawaiiLand\Shader\Build-in\ToonLit.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
     <None Include="Assets\AssetStore\SpecialSkillsEffectsPack\Shader_ForEffects\Shader_Decal.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
     <None Include="Assets\TextMesh Pro\Examples &amp; Extras\Fonts\Oswald-Bold - OFL.txt" />
+    <None Include="Assets\AssetStore\KawaiiLand\Shader\Build-in\ToonWater.shader" />
+    <None Include="Assets\AssetStore\KawaiiLand\Shader\Build-in\UnlitCastShadow.shader" />
     <None Include="Assets\TextMesh Pro\Examples &amp; Extras\Fonts\Anton OFL.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Mobile.cginc" />
     <None Include="Assets\AssetStore\Unity UI Samples\Textures and Sprites\SF UI\Background\LICENSE.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF SSD.shader" />
     <None Include="Assets\AssetStore\Unity UI Samples\Materials\UI-Default-No-Alpha.shader" />
+    <None Include="Assets\AssetStore\KawaiiLand\URP convert.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface-Mobile.shader" />
     <None Include="Assets\AssetStore\SpecialSkillsEffectsPack\Shader_ForEffects\Shader_DistortionEffect.shader" />
+    <None Include="Assets\AssetStore\KawaiiLand\Ruletile\Readme.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface.shader" />
     <None Include="Assets\TextMesh Pro\Sprites\EmojiOne Attribution.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Custom-Atlas.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF.shader" />
+    <None Include="Assets\AssetStore\KawaiiLand\Shader\Build-in\ToonLitCutout.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile SSD.shader" />
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Properties.cginc" />
@@ -198,6 +206,7 @@
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF Overlay.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Mobile.shader" />
     <None Include="Assets\TextMesh Pro\Fonts\LiberationSans - OFL.txt" />
+    <None Include="Assets\AssetStore\KawaiiLand\Shader\Build-in\ToonLitCutoutDoubleSide.shader" />
     <None Include="Assets\Shader\MonsterDeathShader.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Sprite.shader" />
